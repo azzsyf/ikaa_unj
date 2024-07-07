@@ -1,9 +1,18 @@
 <style>
     footer #footer{
+        display: flex;
         color: #ffffff;
         padding-top: 5%;
         #text-footer{
             font-size: 16px;
+        }
+    }
+
+    #logoFooter{
+        padding-left: 5%;
+        flex-grow: 2;
+        img{
+            width: 100px;
         }
     }
 
@@ -25,6 +34,32 @@
             align-self: center;
             border-bottom: 1px solid white;
             width: 90.5%;
+        }
+    }
+
+    @media screen and (min-width: 501px) AND (max-width: 600px){
+        footer #footer{
+            display: flex;
+            color: #ffffff;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-top: 5%;
+            #text-footer{
+                font-size: 16px;
+            }
+        }
+
+        #logoFooter{
+            padding-left: 0%; 
+            flex-grow: 2;
+            img{
+                width: 200px;
+            }
+        }
+
+        #text-footer{
+            font-size: 15px;
         }
     }
 
@@ -345,9 +380,9 @@
 </style>
         
         <footer>
-            <div id="footer" style="display: flex;">
-                <div style="padding-left: 5%; flex-grow: 2;">
-                    <img src="asset/Logo IKA Akuntansi UNJ bulet.png" alt="" style="width: 100px;">
+            <div id="footer">
+                <div id="logoFooter">
+                    <img src="asset/Logo IKA Akuntansi UNJ bulet.png" alt="" style="">
                 </div>
                 <div id="text-footer" style="flex-grow: .5;">
                     Beranda <br> Organisani <br> Karir <br> Event <br> Berita <br> Kontak

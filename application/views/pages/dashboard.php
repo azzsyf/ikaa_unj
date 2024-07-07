@@ -7,10 +7,13 @@
         }
 
         .parallax1 {
-            background-color: #006805;
-            width: 100%;
-            height: 100%;
-            padding: 15%;
+            padding-top: 200px;
+            background: url("<?= base_url() ?>asset/logo-unj.png") left bottom no-repeat, url("asset/Logo IKA Akuntansi UNJ bulet.png") right bottom no-repeat, #006805 repeat;
+            background-size: 240px, 290px, 1000px;
+            /* height: 750px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             h1{
                 color: #ffffff;
                 margin-bottom: auto;
@@ -86,12 +89,12 @@
                 column-gap: 2em;
                 .card{
                     width: 280px;
-                    height: 410px;
+                    height: 390px;
                     transition: 1s;
                     transition-timing-function: ease-in-out;
                     &:hover{
-                        width: 300px !important;
-                        height: 415px;
+                        width: 280px !important;
+                        height: 390px;
                         -ms-transform: scale(1.1);
                         transform: scale(1.1); 
                     }
@@ -110,8 +113,8 @@
                     transition: 1s;
                     transition-timing-function: ease-in-out;
                     &:hover{
-                        width: 290px !important;
-                        height: 320px;
+                        width: 280px !important;
+                        height: 310px;
                         -ms-transform: scale(1.1);
                         transform: scale(1.1); 
                     }
@@ -1704,11 +1707,12 @@
 
 
     </style>
-    
-        <div style="height:20%; text-align: center;" class="parallax1" id="beranda">
+        <div>
+        </div>
+        <div class="parallax1" style="height:20%; text-align: center;" id="beranda">
             <h1>Selamat Datang Ikatan Alumni Akutansi <br> Universitas Negeri Jakarta</h1> 
-            <br>
-            <h6>Ruang Koneksi, Kolaborasi & Kontribusi Alumni - Civitas Akademika Akuntansi <br> Universitas Negeri Jakarta</h6>
+            <!-- <br>
+            <p>Ruang Koneksi, Kolaborasi & Kontribusi Alumni - Civitas Akademika Akuntansi Universitas Negeri Jakarta</p> -->
         </div>
         <div class="parallax2" id="organisasi">
             <div class="card" id="zoom-effect">
@@ -1734,64 +1738,68 @@
             <div class="row" id="acara">
                 <div style="display: flex;">
                     <h2 style="text-align: left; flex-grow: 1;">ACARA SERU</h2>
-                    <a href="#" style="color: #000000; text-decoration: none;">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                    <a href="<?= base_url() ?>acara" style="color: #000000; text-decoration: none;">Selengkapnya <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
             <div class="flex-container" style="padding-left: 6%; padding-right: 6%; padding-bottom: 2%; padding-top: 2%;">
                 <div class="card col-md-4">
-                    <img src="asset/Snapinsta1.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 style="text-align: justify; font-weight: bold;">Nama Acara</h6>
-                        <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/Snapinsta1.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 style="text-align: justify; font-weight: bold;">Nama Acara</h6>
-                        <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/Snapinsta1.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 style="text-align: justify; font-weight: bold;">Nama Acara</h6>
-                        <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/Snapinsta1.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 style="text-align: justify; font-weight: bold;">Nama Acara</h6>
-                        <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/Snapinsta1.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 style="text-align: justify; font-weight: bold;">Nama Acara</h6>
-                        <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/Snapinsta1.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 style="text-align: justify; font-weight: bold;">Nama Acara</h6>
-                        <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                    </div>
-                </div>
-                <div class="card col-md-4">
-                    <img src="asset/Snapinsta1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 style="text-align: justify; font-weight: bold;">Nama Acara</h6>
-                        <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1799,50 +1807,62 @@
             <div class="row" id="berita">
                 <div style="display: flex;">
                     <h2 style="text-align: left; flex-grow: 1;">BERITA UNTUKMU</h2>
-                    <a href="#" style="color: #000000; text-decoration: none;">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                    <a href="<?= base_url() ?>berita" style="color: #000000; text-decoration: none;">Selengkapnya <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
             <div class="flex-containerBerita" style="padding-left: 6%; padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
                 <div class="card col-md-4">
-                    <img src="asset/news.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/news.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/news.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/news.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/news.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
                 <div class="card col-md-4">
-                    <img src="asset/news.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                        <span class="post-date" style="color: #a6a6a6; font-size: 13px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <div style="padding-top: 10px;">
+                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                        </div>
                     </div>
                 </div>
             </div>

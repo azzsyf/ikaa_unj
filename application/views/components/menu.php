@@ -18,7 +18,7 @@
         text-decoration: none;
         font-weight: bolder;
         font-size: 12px;
-        color: #006805;
+        color: #000000;
     }
 
     .nav-link::after {
@@ -41,13 +41,9 @@
         transform: translateX(-50%);
     }
 
-    .nav-link:active{
-        color: #006805;
-    }
-
     ul, .nav-link{
         padding: 10px;
-        color: #000000;
+        /* color: #000000; */
         &:hover{
             color: #006805;
         }
@@ -112,7 +108,7 @@
 </style>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: fixed;">
-        <a class="navbar-brand" href="#">IKAA UNJ</a>
+        <a class="navbar-brand" href="#"><img src="asset/Logo IKA Akuntansi UNJ bulet.png" alt="" width="60px">IKAA UNJ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -125,22 +121,22 @@
                     <a class="nav-link" href="<?= base_url('organisasi') ?>">ORGANISASI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#anggota">DATA ALUMNI</a>
+                    <a class="nav-link" href="<?= base_url('alumni') ?>">DATA ALUMNI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#karir">KARIR</a>
+                    <a class="nav-link" href="<?= base_url('karir') ?>">KARIR</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#acara">ACARA</a>
+                    <a class="nav-link" href="<?= base_url('acara') ?>">ACARA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#berita">BERITA</a>
+                    <a class="nav-link" href="<?= base_url('berita') ?>">BERITA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#footer">KONTAK</a>
+                    <a class="nav-link" href="<?= base_url('kontak') ?>">KONTAK</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
+            <form class="d-flex" role="search" action="<?= base_url('login/login') ?>">
                 <button class="btn btn-outline-success" style="padding: 5px 10px; margin-right: 20px;" type="submit">MASUK</button>
             </form>
         </div>

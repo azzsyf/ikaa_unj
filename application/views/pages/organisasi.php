@@ -118,7 +118,7 @@
                 }
                 #img3{
                     transform: translateX(-120px) translateY(-150px);
-                    width: 300px;
+                    width: 290px;
                     height: 350px;
                     transition: 1s;
                 }
@@ -135,8 +135,8 @@
                     height: 950px !important;
                 }
                 #img3{
-                    transform: translateX(30px) translateY(115px) !important;
-                    width: 450px !important;
+                    transform: translateX(70px) translateY(115px) !important;
+                    width: 430px !important;
                     height: 520px !important;
                 }
             }
@@ -154,9 +154,9 @@
                 padding-left: 30px;
                 position: relative;
                 #isi4{
-                    flex: 40%; 
+                    flex: 50%; 
                     padding-left: 20px;
-                    padding-top: 40px;
+                    padding-top: 30px;
                     padding-bottom: 40px;
                     padding-right: 0px;
                     color: #fff;
@@ -181,7 +181,7 @@
                     flex: 50%;
                     align-self: center;
                     padding-left: 200px;
-                    padding-top: 200px;
+                    padding-top: 180px;
                     #circelhover4{
                         transform: translateX(-30px) translateY(-90px);
                         width: 50px;
@@ -193,7 +193,7 @@
                     }
                 }
                 img{
-                    transform: translateX(-190px) translateY(-200px);
+                    transform: translateX(-190px) translateY(-250px);
                     width: 450px;
                     height: auto;
                     transition: 1s;
@@ -211,7 +211,7 @@
                     height: 950px !important;
                 }
                 #img4{
-                    transform: translateX(250px) translateY(25px);
+                    transform: translateX(250px) translateY(-15px);
                     width: 700px;
                     height: auto;
                 }
@@ -345,7 +345,7 @@
                     }
                 }
                 img{
-                    transform: translateX(-160px) translateY(-150px);
+                    transform: translateX(-160px) translateY(-200px);
                     width: 450px;
                     height: auto;
                     transition: 1s;
@@ -2662,7 +2662,7 @@
             </div>
             <div class="text1">
                 <h1>Struktur<br>Organisasi</h1>
-                <p>Ikatan Alumni Akuntansu UNJ</p>
+                <p>Ikatan Alumni Akuntansi UNJ</p>
             </div>
         </div>
     </div>
@@ -2723,7 +2723,7 @@
                         Ketua IKA Akuntansi UNJ
                     </div>
                     <div id="text-pkj3" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
-                        <b>PEKERJAAN</b>
+                        <b>RIWAYAT PEKERJAAN</b>
                     </div>
                     <div id="pkj3" style="font-size: 12px;">
                         <li>Managing Partner (CEO) - PT. Jawara Mitra Consulting, Oktober 2015 - Sekarang</li>
@@ -2760,14 +2760,33 @@
             </div>
             <div id="isi4">
                 <div id="coverIsi4">
-                    <h5>R.M. Canda Hadipta Janapriya S.E., Ak, CPA.</h5>
-                    <span>Wakil Ketua 1 IKA Akuntansi UNJ</span>
-                    <p>
-                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out 
-                        print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century 
-                        who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
-                    </p>
-                    <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
+                    <div style="font-size: 16px;">
+                        <b>R.M. Canda Hadipta Janapriya S.E., Ak, CPA.</b>
+                    </div>
+                    <div style="font-size: 14px;">
+                        Wakil Ketua 1 IKA Akuntansi UNJ
+                    </div>
+                    <div id="text-pkj3" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>RIWAYAT PEKERJAAN</b>
+                    </div>
+                    <div id="pkj3" style="font-size: 12px;">
+                        <li>Shareholder and Commissioner - PT. Jawara Mitra Consulting (JMC)</li>
+                        <li>Shareholder and President Director - PT. Chakra Ragheeda Mustika (CRM)</li>
+                        <li>Shareholder and President Director - PT. Ide Nuansa Integra (INI) - Document Aggregator</li>
+                        <li>Senior Auditor experienced - KAP Sidharta Widjaja & Rekan (KPMG Indonesia), 2018 - 2019</li>
+                    </div>
+                    <div id="text-po3" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>PENGALAMAN ORGANISASI</b>
+                    </div>
+                    <div id="po3" style="font-size: 12px;">
+                        <li>Leader of Department Bidang XII HIPMI JAKSEL - Bidang Investasi</li>
+                        <li>Founder and Bendahara Umum - Semangat Entreprenuer Nasional (SENTRAL)</li>
+                        <li>Ikatan Akuntan Publik Indonesia (Member)</li>
+                        <li>Bendahara Umum - Asosiasi Konsultan Pajak Publik Indonesia (AKP2I) Cabang Depok</li>
+                    </div>
+                    <div style="padding-top: 15px;">
+                        <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
+                    </div>
                 </div>
                 
             </div>
@@ -2803,14 +2822,29 @@
             </div>
             <div id="isi6">
                 <div id="coverIsi6">
-                    <h5>Hananto Haryadi</h5>
-                    <span>Bendahara IKA Akuntansi UNJ</span>
-                    <p>
-                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out 
-                        print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century 
-                        who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
-                    </p>
-                    <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
+                    <div style="font-size: 16px;">
+                        <b>Hananto Haryadi</b>
+                    </div>
+                    <div style="font-size: 14px;">
+                        Bendahara Umum IKA Akuntansi UNJ
+                    </div>
+                    <div id="text-pkj6" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>RIWAYAT PEKERJAAN</b>
+                    </div>
+                    <div id="pkj6" style="font-size: 12px;">
+                        <li>Wilmar Group Indonesia, 2012 - 2014</li>
+                        <li>Direktorat Jendral Pajak Kementrian Keuangan RI, 2014 - 2022</li>
+                        <li>Pemerintah Provinsi DKI Jakarta, 2022 - Sekarang</li>
+                    </div>
+                    <div id="text-po6" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>PENGALAMAN ORGANISASI</b>
+                    </div>
+                    <div id="po6" style="font-size: 12px;">
+                        <li>Anggota Madya Ikatan Akuntan Indonesia</li>
+                    </div>
+                    <div style="padding-top: 15px;">
+                        <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
+                    </div>
                 </div>
             </div>
         </div>
