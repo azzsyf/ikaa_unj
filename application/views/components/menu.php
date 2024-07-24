@@ -4,7 +4,7 @@
         z-index: 1;
     }
     .navbar-brand {
-        padding-left: 6%;
+        padding-left: 50px;
         font-weight: bolder;
         font-size: 20px;
         color: #006805;
@@ -108,7 +108,7 @@
 </style>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: fixed;">
-        <a class="navbar-brand" href="#"><img src="asset/Logo IKA Akuntansi UNJ bulet.png" alt="" width="60px">IKAA UNJ</a>
+        <a class="navbar-brand" href="#"><img src="asset/Logo IKA Akuntansi UNJ bulet.png" alt="" width="80px"> IKAA UNJ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -136,7 +136,7 @@
                     <a class="nav-link" href="<?= base_url('kontak') ?>">KONTAK</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search" action="<?= base_url('login/login') ?>">
+            <form class="d-flex" role="login" action="<?= base_url('login/login') ?>">
                 <button class="btn btn-outline-success" style="padding: 5px 10px; margin-right: 20px;" type="submit">MASUK</button>
             </form>
         </div>

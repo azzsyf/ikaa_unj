@@ -10,7 +10,6 @@
         }
         #head h1{
             position: relative;
-            z-index: 1;
             font-family: "Wittgenstein", serif;
             font-size: 70px;
         }
@@ -28,6 +27,6 @@
 <div class="section1">
     <div id="head">
         <h1>Data Alumni</h1>
-        <p>Ikatan Alumni Akuntansu UNJ</p>
+        <p>Ikatan Alumni Akuntansi UNJ</p>
     </div>
 </div>

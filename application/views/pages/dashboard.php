@@ -8,31 +8,54 @@
 
         .parallax1 {
             padding-top: 200px;
-            background: url("<?= base_url() ?>asset/logo-unj.png") left bottom no-repeat, url("asset/Logo IKA Akuntansi UNJ bulet.png") right bottom no-repeat, #006805 repeat;
-            background-size: 240px, 290px, 1000px;
-            /* height: 750px; */
+            padding-bottom: 60px;
+            background-color: #006805;
+            background-size: cover;
             display: flex;
             align-items: center;
             justify-content: center;
+            .card{
+                background-color: transparent;
+                height: 400px;
+                border: 0px;
+                #logo-unj{
+                    padding-right: 30px;
+                }
+                #logo-ikaa{
+                    padding-left: 20px;
+                }
+            }
+            .img-logo-unj{
+                padding-top: 20px;
+                width: 230px;
+            }
+            .img-logo-ikaa{
+                width: 270px;
+            }
+            #text-welcome{
+                padding-left: 40px;
+            }
             h1{
+                padding-top: 70px;
                 color: #ffffff;
                 margin-bottom: auto;
                 font-weight: bolder ;
+                font-size: 35px;
             }
             h6{
                 color: #ffffff;
                 margin-bottom: auto;
                 font-size: 20px;
+                padding-top: 10px;
             }
         }
         .parallax2 {
-            background: url("asset/Snapinsta4.png") left bottom no-repeat, url("asset/Snapinsta3.png") right bottom no-repeat, url("asset/BG.png") no-repeat;
-            background-size: 290px, 340px, cover;
-            height: 650px;
+            background: url("asset/UNJ_profile.jpg") no-repeat;
+            background-size: cover;
+            height: 750px;
             display: flex;
             align-items: center;
             justify-content: center;
-
         }
         .parallax2 .card{
             display: flex;
@@ -62,8 +85,15 @@
         .parallax3 {
             background: rgb(86,198,95);
             background: linear-gradient(0deg, rgba(86,198,95,1) 0%, rgba(255,255,255,1) 50%, rgba(86,198,95,1) 100%);
-            height: 460px;
+            height: 450px;
             img{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #logo-sentral{
+                width: 180px;
+            }
+            #logo-akp2i{
                 width: 200px;
             }
         }
@@ -262,15 +292,106 @@
             }
         }
 
-        @media screen and (min-width: 768px) AND (max-width: 990px) {
+        @media screen and (min-width: 990px) AND (max-width: 1200px) {
+            .parallax1 {
+                padding-top: 200px;
+                background-color: #006805;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .card{
+                    background-color: transparent;
+                    height: 300px;
+                    border: 0px;
+                    #logo-unj{
+                        padding-right: 20px;
+                        padding-left: 30px;
+                    }
+                    #logo-ikaa{
+                        padding-left: 10px;
+                    }
+                }
+                /* #text-welcome{
+                    padding-left: 10px;
+                } */
+                .img-logo-unj{
+                    padding-left: 10px;
+                    padding-top: 20px;
+                    width: 180px;
+                }
+                .img-logo-ikaa{
+                    width: 210px;
+                }
+                h1{
+                    padding-top: 70px;
+                    color: #ffffff;
+                    margin-bottom: auto;
+                    font-weight: bolder ;
+                    font-size: 25px;
+                }
+                h6{
+                    color: #ffffff;
+                    margin-bottom: auto;
+                    font-size: 15px;
+                    padding-top: 10px;
+                }
+            }
+        }
+
+        @media screen and (min-width: 750px) AND (max-width: 990px) {
             nav{
                 width: 100%;
 
             }
 
+            .parallax1 {
+                padding-top: 200px;
+                background-color: #006805;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .card{
+                    background-color: transparent;
+                    height: 300px;
+                    border: 0px;
+                    #logo-unj{
+                        padding-right: 20px;
+                        padding-left: 30px;
+                    }
+                    #logo-ikaa{
+                        padding-left: 10px;
+                    }
+                }
+                #text-welcome{
+                    padding-left: 20px;
+                }
+                .img-logo-unj{
+                    padding-left: 10px;
+                    padding-top: 20px;
+                    width: 150px;
+                }
+                .img-logo-ikaa{
+                    width: 180px;
+                    padding-right: 10px;
+                }
+                h1{
+                    padding-top: 70px;
+                    color: #ffffff;
+                    margin-bottom: auto;
+                    font-weight: bolder ;
+                    font-size: 18px;
+                }
+                h6{
+                    color: #ffffff;
+                    margin-bottom: auto;
+                    font-size: 13px;
+                    padding-top: 10px;
+                }
+            }
+
             .parallax2{
-                background: url("asset/Snapinsta4.png") left bottom no-repeat, url("asset/Snapinsta3.png") right bottom no-repeat, url("asset/BG.png") no-repeat;
-                background-size: 220px, 260px, cover;
                 height: 550px;
                 display: flex;
                 align-items: center;
@@ -468,7 +589,7 @@
 
         }
 
-        @media screen and (min-width: 615px) AND (max-width: 767px) {
+        @media screen and (min-width: 615px) AND (max-width: 749px) {
             nav{
                 width: 100%;
                 button{
@@ -478,6 +599,89 @@
             h2{
                 padding-bottom: 20px;
             }
+
+            .parallax1 {
+                padding-top: 150px;
+                background-color: #006805;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                .card{
+                    background-color: transparent;
+                    height: 200px;
+                    border: 0px;
+                    #logo-unj{
+                        padding-right: 0px;
+                        padding-left: 0px;
+                    }
+                    #logo-ikaa{
+                        padding-left: 0px;
+                    }
+                }
+                #text-welcome{
+                    padding-left: 0px;
+                }
+                .img-logo-unj{
+                    padding-left: 0px;
+                    padding-top: 0px;
+                    width: 150px;
+                }
+                .img-logo-ikaa{
+                    width: 180px;
+                    padding-right: 0px;
+                }
+                h1{
+                    padding-top: 50px;
+                    color: #ffffff;
+                    margin-bottom: auto;
+                    font-weight: bolder ;
+                    font-size: 20px;
+                }
+                h6{
+                    color: #ffffff;
+                    margin-bottom: auto;
+                    font-size: 15px;
+                    padding-top: 10px;
+                }
+            }
+
+            .parallax2{
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .card{
+                    display: flex;
+                    border-radius: 15px;
+                    background: linear-gradient(0deg, rgba(255,255,255,0.48783263305322133) 0%, rgba(255,255,255,0.49) 100%);
+                    text-align: center;
+                    align-self: center;
+                    box-shadow: 0px 1px 2px #000000;
+                    width: 250px;
+                    height: 150px;
+                    transition: 0.5s;
+                    transition-timing-function: ease-in-out;
+                    &:hover{
+                        width: 280px !important;
+                        height: 150px;
+                        background: linear-gradient(0deg, rgba(14,227,47,0.67) 0%, rgba(14,227,47,0.67) 100%);
+                        -ms-transform: scale(1.1);
+                        transform: scale(1.1);
+                    }
+                    h1{
+                        font-size: 45px;
+                    }
+                    h5{
+                        font-size: 15px;
+                    }
+                    p{
+                        font-size: 13px;
+                    }
+                }
+            }
+
             .parallax4{
                 .flex-container {
                     overflow-y: scroll; 
@@ -654,25 +858,53 @@
                 }
             }
             .parallax1 {
+                padding-top: 150px;
                 background-color: #006805;
-                height: 100%;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                .card{
+                    background-color: transparent;
+                    height: 200px;
+                    border: 0px;
+                    #logo-unj{
+                        padding-right: 0px;
+                        padding-left: 0px;
+                    }
+                    #logo-ikaa{
+                        padding-left: 0px;
+                    }
+                }
+                #text-welcome{
+                    padding-left: 0px;
+                }
+                .img-logo-unj{
+                    padding-left: 0px;
+                    padding-top: 0px;
+                    width: 150px;
+                }
+                .img-logo-ikaa{
+                    width: 180px;
+                    padding-right: 0px;
+                }
                 h1{
+                    padding-top: 50px;
                     color: #ffffff;
+                    margin-bottom: auto;
                     font-weight: bolder ;
-                    font-size: 20px;
-                    margin-top: 40px
+                    font-size: 17px;
                 }
                 h6{
                     color: #ffffff;
                     margin-bottom: auto;
-                    font-size: 15px;
+                    font-size: 14px;
+                    padding-top: 10px;
                 }
-                
             }
             
             .parallax2{
-                background: url("asset/Snapinsta4.png") left bottom no-repeat, url("asset/Snapinsta3.png") right bottom no-repeat, url("asset/BG.png") no-repeat;
-                background-size: 150px, 180px, cover;
                 height: 400px;
                 display: flex;
                 align-items: center;
@@ -710,9 +942,16 @@
             .parallax3 {
                 background: rgb(86,198,95);
                 background: linear-gradient(0deg, rgba(86,198,95,1) 0%, rgba(255,255,255,1) 50%, rgba(86,198,95,1) 100%);
-                height: 300px;
+                height: 250px;
                 img{
-                    width: 150px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                #logo-sentral{
+                    width: 80px;
+                }
+                #logo-akp2i{
+                    width: 100px;
                 }
             }
             
@@ -918,25 +1157,53 @@
             }
             
             .parallax1 {
+                padding-top: 150px;
                 background-color: #006805;
-                height: 100%;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                .card{
+                    background-color: transparent;
+                    height: 180px;
+                    border: 0px;
+                    #logo-unj{
+                        padding-right: 0px;
+                        padding-left: 0px;
+                    }
+                    #logo-ikaa{
+                        padding-left: 0px;
+                    }
+                }
+                #text-welcome{
+                    padding-left: 0px;
+                }
+                .img-logo-unj{
+                    padding-left: 0px;
+                    padding-top: 0px;
+                    width: 150px;
+                }
+                .img-logo-ikaa{
+                    width: 180px;
+                    padding-right: 0px;
+                }
                 h1{
+                    padding-top: 50px;
                     color: #ffffff;
                     margin-bottom: auto;
                     font-weight: bolder ;
                     font-size: 15px;
-                    padding-top: 40px;
                 }
                 h6{
                     color: #ffffff;
                     margin-bottom: auto;
                     font-size: 10px;
+                    padding-top: 10px;
                 }
             }
             
             .parallax2{
-                background: url("asset/Snapinsta4.png") left bottom no-repeat, url("asset/Snapinsta3.png") right bottom no-repeat, url("asset/BG.png") no-repeat;
-                background-size: 130px, 160px, cover;
                 height: 300px;
                 display: flex;
                 align-items: center;
@@ -948,25 +1215,25 @@
                     text-align: center;
                     align-self: center;
                     box-shadow: 0px 1px 2px #000000;
-                    width: 200px;
-                    height: 135px;
+                    width: 180px;
+                    height: 115px;
                     transition: 0.5s;
                     transition-timing-function: ease-in-out;
                     &:hover{
-                        width: 230px !important;
-                        height: 135px;
+                        width: 190px !important;
+                        height: 120px;
                         background: linear-gradient(0deg, rgba(14,227,47,0.67) 0%, rgba(14,227,47,0.67) 100%);
                         -ms-transform: scale(1.1);
                         transform: scale(1.1);
                     }
                     h1{
-                        font-size: 40px;
+                        font-size: 30px;
                     }
                     h5{
-                        font-size: 13px;
+                        font-size: 10px;
                     }
                     p{
-                        font-size: 10px;
+                        font-size: 8px;
                     }
                 }
             }
@@ -978,12 +1245,30 @@
                 img{
                     width: 100px;
                 }
+                #logo-sentral{
+                    width: 100px;
+                }
+                #logo-akp2i{
+                    width: 120px;
+                }
                 h2{
                     font-size: 15px;
                 }
             }
 
             .parallax4{
+                #acara h2{
+                    font-size: 15px;
+                }
+                #acara a{
+                    font-size: 13px;
+                }
+                #berita h2{
+                    font-size: 15px;
+                }
+                #berita a{
+                    font-size: 13px;
+                }
                 .flex-container {
                     overflow-y: scroll; 
                     display: flex;
@@ -1161,7 +1446,7 @@
                 }
             }
 
-            footer #footer{
+            /* footer #footer{
                 display: flex;
                 flex-direction: column;
                 h3{
@@ -1171,7 +1456,7 @@
                     margin-left: 20px;
                     font-size: 10px !important;
                 }
-            }
+            } */
 
         }
 
@@ -1201,8 +1486,6 @@
             }
             
             .parallax2{
-                background: url("asset/Snapinsta4.png") left bottom no-repeat, url("asset/Snapinsta3.png") right bottom no-repeat, url("asset/BG.png") no-repeat;
-                background-size: 100px, 130px, cover;
                 height: 300px;
                 display: flex;
                 align-items: center;
@@ -1427,7 +1710,7 @@
                 }
             }
 
-            footer #footer{
+            /* footer #footer{
                 display: flex;
                 flex-direction: column;
                 h3{
@@ -1440,7 +1723,7 @@
             }
             footer p{
                 font-size: 6px;
-            }
+            } */
         }
 
         @media screen and (max-width: 320px){
@@ -1448,8 +1731,6 @@
                 width: 100%;
             }
             .parallax2{
-                background: url("asset/Snapinsta4.png") left bottom no-repeat, url("asset/Snapinsta3.png") right bottom no-repeat, url("asset/BG.png") no-repeat;
-                background-size: 100px, 120px, cover;
                 height: 300px;
                 display: flex;
                 align-items: center;
@@ -1691,7 +1972,7 @@
                 }
             }
 
-            footer #footer{
+            /* footer #footer{
                 h3{
                     font-size: 10px;
                 }
@@ -1701,7 +1982,7 @@
             }
             footer p{
                 font-size: 5px;
-            }
+            } */
             
         }
 
@@ -1710,9 +1991,22 @@
         <div>
         </div>
         <div class="parallax1" style="height:20%; text-align: center;" id="beranda">
-            <h1>Selamat Datang Ikatan Alumni Akutansi <br> Universitas Negeri Jakarta</h1> 
-            <!-- <br>
-            <p>Ruang Koneksi, Kolaborasi & Kontribusi Alumni - Civitas Akademika Akuntansi Universitas Negeri Jakarta</p> -->
+            <div class="card" id="logo-unj">
+                <div class="card-body">
+                    <img class="img-logo-unj" src="asset/logo-unj.png" alt="">
+                </div>
+            </div>
+            <div class="card" id="text-welcome">
+                <div class="car-body">
+                    <h1>Selamat Datang Ikatan Alumni Akutansi <br> Universitas Negeri Jakarta</h1> 
+                    <h6>Ruang Koneksi, Kolaborasi & Kontribusi Alumni - Civitas Akademika Akuntansi <br> Universitas Negeri Jakarta</h6>
+                </div>
+            </div>
+            <div class="card" id="logo-ikaa">
+                <div class="card-body">
+                    <img class="img-logo-ikaa" src="asset/Logo IKA Akuntansi UNJ bulet.png" alt="">
+                </div>
+            </div>
         </div>
         <div class="parallax2" id="organisasi">
             <div class="card" id="zoom-effect">
@@ -1728,8 +2022,8 @@
             <div class="row" style="padding-left: 6%; padding-right: 6%; padding-top: 5%;">
                 <div class="col-md-12">
                     <marquee behavior="scroll" loop="infinite"  direction="" scrollamount="15">
-                        <img src="asset/Logo Sentral.png" alt="" style="width: 150px;">
-                        <img src="asset/LOGO-AKP2I-square.png" alt="" style="margin-left: 100px;">
+                        <img src="asset/Logo Sentral.png" id="logo-sentral" alt="">
+                        <img src="asset/LOGO-AKP2I-square.png" id="logo-akp2i" alt="">
                     </marquee>
                 </div>
             </div>
@@ -1882,7 +2176,7 @@
                     <p style="text-align: justify;">Bergabung dengan ikatan alumni akuntansi, temukan informasi, pekerjaan dengan mudah, tepat, dan terpercaya bersama kami!</p>
                     <div class="row">
                         <div class="col-sm-12">
-                            <button class="btn btn-light" id="btn1">Daftar Sekarang</button>
+                            <a class="btn btn-light" href="<?= base_url()?>registrasi/" id="btn1">Daftar Sekarang</a>
                             <button class="btn btn-outline-light" id="btn2">Selengkapnya</button>
                         </div>
                     </div>
@@ -1891,7 +2185,7 @@
         </div>
         <div class="parallax6">
             <div id="headfoot">
-                <div style="color: #ffffff; flex-grow: .5;">
+                <div style="color: #ffffff; flex-grow: .9;">
                     <h3>Daftarkan dirimu Dan Belajar Bersama!</h3>
                 </div>
                 <div>
@@ -1904,3 +2198,4 @@
                     
                 </div>
             </div>
+        

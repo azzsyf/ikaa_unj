@@ -9,29 +9,23 @@
         .section1{
             background: #006805;
             width: 100%;
-            height: 600px;
+            height: 700px;
             #div-coba{
                 display: flex;
                 .logo1{
                     flex: 50%;
-                    transform: translateY(70px);
-                    margin-top: 120px;
-                    text-align: center;
-                    font-weight: bolder;
-                    position: absolute;
+                    margin-top: 220px;
                     img{
-                        width: 250px;
+                        width: 300px;
                     }
                 }
                 .text1{
-                    transform: translateY(250px);
                     width: 300px;
-                    height: 300px;
                     color: white;
+                    padding-top: 300px;
                     margin-right: 40px;
                     text-align: right;
                     font-weight: bolder;
-                    flex-grow: 1;
                 }
             }
         }
@@ -39,11 +33,43 @@
         .section2{
             padding: 20px;
             padding-top: 40px;
-            background: #ffff;
-            width: 100%;
+            background: #fff;
+            /* background: linear-gradient(
+                to left,
+                #56C65F 0%,
+                #fff 50%,
+                #fff 50%,
+                #56C65F 100%
+            ); */
             height: auto;
             text-align: justify;
             position: relative;
+            .flex-container{
+                display: flex;
+                justify-content: center;
+            }
+            #card-head2{
+                width: auto;
+                border-radius: 20px;
+                .card-body{
+                    margin: 10px;
+                }
+            }
+            #card-visi{
+                height: 500px;
+                border-radius: 20px;
+                .card-body{
+                    margin: 10px;
+                }
+            }
+
+            #card-progul{
+                height: 500px;
+                border-radius: 20px;
+                .card-body{
+                    margin: 10px;
+                }
+            }
             #head2{
                 text-align: center;
             }
@@ -64,6 +90,158 @@
             }
 
 
+        }
+
+        .section9{
+            background: rgb(0,104,5);
+            background: linear-gradient(80deg, rgba(0,104,5,1) 0%, rgba(86,198,95,1) 100%);
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            text-align: justify;
+            position: relative;
+            transition: 1s;
+            #div-isi9{
+                display: flex; 
+                padding-left: 30px;
+                position: relative;
+                #isi9{
+                    flex: 55%; 
+                    padding-left: 40px;
+                    padding-top: 30px;
+                    padding-bottom: 40px;
+                    padding-right: 40px;
+                    color: #fff;
+                    transition: 1s;
+                    #coverIsi9{
+                        width: 80%;
+                    }
+                    h5{
+                        font-weight: bolder;
+                        font-size: 15px;
+                    }
+                    span{
+                        font-size: 13px;
+                    }
+                    p{
+                        padding-top: 10px;
+                        font-size: 12px;
+                    }
+                }
+                #div-img9{
+                    flex: 50%;
+                    align-self: center;
+                    padding-left: 300px;
+                    padding-top: 100px;
+                    #circelhover{
+                        width: 50px;
+                        height: 50px;
+                        background: #006805;
+                        border-radius: 50%;
+                        transition: 1s;
+                        position: absolute;
+                    }
+                }
+                #img9{
+                    transform: translateX(-120px) translateY(-170px);
+                    width: 350px;
+                    height: 350px;
+                    transition: 1s;
+                }
+            }
+            &:hover{
+                #isi9{
+                    padding-left: 60px !important;
+                    padding-right: 20px !important;
+                    transition: all 1s ease-in-out;
+                }
+                #div-img9 #circelhover{
+                    transform: translateX(-320px) translateY(-320px) !important;
+                    width: 950px !important;
+                    height: 950px !important;
+                }
+                #img9{
+                    transform: translateX(-0px) translateY(115px) !important;
+                    width: 570px !important;
+                    height: 570px !important;
+                }
+            }
+        }
+
+        .section10{
+            background: rgb(0,104,5);
+            background: linear-gradient(270deg, rgba(0,104,5,1) 0%, rgba(86,198,95,1) 100%);
+            width: 100%;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            #div-isi10{
+                display: flex; 
+                padding-left: 30px;
+                position: relative;
+                #isi10{
+                    flex: 50%; 
+                    padding-left: 20px;
+                    padding-top: 30px;
+                    padding-bottom: 40px;
+                    padding-right: 0px;
+                    color: #fff;
+                    text-align: justify;
+                    transition: 1s;  
+                    #coverIsi10{
+                        width: 80%;
+                    }                  
+                    h5{
+                        font-weight: bolder;
+                        font-size: 15px;
+                    }
+                    span{
+                        font-size: 13px;
+                    }
+                    p{
+                        padding-top: 10px;
+                        font-size: 12px;
+                    }
+                }
+                #div-img10{
+                    flex: 50%;
+                    align-self: center;
+                    padding-left: 200px;
+                    padding-top: 180px;
+                    #circelhover10{
+                        transform: translateX(-30px) translateY(-90px);
+                        width: 50px;
+                        height: 50px;
+                        background: #006805;
+                        border-radius: 50%;
+                        transition: 1s;
+                        position: absolute;
+                    }
+                }
+                img{
+                    transform: translateX(-190px) translateY(-150px);
+                    width: 450px;
+                    height: auto;
+                    transition: 1s;
+                }
+            }
+            &:hover{
+                #isi10{
+                    padding-left: 0px !important;
+                    padding-right: 20px !important;
+                    transition: all 1s ease-in-out;
+                }  
+                #div-img10 #circelhover10{
+                    transform: translateX(-550px) translateY(-400px) !important;
+                    width: 950px !important;
+                    height: 950px !important;
+                }
+                #img10{
+                    transform: translateX(250px) translateY(55px);
+                    width: 700px;
+                    height: auto;
+                }
+            }
         }
 
         .section3{
@@ -90,15 +268,22 @@
                     #coverIsi3{
                         width: 80%;
                     }
-                    h5{
-                        font-weight: bolder;
-                        font-size: 15px;
-                    }
-                    span{
+                    .name3{
+                        font-size: 16px;
+                    }       
+                    .jabatan3{
+                        font-size: 14px;
+                    }  
+                    .text-pkj3{
+                        font-size: 13px;
+                    }    
+                    .pkj3{
+                        font-size: 12px;
+                    }  
+                    .text-po3{
                         font-size: 13px;
                     }
-                    p{
-                        padding-top: 10px;
+                    .po3{
                         font-size: 12px;
                     }
                 }
@@ -138,6 +323,89 @@
                     transform: translateX(70px) translateY(115px) !important;
                     width: 430px !important;
                     height: 520px !important;
+                }
+            }
+        }
+
+        .section4{
+            background: rgb(0,104,5);
+            background: linear-gradient(270deg, rgba(0,104,5,1) 0%, rgba(86,198,95,1) 100%);
+            width: 100%;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            #div-isi4{
+                display: flex; 
+                padding-left: 30px;
+                position: relative;
+                #isi4{
+                    flex: 50%; 
+                    padding-left: 20px;
+                    padding-top: 30px;
+                    padding-bottom: 40px;
+                    padding-right: 0px;
+                    color: #fff;
+                    text-align: justify;
+                    transition: 1s;  
+                    #coverIsi4{
+                        width: 80%;
+                    } 
+                    .name4{
+                        font-size: 16px;
+                    }       
+                    .jabatan4{
+                        font-size: 14px;
+                    }  
+                    .text-pkj4{
+                        font-size: 13px;
+                    }    
+                    .pkj4{
+                        font-size: 12px;
+                    }  
+                    .text-po4{
+                        font-size: 13px;
+                    }
+                    .po4{
+                        font-size: 12px;
+                    }                 
+                }
+                #div-img4{
+                    flex: 50%;
+                    align-self: center;
+                    padding-left: 200px;
+                    padding-top: 180px;
+                    #circelhover4{
+                        transform: translateX(-30px) translateY(-90px);
+                        width: 50px;
+                        height: 50px;
+                        background: #006805;
+                        border-radius: 50%;
+                        transition: 1s;
+                        position: absolute;
+                    }
+                }
+                img{
+                    transform: translateX(-190px) translateY(-250px);
+                    width: 450px;
+                    height: auto;
+                    transition: 1s;
+                }
+            }
+            &:hover{
+                #isi4{
+                    padding-left: 0px !important;
+                    padding-right: 20px !important;
+                    transition: all 1s ease-in-out;
+                }  
+                #div-img4 #circelhover4{
+                    transform: translateX(-550px) translateY(-400px) !important;
+                    width: 950px !important;
+                    height: 950px !important;
+                }
+                #img4{
+                    transform: translateX(250px) translateY(-15px);
+                    width: 700px;
+                    height: auto;
                 }
             }
         }
@@ -333,7 +601,7 @@
                     flex: 50%;
                     align-self: center;
                     padding-left: 200px;
-                    padding-top: 200px;
+                    padding-top: 180px;
                     #circelhover6{
                         transform: translateX(-30px) translateY(-90px);
                         width: 50px;
@@ -345,7 +613,7 @@
                     }
                 }
                 img{
-                    transform: translateX(-160px) translateY(-200px);
+                    transform: translateX(-190px) translateY(-150px);
                     width: 450px;
                     height: auto;
                     transition: 1s;
@@ -451,6 +719,16 @@
                 text-align: center;
                 h3{
                     font-weight: bolder;
+                    position: relative;
+                }
+                h3:after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -50px;
+                    bottom: -4px;
+                    width: 100px;
+                    border-bottom: 2px solid #006805;
                 }
             }
 
@@ -463,7 +741,13 @@
             }
         }
 
-        @media screen and (max-width: 1024px){
+        .section11{
+            text-align: center;
+            background: #000;
+            height: 5px;
+        }
+
+        /* @media screen and (max-width: 1024px){
             .section1{
                 background: #006805;
                 width: 100%;
@@ -491,16 +775,6 @@
                     margin-right: 40px;
                     text-align: right;
                     font-weight: bolder;
-                    flex-grow: 1;
-                }
-                .text2{
-                    transform: translateX(700px) translateY(60px);
-                    width: 300px;
-                    height: 300px;
-                    color: white;
-                    margin-right: 40px;
-                    text-align: right;
-                    font-size: 20px;
                     flex-grow: 1;
                 }
             }
@@ -869,9 +1143,9 @@
                     }
                 }
             }
-        }
+        } */
 
-        @media screen and (min-width: 750px) AND (max-width: 1023px){
+        @media screen and (min-width: 750px) AND (max-width: 1024px){
 
             .section1{
                 background: #006805;
@@ -879,44 +1153,84 @@
                 height: 600px;
                 #div-coba{
                     display: flex;
-                    .logo{
+                    .logo1{
                         flex: 50%;
-                        transform: translateY(100px);
-                        width: 200px;
-                        height: 200px;
-                        background: rgb(223, 209, 209);
-                        border-radius: 50%;
-                        margin: 40px;
-                        margin-top: 120px;
-                        text-align: center;
-                        font-weight: bolder;
-                        position: absolute;
-                    }
-                    .text{
-                        transform: translateX(53px) translateY(65px);
+                        margin-top: 220px;
+                        img{
+                            width: 250px;
+                        }
                     }
                     .text1{
-                        transform: translateY(250px);
-                        width: 300px;
-                        height: 300px;
+                        transform: translateX(0px) translateY(60px);
+                        width: 400px;
                         color: white;
-                        /* margin-right: 40px; */
+                        padding-top: 220px;
                         text-align: right;
                         font-weight: bolder;
-                        flex-grow: 1;
-                    }
-                    .text2{
-                        transform: translateX(430px) translateY(60px);
-                        width: 300px;
-                        height: 300px;
-                        color: white;
-                        margin-right: 40px;
-                        text-align: right;
-                        font-size: 20px;
                         flex-grow: 1;
                     }
                 }
                 
+            }
+
+            .section2{
+                padding: 20px;
+                padding-top: 40px;
+                background: #fff;
+                /* background: linear-gradient(
+                    to left,
+                    #56C65F 0%,
+                    #fff 50%,
+                    #fff 50%,
+                    #56C65F 100%
+                ); */
+                height: auto;
+                text-align: justify;
+                position: relative;
+                #card-head2{
+                    width: auto;
+                    border-radius: 20px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+                #card-visi{
+                    height: 600px;
+                    border-radius: 20px;
+                    font-size: 13px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+
+                #card-progul{
+                    height: 600px;
+                    border-radius: 20px;
+                    font-size: 13px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+                #head2{
+                    text-align: center;
+                }
+                h3{
+                    font-weight: bolder;
+                }
+
+                #div-isi2{
+                    display: flex; 
+                    padding: 30px;
+                    #isi2{
+                        flex: 50%; 
+                        padding: 20px;
+                        h5{
+                            font-weight: bolder;
+                        }
+                    }
+                }
+
+
             }
 
             .section3{
@@ -940,17 +1254,24 @@
                         padding-right: 0px;
                         color: #fff;
                         transition: 1s;
-                        h5{
-                            font-weight: bolder;
-                            font-size: 15px;
-                        }
-                        span{
+                        .name3{
+                            font-size: 16px;
+                        }       
+                        .jabatan3{
+                            font-size: 14px;
+                        }  
+                        .text-pkj3{
+                            font-size: 13px;
+                        }    
+                        .pkj3{
+                            font-size: 12px;
+                        }  
+                        .text-po3{
                             font-size: 13px;
                         }
-                        p{
-                            padding-top: 10px;
+                        .po3{
                             font-size: 12px;
-                        }
+                        }  
                     }
                     #div-img3{
                         flex: 30%;
@@ -1004,28 +1325,35 @@
                     padding-left: 30px;
                     position: relative;
                     #isi4{
-                        flex: 40%; 
+                        flex: 55%; 
                         padding-left: 20px;
                         padding-top: 40px;
                         padding-bottom: 40px;
                         padding-right: 0px;
                         color: #fff;
                         text-align: justify;
-                        transition: 1s;                    
-                        h5{
-                            font-weight: bolder;
-                            font-size: 15px;
-                        }
-                        span{
+                        transition: 1s; 
+                        .name4{
+                            font-size: 16px;
+                        }       
+                        .jabatan4{
+                            font-size: 14px;
+                        }  
+                        .text-pkj4{
+                            font-size: 13px;
+                        }    
+                        .pkj4{
+                            font-size: 12px;
+                        }  
+                        .text-po4{
                             font-size: 13px;
                         }
-                        p{
-                            padding-top: 10px;
+                        .po4{
                             font-size: 12px;
                         }
                     }
                     #div-img4{
-                        flex: 50%;
+                        flex: 45%;
                         align-self: center;
                         padding-left: 200px;
                         padding-top: 200px;
@@ -1040,8 +1368,8 @@
                         }
                     }
                     img{
-                        transform: translateX(-190px) translateY(-150px);
-                        width: 450px;
+                        transform: translateX(-230px) translateY(-300px);
+                        width: 300px;
                         height: auto;
                         transition: 1s;
                     }
@@ -1054,12 +1382,12 @@
                     }  
                     #div-img4 #circelhover4{
                         transform: translateX(-780px) translateY(-500px) !important;
-                        width: 950px !important;
-                        height: 950px !important;
+                        width: 920px !important;
+                        height: 920px !important;
                     }
                     #img4{
-                        transform: translateX(470px) translateY(190px);
-                        width: 650px;
+                        transform: translateX(380px) translateY(-30px);
+                        width: 600px;
                         height: auto;
                     }
                 }
@@ -1283,6 +1611,79 @@
                     }
                 }
             }
+
+            .section9{
+                background: rgb(0,104,5);
+                background: linear-gradient(80deg, rgba(0,104,5,1) 0%, rgba(86,198,95,1) 100%);
+                width: 100%;
+                height: 350px;
+                overflow: hidden;
+                text-align: justify;
+                position: relative;
+                transition: 1s;
+                #div-isi9{
+                    display: flex; 
+                    padding-left: 30px;
+                    position: relative;
+                    #isi9{
+                        flex: 55%; 
+                        padding-left: 40px;
+                        padding-top: 40px;
+                        padding-bottom: 40px;
+                        padding-right: 40px;
+                        color: #fff;
+                        transition: 1s;
+                        h5{
+                            font-weight: bolder;
+                            font-size: 15px;
+                        }
+                        span{
+                            font-size: 13px;
+                        }
+                        p{
+                            padding-top: 10px;
+                            font-size: 12px;
+                        }
+                    }
+                    #div-img9{
+                        flex: 45%;
+                        align-self: center;
+                        padding-left: 200px;
+                        padding-top: 0px;
+                        #circelhover{
+                            width: 50px;
+                            height: 50px;
+                            background: #006805;
+                            border-radius: 50%;
+                            transition: 1s;
+                            position: absolute;
+                        }
+                    }
+                    #img9{
+                        transform: translateX(-190px) translateY(-140px);
+                        width: 350px;
+                        height: 350px;
+                        transition: 1s;
+                    }
+                }
+                &:hover{
+                    #isi9{
+                        padding-left: 60px !important;
+                        padding-right: 20px !important;
+                        transition: all 1s ease-in-out;
+                    }
+                    #div-img9 #circelhover{
+                        transform: translateX(-230px) translateY(-300px) !important;
+                        width: 780px !important;
+                        height: 780px !important;
+                    }
+                    #img9{
+                        transform: translateX(-50px) translateY(130px) !important;
+                        width: 480px !important;
+                        height: 480px !important;
+                    }
+                }
+            }
         }
 
         @media screen and (min-width: 601px) AND (max-width: 749px){
@@ -1294,13 +1695,37 @@
                 height: auto;
                 text-align: justify;
                 position: relative;
+                #card-head2{
+                    width: auto;
+                    border-radius: 20px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+                #card-visi{
+                    height: auto;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+
+                #card-progul{
+                    height: auto;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
                 #head2{
                     text-align: center;
-                    font-size: small;
+                    font-size: 12px;
                 }
                 h3{
                     font-weight: bolder;
-                    font-size: 20px;
+                    font-size: 18px;
                 }
 
                 #div-isi2{
@@ -1621,6 +2046,30 @@
                 height: auto;
                 text-align: justify;
                 position: relative;
+                #card-head2{
+                    width: auto;
+                    border-radius: 20px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+                #card-visi{
+                    height: auto;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+
+                #card-progul{
+                    height: auto;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
                 #head2{
                     text-align: center;
                     font-size: small;
@@ -1942,6 +2391,36 @@
         }
 
         @media screen and (min-width: 400px) AND (max-width: 500px) {
+            .section1{
+                background: #006805;
+                width: 100%;
+                height: 500px;
+                #div-coba{
+                    display: flex;
+                    .logo1{
+                        flex: 50%;
+                        margin-top: 220px;
+                        img{
+                            width: 150px;
+                        }
+                    }
+                    .text1{
+                        width: 400px;
+                        color: white;
+                        padding-top: 240px;
+                        text-align: right;
+                        font-weight: bolder;
+                        flex-grow: 1;
+                        h1{
+                            font-size: 25px;
+                        }
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+                }
+                
+            }
             .section2{
                 padding: 0px;
                 padding-top: 40px;
@@ -1950,13 +2429,37 @@
                 height: auto;
                 text-align: justify;
                 position: relative;
+                #card-head2{
+                    width: auto;
+                    border-radius: 20px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+                #card-visi{
+                    height: auto;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
+
+                #card-progul{
+                    height: auto;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    .card-body{
+                        margin: 10px;
+                    }
+                }
                 #head2{
                     text-align: center;
                     font-size: small;
                 }
                 h3{
                     font-weight: bolder;
-                    font-size: 20px;
+                    font-size: 15px;
                 }
 
                 #div-isi2{
@@ -2265,6 +2768,30 @@
                         transform: translateX(-100px) translateY(-100px) scaleX(-1) !important;
                         width: 380px !important;
                         height: auto !important;
+                    }
+                }
+            }
+
+            .section8{
+                #head8{
+                    text-align: center;
+                    h3{
+                        font-weight: bolder;
+                        position: relative;
+                        font-size: 15px;
+                    }
+                    h3:after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -25px;
+                        bottom: -4px;
+                        width: 50px;
+                        border-bottom: 2px solid #006805;
+                    }
+
+                    span{
+                        font-size: 13px;
                     }
                 }
             }
@@ -2667,75 +3194,174 @@
         </div>
     </div>
     <div class="section2">
-        <div id="head2">
-            <h3>VISI, MISI & PROGRAM UNGGULAN</h3>
-            <span>Ikatan Alumni Akuntansi Universitas Negeri Jakarta</span>
+        <div class="flex-container">
+            <div class="card" id="card-head2" style="background-color: #e7e7e7; border: 0px;">
+                <div class="card-body">
+                    <div id="head2">
+                        <h3>VISI, MISI & PROGRAM UNGGULAN</h3>
+                        <span>Ikatan Alumni Akuntansi Universitas Negeri Jakarta</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="div-isi2">
             <div id="isi2">
-                <h5>VISI</h5>
-                <p>
-                    Menjadikan IKAA UNJ sebagai wadah dalam membangun jaringan wirausaha, karir serta pengembangan ilmu dan wawasan.
-                </p>
-                <h5>MISI</h5>
-                <p>
-                    Memperluas jaringan wirausaha dalam lingkup interal seperti membangun sistem yang terpadu, 
-                    serta dalam ruang lingkup eksternal seperti berkolaborasi dengan organisasi pengusaha lainnya.
-                </p>
-                <p>
-                    Mempererat jaringan karir baik dalam ruang lingkup internal seperti pemberitahuan lowongan 
-                    pekerjaan dari sistem terpadu, dan mengembangkan jaringan karir dalam lingkup eksternal sperti berkolaborasi 
-                    dengan organisasi profesi dan pihak eksternal lainnya.
-                </p>
-                <p>
-                    Mengaktifkan IKAA UNJ sebagai pusat pengembangan ilmu pengetahuan dan wawasan sesuai dengan kebutuhan
-                    dan tantangan zaman.
-                </p>
-
+                <div class="card" id="card-visi" style="background: linear-gradient(249deg, rgba(188,188,188,1) 0%, rgba(231,231,231,1) 100%); border: 0px;">
+                    <div class="card-body">
+                        <h5>VISI</h5>
+                        <p>
+                            Menjadikan IKAA UNJ sebagai wadah dalam membangun jaringan wirausaha, karir serta pengembangan ilmu dan wawasan.
+                        </p>
+                        <h5>MISI</h5>
+                        <div class="row">
+                            <div class="col-md-1">1.</div>
+                            <div class="col-md-11">
+                                <p>
+                                    Memperluas jaringan wirausaha dalam lingkup interal seperti membangun sistem yang terpadu, 
+                                    serta dalam ruang lingkup eksternal seperti berkolaborasi dengan organisasi pengusaha lainnya.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">2.</div>
+                            <div class="col-md-11">
+                                <p>
+                                    Mempererat jaringan karir baik dalam ruang lingkup internal seperti pemberitahuan lowongan 
+                                    pekerjaan dari sistem terpadu, dan mengembangkan jaringan karir dalam lingkup eksternal sperti berkolaborasi 
+                                    dengan organisasi profesi dan pihak eksternal lainnya.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">3.</div>
+                            <div class="col-md-11">
+                                <p>
+                                    Mengaktifkan IKAA UNJ sebagai pusat pengembangan ilmu pengetahuan dan wawasan sesuai dengan kebutuhan
+                                    dan tantangan zaman.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="isi2">
-                <h5>PROGRAM UNGGULAN</h5>
-                <div class="row">
-                    <div class="col-md-1">1.</div>
-                    <div class="col-md-11">
-                        Membuat sistem terpadu berbasis WEB dan WhatsApp grup sebagai wadah bertukar informasi lowongan kerja dan bisnis.
-                    </div>
-                    <div class="col-md-1">2.</div>
-                    <div class="col-md-11">
-                        Membuat program pengembangan seperti Brevet, Bootcamp, dan mentoring bisnis.
-                    </div>
-                    <div class="col-md-1">3.</div>
-                    <div class="col-md-11">
-                        Mempererat tali silaturahmi dengan pengadaan olahraga bersama.
+                <div class="card" id="card-progul" style="background: linear-gradient(249deg, rgba(188,188,188,1) 0%, rgba(231,231,231,1) 100%); border: 0px;">
+                    <div class="card-body">
+                        <h5>PROGRAM UNGGULAN</h5>
+                        <div class="row">
+                            <div class="col-md-1">1.</div>
+                            <div class="col-md-11">
+                                Membuat sistem terpadu berbasis WEB dan WhatsApp grup sebagai wadah bertukar informasi lowongan kerja dan bisnis.
+                            </div>
+                            <div class="col-md-1">2.</div>
+                            <div class="col-md-11">
+                                Membuat program pengembangan seperti Brevet, Bootcamp, dan mentoring bisnis.
+                            </div>
+                            <div class="col-md-1">3.</div>
+                            <div class="col-md-11">
+                                Mempererat tali silaturahmi dengan pengadaan olahraga bersama.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="section9">
+        <div id="div-isi9">
+            <div id="isi9">
+                <div id="coverIsi9">
+                    <div style="font-size: 16px;">
+                        <b>-</b>
+                    </div>
+                    <div style="font-size: 14px;">
+                        Dewan Penasihat IKA Akuntansi UNJ
+                    </div>
+                    <div id="text-pkj9" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>RIWAYAT PEKERJAAN</b>
+                    </div>
+                    <div id="pkj9" style="font-size: 12px;">
+                        <li>-</li>
+                    </div>
+                    <div id="text-po9" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>PENGALAMAN ORGANISASI</b>
+                    </div>
+                    <div id="po9" style="font-size: 12px;">
+                        <li>-</li>
+                    </div>
+                    <div style="padding-top: 15px;">
+                        <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
+                    </div>
+                </div>  
+            </div>
+            <div id="div-img9">
+                <div id="circelhover">
+                    <img id="img9" src="asset/man1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section10">
+        <div id="div-isi10">
+            <div id="div-img10">
+                <div id="circelhover10">
+                    <img id="img10" src="asset/man2.png" alt="">
+                </div>
+            </div>
+            <div id="isi10">
+                <div id="coverIsi10">
+                    <div style="font-size: 16px;">
+                        <b>-</b>
+                    </div>
+                    <div style="font-size: 14px;">
+                        Dewan Pembina IKA Akuntansi UNJ
+                    </div>
+                    <div id="text-pkj10" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>RIWAYAT PEKERJAAN</b>
+                    </div>
+                    <div id="pkj10" style="font-size: 12px;">
+                        <li>-</li>
+                    </div>
+                    <div id="text-po10" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>PENGALAMAN ORGANISASI</b>
+                    </div>
+                    <div id="po10" style="font-size: 12px;">
+                        <li>-</li>
+                    </div>
+                    <div style="padding-top: 15px;">
+                        <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="section11">
+    </div>
     <div class="section3">
         <div id="div-isi3">
             <div id="isi3">
                 <div id="coverIsi3">
-                    <div style="font-size: 16px;">
+                    <div class="name3">
                         <b>Muzaki Andriawan P., S.E., BKP., CTAP.</b>
                     </div>
-                    <div style="font-size: 14px;">
+                    <div class="jabatan3">
                         Ketua IKA Akuntansi UNJ
                     </div>
-                    <div id="text-pkj3" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                    <div class="text-pkj3" style="padding-top: 15px; padding-bottom: 5px;">
                         <b>RIWAYAT PEKERJAAN</b>
                     </div>
-                    <div id="pkj3" style="font-size: 12px;">
+                    <div class="pkj3">
                         <li>Managing Partner (CEO) - PT. Jawara Mitra Consulting, Oktober 2015 - Sekarang</li>
                         <li>Tax Manager - PT. Zona Mitra Solution, Februari 2017 - Oktober 2019</li>
                         <li>Tax Leader - PT. Japan Asia Consultans, Juni 2012 - Januari 2017</li>
                         <li>Managing Partner PT. Cakra Ragheda Mustika (CRM) Business Strategic Consulting</li>
                         <li>CFO Digifile (Startup Technology)</li>
                     </div>
-                    <div id="text-po3" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                    <div class="text-po3" style="padding-top: 15px; padding-bottom: 5px;">
                         <b>PENGALAMAN ORGANISASI</b>
                     </div>
-                    <div id="po3" style="font-size: 12px;">
+                    <div class="po3">
                         <li>Ketua Asosiasi Konsultan Pajak Publik Indonesia Cabang Depok,</li>
                         <li>Ketua kompartmen perpajakan SENTRAL (Semangat Enterpreuner Nasional).</li>
                     </div>
@@ -2751,6 +3377,70 @@
             </div>
         </div>
     </div>
+    <div class="section6">
+        <div id="div-isi6">
+            <div id="div-img6">
+                <div id="circelhover6">
+                    <img id="img6" src="asset/man2.png" alt="">
+                </div>
+            </div>
+            <div id="isi6">
+                <div id="coverIsi6">
+                    <div style="font-size: 16px;">
+                        <b>Rahman Wahyudi</b>
+                    </div>
+                    <div style="font-size: 14px;">
+                        Sekretaris IKA Akuntansi UNJ
+                    </div>
+                    <div id="text-pkj6" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>RIWAYAT PEKERJAAN</b>
+                    </div>
+                    <div id="pkj6" style="font-size: 12px;">
+                        <li>-</li>
+                    </div>
+                    <div id="text-po6" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                        <b>PENGALAMAN ORGANISASI</b>
+                    </div>
+                    <div id="po6" style="font-size: 12px;">
+                        <li>-</li>
+                    </div>
+                    <div style="padding-top: 15px;">
+                        <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section7">
+        <div id="div-isi7">
+            <div id="isi7">
+                <div id="coverIsi7">
+                    <h5>Hananto Haryadi</h5>
+                    <span>Bendahara IKA Akuntansi UNJ</span><br>
+                    <div id="text-pkj7" style="padding-top: 5px; padding-bottom: 5px;">
+                        <b>PEKERJAAN</b>
+                    </div>
+                    <div id="pkj7" style="font-size: 12px;">
+                        <li>Wilmar Group Indonesia, 2012 - 2014</li>
+                        <li>Direktorat Jendral Pajak Kementrian Keuangan RI, 2014 - 2022</li>
+                        <li>Pemerintah Provinsi DKI Jakarta, 2022 - Sekarang</li>
+                    </div>
+                    <div id="text-po7" style="padding-top: 5px; padding-bottom: 5px;">
+                        <b>PENGALAMAN ORGANISASI</b>
+                    </div>
+                    <div id="po7" style="font-size: 12px;">
+                        <li>Anggota Madya Ikatan Akuntan Indonesia</li>
+                    </div>
+                    <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
+                </div>  
+            </div>
+            <div id="div-img7">
+                <div id="circelhover">
+                    <img id="img7" src="asset/man1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="section4">
         <div id="div-isi4">
             <div id="div-img4">
@@ -2760,25 +3450,25 @@
             </div>
             <div id="isi4">
                 <div id="coverIsi4">
-                    <div style="font-size: 16px;">
+                    <div class="name4">
                         <b>R.M. Canda Hadipta Janapriya S.E., Ak, CPA.</b>
                     </div>
-                    <div style="font-size: 14px;">
+                    <div class="jabatan4">
                         Wakil Ketua 1 IKA Akuntansi UNJ
                     </div>
-                    <div id="text-pkj3" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                    <div class="text-pkj4" style="padding-top: 15px; padding-bottom: 5px;">
                         <b>RIWAYAT PEKERJAAN</b>
                     </div>
-                    <div id="pkj3" style="font-size: 12px;">
+                    <div class="pkj4">
                         <li>Shareholder and Commissioner - PT. Jawara Mitra Consulting (JMC)</li>
                         <li>Shareholder and President Director - PT. Chakra Ragheeda Mustika (CRM)</li>
                         <li>Shareholder and President Director - PT. Ide Nuansa Integra (INI) - Document Aggregator</li>
                         <li>Senior Auditor experienced - KAP Sidharta Widjaja & Rekan (KPMG Indonesia), 2018 - 2019</li>
                     </div>
-                    <div id="text-po3" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
+                    <div class="text-po4" style="padding-top: 15px; padding-bottom: 5px;">
                         <b>PENGALAMAN ORGANISASI</b>
                     </div>
-                    <div id="po3" style="font-size: 12px;">
+                    <div class="po4">
                         <li>Leader of Department Bidang XII HIPMI JAKSEL - Bidang Investasi</li>
                         <li>Founder and Bendahara Umum - Semangat Entreprenuer Nasional (SENTRAL)</li>
                         <li>Ikatan Akuntan Publik Indonesia (Member)</li>
@@ -2809,75 +3499,6 @@
             <div id="div-img5">
                 <div id="circelhover">
                     <img id="img5" src="asset/man1.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section6">
-        <div id="div-isi6">
-            <div id="div-img6">
-                <div id="circelhover6">
-                    <img id="img6" src="asset/man2.png" alt="">
-                </div>
-            </div>
-            <div id="isi6">
-                <div id="coverIsi6">
-                    <div style="font-size: 16px;">
-                        <b>Hananto Haryadi</b>
-                    </div>
-                    <div style="font-size: 14px;">
-                        Bendahara Umum IKA Akuntansi UNJ
-                    </div>
-                    <div id="text-pkj6" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
-                        <b>RIWAYAT PEKERJAAN</b>
-                    </div>
-                    <div id="pkj6" style="font-size: 12px;">
-                        <li>Wilmar Group Indonesia, 2012 - 2014</li>
-                        <li>Direktorat Jendral Pajak Kementrian Keuangan RI, 2014 - 2022</li>
-                        <li>Pemerintah Provinsi DKI Jakarta, 2022 - Sekarang</li>
-                    </div>
-                    <div id="text-po6" style="font-size: 13px; padding-top: 15px; padding-bottom: 5px;">
-                        <b>PENGALAMAN ORGANISASI</b>
-                    </div>
-                    <div id="po6" style="font-size: 12px;">
-                        <li>Anggota Madya Ikatan Akuntan Indonesia</li>
-                    </div>
-                    <div style="padding-top: 15px;">
-                        <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section7">
-        <div id="div-isi7">
-            <div id="isi7">
-                <div id="coverIsi7">
-                    <h5>Rahman Wahyudi</h5>
-                    <span>Sekretaris IKA Akuntansi UNJ</span><br>
-                    <div id="text-pkj7" style="padding-top: 5px; padding-bottom: 5px;">
-                        <b>PEKERJAAN</b>
-                    </div>
-                    <div id="pkj7" style="font-size: 12px;">
-                        <li>Managing Partner (CEO) - PT. Jawara Mitra Consulting, Oktober 2015 - Sekarang</li>
-                        <li>Tax Manager - PT. Zona Mitra Solution, Februari 2017 - Oktober 2019</li>
-                        <li>Tax Leader - PT. Japan Asia Consultans, Juni 2012 - Januari 2017</li>
-                        <li>Managing Partner PT. Cakra Ragheda Mustika (CRM) Business Strategic Consulting</li>
-                        <li>CFO Digifile (Startup Technology)</li>
-                    </div>
-                    <div id="text-po7" style="padding-top: 5px; padding-bottom: 5px;">
-                        <b>PENGALAMAN ORGANISASI</b>
-                    </div>
-                    <div id="po7" style="font-size: 12px;">
-                        <li>Ketua Asosiasi Konsultan Pajak Publik Indonesia Cabang Depok,</li>
-                        <li>Ketua kompartmen perpajakan SENTRAL (Semangat Enterpreuner Nasional).</li>
-                    </div>
-                    <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
-                </div>  
-            </div>
-            <div id="div-img7">
-                <div id="circelhover">
-                    <img id="img7" src="asset/man1.png" alt="">
                 </div>
             </div>
         </div>

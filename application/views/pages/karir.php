@@ -28,6 +28,6 @@
 <div class="section1">
     <div id="head">
         <h1>Karir</h1>
-        <p>Ikatan Alumni Akuntansu UNJ</p>
+        <p>Ikatan Alumni Akuntansi UNJ</p>
     </div>
 </div>
