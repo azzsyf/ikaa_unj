@@ -44,14 +44,14 @@
             padding: 16px;
         }
 
-        span.psw {
+        span.password {
             padding-top: 26px;
             font-size: 14px;
         }
 
         /* Change styles for span and cancel button on extra small screens */
         @media screen and (max-width: 300px) {
-            span.psw {
+            span.password {
                 display: block;
                 float: none;
             }
@@ -64,21 +64,30 @@
         <div style="text-align: center; padding-bottom: 20px;">
             <img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" width="150px" alt="">
         </div>
-        <form action="<?= base_url() ?>home" method="post" style="padding: 20px;">
+        <?= $this->session->flashdata('message'); ?>
+        <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
+        <form id="form-login" method="post" action="<?= base_url() ?>auth" style="padding: 20px;">
             <div class="container">
                 <h2 align="center" style="padding-bottom: 20px;">Login Form</h2>
-                <label for="uname"><b>Username</b></label>
-                <input type="text" style="border-radius: 12px;" id="uname" placeholder="Username" name="uname" required>
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" style="border-radius: 12px;" placeholder="Password" name="psw" required>
+                <div class="form-group">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" style="border-radius: 12px;" id="email" placeholder="Email" name="email" value="<?= set_value('email') ?>">
+                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" style="border-radius: 12px;" placeholder="Password" name="password">
+                    <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
                     
                 <button type="submit" style="border-radius: 12px;">Login</button>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
+                <input type="checkbox" name="remember"> Remember me
                 <span style="float: right;">Lupa <a href="#">password?</a></span>
             </div>
             <div style="text-align: center;">
-                <span class="psw"> Baru di platform kami? <a href="<?= base_url() ?>registrasi" style="text-decoration: none;" name="remember"> Buat Akun</a></span>
+                <span class="password"> Baru di platform kami? <a href="<?= base_url() ?>auth/registrasi" style="text-decoration: none;" name="remember"> Buat Akun</a></span>
             </div>
         </form>
     </div>
@@ -93,4 +102,62 @@
             return false;
         return true;
     }
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- <script>
+ $("#form-login").on("submit", function(e){
+    e.preventDefault();
+
+
+    // Swal.fire({
+    //     title: "Berhasil!!",
+    //     text: "Silahkan tekan OK untuk lanjut!",
+    //     icon: "success",
+    //     width: '30em'
+    // });
+
+    var email = $("#email").val();
+    var password = $("#password").val();
+    // console.log(email);
+    
+    if (email != "" && password != "") {
+        $.ajax({
+            method: "POST",
+            url: "<?= base_url('auth/login_user') ?>",
+            dataType: "JSON",
+            data: {
+                email: email,
+                password: password,
+            },
+            success: function(data) {
+                // $("meta[name=csrf_token]").attr("content", data.token);
+                if (data.success==true) {
+                    if(data.code==200){
+                        // Swal.clear();
+                        Swal.fire({
+                            title: "Berhasil!!",
+                            text: "Silahkan tekan OK untuk lanjut!",
+                            icon: "success",
+                            width: '30em'
+                        });
+                        setTimeout(function() {
+                            window.location.href = "<?= base_url() ?>"+data.url;
+                        }, 1000)
+                    }else if(data.code == 400){
+                        toastr.clear();
+                        NioApp.Toast(data.messages, 'warning', {
+                            position: "top-right"
+                        });
+                    }
+                }else if (data.success==false) {
+                    toastr.clear();
+                    NioApp.Toast(data.messages, 'warning', {
+                        position: "top-right"
+                    });
+                }
+            },
+        });
+    }
+ });
 </script> -->

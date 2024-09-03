@@ -50,7 +50,7 @@
             }
         }
         .parallax2 {
-            background: url("asset/UNJ_profile.jpg") no-repeat;
+            background: url("<?= base_url() ?>asset/UNJ_profile.jpg") no-repeat;
             background-size: cover;
             height: 750px;
             display: flex;
@@ -99,7 +99,7 @@
         }
 
         .parallax4 {
-            background: url("asset/Group 45.png") center repeat;
+            background: url("<?= base_url() ?>asset/Group 45.png") center repeat;
             background-size: 100% 110%;
 
             .row{
@@ -156,7 +156,7 @@
         .parallax5{
             display: flex;
             flex-direction: row;
-            background: url("asset/light-trails-buildings 1.png") center repeat;
+            background: url("<?= base_url() ?>asset/light-trails-buildings 1.png") center repeat;
             background-size: 100% 100%;
             height: 500px;
             align-items: center;
@@ -167,14 +167,14 @@
             height: 289px;
             background-repeat: no-repeat;
             background-size: cover;
-            background-image: url("asset/Subtract.png");
+            background-image: url("<?= base_url() ?>asset/Subtract.png");
             transition: 1s;
             &:hover{
                 width: 289px;
                 height: 289px;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: url("asset/Subtract2.png");
+                background-image: url("<?= base_url() ?>asset/Subtract2.png");
             }
         }
         .parallax5 .div-card{
@@ -289,6 +289,74 @@
                 padding-top: 4%; 
                 padding-bottom: 4%; 
                 padding-left: 6%;
+            }
+        }
+
+        footer #footer{
+            display: flex;
+            color: #ffffff;
+            padding-top: 5%;
+            #text-footer{
+                font-size: 16px;
+            }
+        }
+
+        #logoFooter{
+            padding-left: 45px;
+            flex-grow: 1;
+            img{
+                width: 200px;
+            }
+        }
+
+        footer p{
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 40px;
+        }
+        .horizontal_line {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .card{
+                display: flex;
+                align-self: center;
+                border-bottom: 1px solid white;
+                width: 90.5%;
+            }
+        }
+
+        @media screen and (min-width: 375px) AND (max-width: 500px){
+            footer #footer{
+                display: flex;
+                color: #ffffff;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding-top: 5%;
+                #text-footer{
+                    font-size: 13px;
+                }
+            }
+
+            footer p{
+                font-size: 10px;
+            }
+
+            #logoFooter{
+                padding-left: 0%; 
+                flex-grow: 2;
+                img{
+                    width: 200px;
+                }
+            }
+
+            #text-footer{
+                font-size: 12px;
             }
         }
 
@@ -446,7 +514,7 @@
 
             .parallax5{
                 display: flex;
-                background: url("asset/light-trails-buildings 1.png") center repeat;
+                background: url("<?= base_url() ?>asset/light-trails-buildings 1.png") center repeat;
                 background-size: 100% 100%;
                 height: 500px;
                 align-items: center;
@@ -458,14 +526,14 @@
                 margin: 10px;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: url("asset/Subtract.png");
+                background-image: url("<?= base_url() ?>asset/Subtract.png");
                 transition: 1s;
                 &:hover{
                     width: 250px;
                     height: 250px;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-image: url("asset/Subtract2.png");
+                    background-image: url("<?= base_url() ?>asset/Subtract2.png");
                 }
             }
             .parallax5 .div-card{
@@ -732,7 +800,7 @@
 
             .parallax5{
                 display: flex;
-                background: url("asset/light-trails-buildings 1.png") center repeat;
+                background: url("<?= base_url() ?>asset/light-trails-buildings 1.png") center repeat;
                 background-size: 100% 100%;
                 height: 500px;
                 align-items: center;
@@ -744,14 +812,14 @@
                 margin: 10px;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: url("asset/Subtract.png");
+                background-image: url("<?= base_url() ?>asset/Subtract.png");
                 transition: 1s;
                 &:hover{
                     width: 250px;
                     height: 250px;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-image: url("asset/Subtract2.png");
+                    background-image: url("<?= base_url() ?>asset/Subtract2.png");
                 }
             }
             .parallax5 .div-card{
@@ -1006,7 +1074,7 @@
             .parallax5{
                 display: flex;
                 flex-direction: column;
-                background: url("asset/light-trails-buildings 1.png") center repeat;
+                background: url("<?= base_url() ?>asset/light-trails-buildings 1.png") center repeat;
                 background-size: 180% 100%;
                 height: 800px;
                 align-items: center;
@@ -1018,14 +1086,14 @@
                 margin: 10px;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: url("asset/Subtract.png");
+                background-image: url("<?= base_url() ?>asset/Subtract.png");
                 transition: 1s;
                 &:hover{
                     width: 300px;
                     height: 300px;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-image: url("asset/Subtract2.png");
+                    background-image: url("<?= base_url() ?>asset/Subtract2.png");
                 }
             }
             .parallax5 .div-card{
@@ -1319,7 +1387,7 @@
             .parallax5{
                 display: flex;
                 flex-direction: column;
-                background: url("asset/light-trails-buildings 1.png") center repeat;
+                background: url("<?= base_url() ?>asset/light-trails-buildings 1.png") center repeat;
                 background-size: 180% 100%;
                 height: 800px;
                 align-items: center;
@@ -1331,14 +1399,14 @@
                 margin: 10px;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: url("asset/Subtract.png");
+                background-image: url("<?= base_url() ?>asset/Subtract.png");
                 transition: 1s;
                 &:hover{
                     width: 300px !important;
                     height: 300px !important;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-image: url("asset/Subtract2.png");
+                    background-image: url("<?= base_url() ?>asset/Subtract2.png");
                 }
             }
             .parallax5 .div-card{
@@ -1583,7 +1651,7 @@
             .parallax5{
                 display: flex;
                 flex-direction: column;
-                background: url("asset/light-trails-buildings 1.png") center repeat;
+                background: url("<?= base_url() ?>asset/light-trails-buildings 1.png") center repeat;
                 background-size: 180% 100%;
                 height: 800px;
                 align-items: center;
@@ -1595,14 +1663,14 @@
                 margin: 10px;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: url("asset/Subtract.png");
+                background-image: url("<?= base_url() ?>asset/Subtract.png");
                 transition: 1s;
                 &:hover{
                     width: 300px !important;
                     height: 300px !important;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-image: url("asset/Subtract2.png");
+                    background-image: url("<?= base_url() ?>asset/Subtract2.png");
                 }
             }
             .parallax5 .div-card{
@@ -1839,7 +1907,7 @@
             .parallax5{
                 display: flex;
                 flex-direction: column;
-                background: url("asset/light-trails-buildings 1.png") center no-repeat;
+                background: url("<?= base_url() ?>asset/light-trails-buildings 1.png") center no-repeat;
                 background-size: 200% 100%;
                 height: 600px;
             }
@@ -1850,14 +1918,14 @@
                 margin-left: 60px;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: url("asset/Subtract.png");
+                background-image: url("<?= base_url() ?>asset/Subtract.png");
                 transition: 1s;
                 &:hover{
                     width: 300px;
                     height: 300px;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-image: url("asset/Subtract2.png");
+                    background-image: url("<?= base_url() ?>asset/Subtract2.png");
                 }
             }
             .parallax5 .div-card{
@@ -1988,12 +2056,10 @@
 
 
     </style>
-        <div>
-        </div>
         <div class="parallax1" style="height:20%; text-align: center;" id="beranda">
             <div class="card" id="logo-unj">
                 <div class="card-body">
-                    <img class="img-logo-unj" src="asset/logo-unj.png" alt="">
+                    <img class="img-logo-unj" src="<?= base_url() ?>asset/logo-unj.png" alt="">
                 </div>
             </div>
             <div class="card" id="text-welcome">
@@ -2004,15 +2070,18 @@
             </div>
             <div class="card" id="logo-ikaa">
                 <div class="card-body">
-                    <img class="img-logo-ikaa" src="asset/Logo IKA Akuntansi UNJ bulet.png" alt="">
+                    <img class="img-logo-ikaa" src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="">
                 </div>
             </div>
         </div>
         <div class="parallax2" id="organisasi">
             <div class="card" id="zoom-effect">
+                <?php 
+                    $data1 = $this->db->get('profil')->result_array();
+                ?>
                 <div class="card-body">
                     <h5 class="card-title" style="font-weight: bold;">Jumlah Alumni Terdaftar</h5>
-                    <h1 class="card-text" style="font-weight: bolder; font-size: x-larger;">89.000</h1>
+                    <h1 class="card-text" style="font-weight: bolder; font-size: x-larger;"><?= count($data1); ?></h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
             </div>
@@ -2022,8 +2091,8 @@
             <div class="row" style="padding-left: 6%; padding-right: 6%; padding-top: 5%;">
                 <div class="col-md-12">
                     <marquee behavior="scroll" loop="infinite"  direction="" scrollamount="15">
-                        <img src="asset/Logo Sentral.png" id="logo-sentral" alt="">
-                        <img src="asset/LOGO-AKP2I-square.png" id="logo-akp2i" alt="">
+                        <img src="<?= base_url() ?>asset/Logo Sentral.png" id="logo-sentral" alt="">
+                        <img src="<?= base_url() ?>asset/LOGO-AKP2I-square.png" id="logo-akp2i" alt="">
                     </marquee>
                 </div>
             </div>
@@ -2038,7 +2107,7 @@
             <div class="flex-container" style="padding-left: 6%; padding-right: 6%; padding-bottom: 2%; padding-top: 2%;">
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
                             <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -2048,7 +2117,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
                             <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -2058,7 +2127,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
                             <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -2068,7 +2137,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
                             <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -2078,7 +2147,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
                             <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -2088,7 +2157,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/flayer.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
                             <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -2107,7 +2176,7 @@
             <div class="flex-containerBerita" style="padding-left: 6%; padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
                             <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
@@ -2116,7 +2185,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
                             <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
@@ -2125,7 +2194,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
                             <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
@@ -2134,7 +2203,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
                             <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
@@ -2143,7 +2212,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
                             <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
@@ -2152,7 +2221,7 @@
                 </div>
                 <div class="card col-md-4">
                     <div class="card-body">
-                        <img src="asset/news.jpg" class="card-img-top" alt="...">
+                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
                             <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
@@ -2164,10 +2233,10 @@
         <div class="parallax5">
             <div id="puzzle">
                 <div id="div-img">
-                    <img id="business" src="asset/business.png" alt="">
+                    <img id="business" src="<?= base_url() ?>asset/business.png" alt="">
                 </div>
                 <span class="atas">
-                    <img id="lamp" src="asset/image 16.png" alt="">
+                    <img id="lamp" src="<?= base_url() ?>asset/image 16.png" alt="">
                 </span>
             </div>
             <div class="card div-card">
@@ -2175,10 +2244,20 @@
                     <h5 style="text-align: justify;"><strong>Buat hidup lebih mudah, satu platform beragam informasi</strong></h5>
                     <p style="text-align: justify;">Bergabung dengan ikatan alumni akuntansi, temukan informasi, pekerjaan dengan mudah, tepat, dan terpercaya bersama kami!</p>
                     <div class="row">
+                    <?php 
+                        $data = $this->session->userdata('email');
+                    ?>
+                    <?php if(!empty($data)){ ?>
                         <div class="col-sm-12">
-                            <a class="btn btn-light" href="<?= base_url()?>registrasi/" id="btn1">Daftar Sekarang</a>
+                            <!-- <a class="btn btn-light" href="<?= base_url()?>registrasi/" id="btn1">Daftar Sekarang</a>
+                            <button class="btn btn-outline-light" id="btn2">Selengkapnya</button> -->
+                        </div>
+                    <?php }else{ ?>
+                        <div class="col-sm-12">
+                            <a class="btn btn-light" href="<?= base_url()?>registrasi" id="btn1">Daftar Sekarang</a>
                             <button class="btn btn-outline-light" id="btn2">Selengkapnya</button>
                         </div>
+                    <?php } ?>
                     </div>
                 </div>
             </div>
@@ -2198,4 +2277,80 @@
                     
                 </div>
             </div>
+            <footer>
+                <div id="footer">
+                    <div class="card" style="background: transparent; border: 0px; width: 350px;">
+                        <div class="card-body">
+                            <div id="logoFooter">
+                                <img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text-footer" style="flex-grow: .5;">
+                        <div class="card" style="background: transparent; border: 0px;">
+                            <div class="card-body">
+                                <div style="color: #fff">
+                                    Tentang Kami
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text-footer" style="flex-grow: .5;">
+                        <div class="card" style="background: transparent; border: 0px;">
+                            <div class="card-body">
+                                <div style="color: #fff">
+                                    Tautan
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text-footer" style="flex-grow: .5;">
+                        <div class="card" style="background: transparent; border: 0px;">
+                            <div class="card-body">
+                                <div style="color: #fff">
+                                    Beranda
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text-footer" style="flex-grow: .5;">
+                        <div class="card" style="background: transparent; border: 0px;">
+                            <div class="card-body">
+                                <div style="color: #fff">
+                                    Tentang Kami
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text-footer" style="flex-grow: .8;">
+                        <div class="card" style="background: transparent; border: 0px;">
+                            <div class="card-body">
+                                <div style="color: #fff">
+                                    Kontak Kami
+                                </div>
+                                <div>
+                                    <span style="color: #fff;">Kantor Sekretariat</span>
+                                </div>
+                                <div>
+                                    <span style="color: #fff;">Universitas Negeri jakarta</span>
+                                </div>
+                                <div>
+                                    <a href="https://www.instagram.com/ikaakuntansiunj" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-instagram"> </i> ikaakuntansiunj</a>
+                                </div>
+                                <div class="mail">
+                                    <a href="https://haloalumni@ikaaunj.id" style="color: #bcbcbc; hover: color: #fff; text-decoration: none;"><i class="fas fa-envelope"> </i> haloalumni@ikaaunj.id</a>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-whatsapp"> </i> +6285777888999</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.tiktok.com" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-tiktok"> </i> ikaa.unj_official</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>COPYRIGHT &copy; 2024 IKATAN ALUMNI AKUNTANSI UNIVERSITAS NEGERI JAKARTA</p>
+            </footer>
+        </div>
         

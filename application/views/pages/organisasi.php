@@ -33,14 +33,9 @@
         .section2{
             padding: 20px;
             padding-top: 40px;
+            padding-bottom: 50px;
             background: #fff;
-            /* background: linear-gradient(
-                to left,
-                #56C65F 0%,
-                #fff 50%,
-                #fff 50%,
-                #56C65F 100%
-            ); */
+            
             height: auto;
             text-align: justify;
             position: relative;
@@ -72,14 +67,35 @@
             }
             #head2{
                 text-align: center;
+                h3{
+                    font-weight: bolder;
+                    position: relative;
+                }
+                h3:after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -50px;
+                    bottom: -4px;
+                    width: 100px;
+                    border-bottom: 2px solid #006805;
+                }
             }
             h3{
                 font-weight: bolder;
             }
+            
+            h5{
+                border-top: solid 5px yellow; 
+                border-bottom-right-radius: 20px; 
+                padding: 15px; 
+                margin-left: 10px; 
+                background-color: #56C65F;
+            }
 
             #div-isi2{
                 display: flex; 
-                padding: 30px;
+                padding: 5px;
                 #isi2{
                     flex: 50%; 
                     padding: 20px;
@@ -90,6 +106,25 @@
             }
 
 
+        }
+
+        .headProfil{
+            text-align: center; 
+            padding: 50px; 
+            padding-top: 100px;
+            h3{
+                font-weight: bolder;
+                position: relative;
+            }
+            h3:after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                margin-left: -50px;
+                bottom: -4px;
+                width: 100px;
+                border-bottom: 2px solid #006805;
+            }
         }
 
         .section9{
@@ -689,9 +724,9 @@
                     }
                 }
                 #img7{
-                    transform: translateX(-120px) translateY(-170px);
-                    width: 350px;
-                    height: 350px;
+                    transform: translateX(-120px) translateY(-220px);
+                    width: 400px;
+                    height: 400px;
                     transition: 1s;
                 }
             }
@@ -3195,7 +3230,7 @@
     </div>
     <div class="section2">
         <div class="flex-container">
-            <div class="card" id="card-head2" style="background-color: #e7e7e7; border: 0px;">
+            <div class="card" id="card-head2" style="border: 0px;">
                 <div class="card-body">
                     <div id="head2">
                         <h3>VISI, MISI & PROGRAM UNGGULAN</h3>
@@ -3206,14 +3241,45 @@
         </div>
         <div id="div-isi2">
             <div id="isi2">
-                <div class="card" id="card-visi" style="background: linear-gradient(249deg, rgba(188,188,188,1) 0%, rgba(231,231,231,1) 100%); border: 0px;">
+                <div class="card" id="card-visi" style="border: 0px;">
                     <div class="card-body">
                         <h5>VISI</h5>
-                        <p>
+                        <p style="border-left: solid 5px yellow; padding-left: 20px; padding: 15px; margin-left: 10px;">
                             Menjadikan IKAA UNJ sebagai wadah dalam membangun jaringan wirausaha, karir serta pengembangan ilmu dan wawasan.
                         </p>
+                        <h5>PROGRAM UNGGULAN</h5>
+                        <div class="row" style="border-left: solid 4px yellow; padding-left: 10px; margin-left: 10px;">
+                            <div class="col-md-1">1.</div>
+                            <div class="col-md-11">
+                                <p>
+                                    Membuat sistem terpadu berbasis WEB dan WhatsApp grup sebagai wadah bertukar informasi lowongan kerja dan bisnis.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row" style="border-left: solid 4px #56C65F; padding-left: 10px; margin-left: 10px;">
+                            <div class="col-md-1">2.</div>
+                            <div class="col-md-11">
+                                <p>
+                                    Membuat program pengembangan seperti Brevet, Bootcamp, dan mentoring bisnis.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row" style="border-left: solid 4px yellow; padding-left: 10px; margin-left: 10px;">
+                            <div class="col-md-1">3.</div>
+                            <div class="col-md-11">
+                                <p>
+                                    Mempererat tali silaturahmi dengan pengadaan olahraga bersama.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="isi2">
+                <div class="card" id="card-progul" style="border: 0px;">
+                    <div class="card-body">
                         <h5>MISI</h5>
-                        <div class="row">
+                        <div class="row" style="border-left: solid 4px yellow; padding-left: 10px; margin-left: 10px;">
                             <div class="col-md-1">1.</div>
                             <div class="col-md-11">
                                 <p>
@@ -3222,7 +3288,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="border-left: solid 4px #56C65F; padding-left: 10px; margin-left: 10px;">
                             <div class="col-md-1">2.</div>
                             <div class="col-md-11">
                                 <p>
@@ -3232,7 +3298,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="border-left: solid 4px yellow; padding-left: 10px; margin-left: 10px;">
                             <div class="col-md-1">3.</div>
                             <div class="col-md-11">
                                 <p>
@@ -3244,28 +3310,11 @@
                     </div>
                 </div>
             </div>
-            <div id="isi2">
-                <div class="card" id="card-progul" style="background: linear-gradient(249deg, rgba(188,188,188,1) 0%, rgba(231,231,231,1) 100%); border: 0px;">
-                    <div class="card-body">
-                        <h5>PROGRAM UNGGULAN</h5>
-                        <div class="row">
-                            <div class="col-md-1">1.</div>
-                            <div class="col-md-11">
-                                Membuat sistem terpadu berbasis WEB dan WhatsApp grup sebagai wadah bertukar informasi lowongan kerja dan bisnis.
-                            </div>
-                            <div class="col-md-1">2.</div>
-                            <div class="col-md-11">
-                                Membuat program pengembangan seperti Brevet, Bootcamp, dan mentoring bisnis.
-                            </div>
-                            <div class="col-md-1">3.</div>
-                            <div class="col-md-11">
-                                Mempererat tali silaturahmi dengan pengadaan olahraga bersama.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+    </div>
+    <div class="headProfil" style="text-align: center; padding: 50px; padding-top: 100px;">
+        <h3>PROFIL PENGURUS ORGANISASI</h3>
+        <span>Ikatan Alumni Akuntansi Universitas Negeri Jakarta</span>
     </div>
     <div class="section9">
         <div id="div-isi9">
@@ -3436,7 +3485,7 @@
             </div>
             <div id="div-img7">
                 <div id="circelhover">
-                    <img id="img7" src="asset/man1.png" alt="">
+                    <img id="img7" src="asset/hanan.png" alt="">
                 </div>
             </div>
         </div>
