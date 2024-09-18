@@ -67,4 +67,8 @@ class Karir extends CI_Controller {
 			// redirect('karir/view');
 		}
 	}
+
+	function cari(){
+		
+	}
 }

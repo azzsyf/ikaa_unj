@@ -66,7 +66,7 @@
         </div>
         <?= $this->session->flashdata('message'); ?>
         <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
-        <form id="form-login" method="post" action="<?= base_url() ?>auth" style="padding: 20px;">
+        <form id="form-login" method="post" action="<?= base_url() ?>auth" style="padding: 20px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); border-radius: 15px;">
             <div class="container">
                 <h2 align="center" style="padding-bottom: 20px;">Login Form</h2>
 
@@ -83,8 +83,6 @@
                 </div>
                     
                 <button type="submit" style="border-radius: 12px;">Login</button>
-                <input type="checkbox" name="remember"> Remember me
-                <span style="float: right;">Lupa <a href="#">password?</a></span>
             </div>
             <div style="text-align: center;">
                 <span class="password"> Baru di platform kami? <a href="<?= base_url() ?>auth/registrasi" style="text-decoration: none;" name="remember"> Buat Akun</a></span>
@@ -94,70 +92,32 @@
 
 </body>
 </html>
-<!-- <script type="text/javascript">
-    function numb(evt) {
-        var charCode = (evt.which) ? evt.which : event.keyCode
-        if (charCode > 31 && (charCode < 48 || charCode > 57))
 
-            return false;
-        return true;
-    }
-</script> -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $("#form-login").on("submit", function(e){
+        e.preventDefault();
 
-<!-- <script>
- $("#form-login").on("submit", function(e){
-    e.preventDefault();
-
-
-    // Swal.fire({
-    //     title: "Berhasil!!",
-    //     text: "Silahkan tekan OK untuk lanjut!",
-    //     icon: "success",
-    //     width: '30em'
-    // });
-
-    var email = $("#email").val();
-    var password = $("#password").val();
-    // console.log(email);
-    
-    if (email != "" && password != "") {
-        $.ajax({
-            method: "POST",
-            url: "<?= base_url('auth/login_user') ?>",
-            dataType: "JSON",
-            data: {
-                email: email,
-                password: password,
-            },
-            success: function(data) {
-                // $("meta[name=csrf_token]").attr("content", data.token);
-                if (data.success==true) {
-                    if(data.code==200){
-                        // Swal.clear();
-                        Swal.fire({
-                            title: "Berhasil!!",
-                            text: "Silahkan tekan OK untuk lanjut!",
-                            icon: "success",
-                            width: '30em'
-                        });
+        var email = $("#email").val();
+        var password = $("#password").val();
+        // console.log(email);
+        
+        if (email != "" && password != "") {
+            $.ajax({
+                url : "<?= base_url(); ?>auth/login_user",
+                method : "post",
+                data : $("#form-login").serialize(),
+                success : function (data) {
+                    var response = JSON.parse(data);
+                    if(response.success == true){
+                        toastr.success(response.messages);
                         setTimeout(function() {
-                            window.location.href = "<?= base_url() ?>"+data.url;
+                            window.location.href = "<?= base_url(); ?>home";
                         }, 1000)
-                    }else if(data.code == 400){
-                        toastr.clear();
-                        NioApp.Toast(data.messages, 'warning', {
-                            position: "top-right"
-                        });
+                    }else if(response.success == false){
+                        toastr.warning(response.messages);
                     }
-                }else if (data.success==false) {
-                    toastr.clear();
-                    NioApp.Toast(data.messages, 'warning', {
-                        position: "top-right"
-                    });
                 }
-            },
-        });
-    }
- });
-</script> -->
+            })
+        }
+    });
+</script>

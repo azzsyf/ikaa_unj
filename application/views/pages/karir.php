@@ -110,7 +110,11 @@
                 $data2 = $this->db->get_where('loker', ["email_created" => $data])->result_array();
             ?>
             <div class="side">
-                <h3><b>Lowongan Kerja</b></h3>
+                <div class="asd" style="display: flex; margin-bottom: 50px;">
+                    <h3 style="margin-right: 400px;"><b>Lowongan Kerja</b></h3>
+                    <input type="text" class="form-control" name="cari" id="cari" placeholder="Cari loker" style="width: 250px; margin-left: 10px; margin-right: 10px; border-color: green;">
+                    <!-- <button class="btn btn-success form-control" style="width: 70px;"><i class="fas fa-search"></i></button> -->
+                </div>
                 <?php if(!empty($data)){ ?>
                     <?php if(!empty($data2)){ ?>
                         <?php foreach ($data2 as $key) { ?>
@@ -155,38 +159,40 @@
                         </div>
                     <?php } ?>
                 <?php }else if(empty($data)){ ?>
-                    <?php foreach ($loker as $key) { ?>
-                        <div class="flex" style="display: flex;">
-                            <div class="card" style="flex: 20px;; border: 0px; background: transparent;">
-                                <img src="<?= base_url() ?>asset/lowongan-kerja.png" alt="" style="width: 200px; padding-top: 20px;">
-                            </div>
-                            <div class="card" style="flex: 60px; border: 0px;">
-                                <div class="card-body">
-                                    <h3><b><?= $key['divisi']; ?></b></h3>
-                                    <i class="fas fa-building"></i> <?= $key['nama_perusahaan']; ?>
-                                    <div class="row" style="padding-top: 10px; font-family: arial;">
-                                        <div class="col-md-12" style="font-size: 15px;">
-                                            <i class="fas fa-map-marker-alt"></i> <?= $key['alamat']; ?>
+                    <div class="oke">
+                        <?php foreach ($loker as $key) { ?>
+                            <div class="flex" style="display: flex;">
+                                <div class="card" style="flex: 20px;; border: 0px; background: transparent;">
+                                    <img src="<?= base_url() ?>asset/lowongan-kerja.png" alt="" style="width: 200px; padding-top: 20px;">
+                                </div>
+                                <div class="card" style="flex: 60px; border: 0px; margin-left: 50px;">
+                                    <div class="card-body">
+                                        <h3><b><?= $key['divisi']; ?></b></h3>
+                                        <i class="fas fa-building"></i> <?= $key['nama_perusahaan']; ?>
+                                        <div class="row" style="padding-top: 10px; font-family: arial;">
+                                            <div class="col-md-12" style="font-size: 15px;">
+                                                <i class="fas fa-map-marker-alt"></i> <?= $key['alamat']; ?>
+                                            </div>
                                         </div>
-                                    </div>
 
+                                    </div>
+                                </div>
+                                <div class="card" style="flex: 10px; border: 0px; margin-left: 130px;">
+                                    <div class="card-body">
+                                        <p><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="card" style="flex: 10px; border: 0px;">
-                                <div class="card-body">
-                                    <p><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                            <div class="isi">
+                                <div>
+                                    <?= $key['syarat']; ?>
                                 </div>
                             </div>
-                        </div>
-                        <div class="isi">
-                            <div>
-                                <?= $key['syarat']; ?>
+                            <div style="padding-top: 10px; padding-bottom: 10px;">
+                                <a href="<?= base_url() ?>karir/view/<?= $key['id']; ?>" class="btn btn-success" style="width: 100%;">Selengkapnya</a>
                             </div>
-                        </div>
-                        <div style="padding-top: 10px; padding-bottom: 10px;">
-                            <a href="<?= base_url() ?>karir/view/<?= $key['id']; ?>" class="btn btn-success" style="width: 100%;">Selengkapnya</a>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 <?php } ?>
             </div>
             <div class="main">
@@ -255,4 +261,14 @@
             }
         })
     })
+
+ 
+    $("#cari").on("keyup",function(){
+        var keywoard = $(this).val();
+        var data = keywoard;
+        console.log(data)
+        // alert(cari);
+        
+    })
+
 </script>

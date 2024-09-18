@@ -6,7 +6,7 @@ class Auth extends CI_Controller {
     {
         parent::__construct(); 
 		$this->load->library('form_validation'); 
-		$this->load->model('Generate_Code');
+		// $this->load->model('Generate_Code');
     }
 	public function index()
 	{
@@ -24,6 +24,16 @@ class Auth extends CI_Controller {
 		}
 	}
 
+	public function v2()
+    {
+        if ($this->session->userdata('email')) {
+            redirect('home');
+        }else{
+			$this->load->view('components/header');
+            $this->load->view('pages/auth/login_v2');
+        }
+    }
+
 	function login_user()
 	{
 		$email = $this->input->post('email');
@@ -37,35 +47,35 @@ class Auth extends CI_Controller {
 					'email' => $user['email'],
 				];
 				$this->session->set_userdata($data);
-				// $response = [
-				// 	'success' => true,
-				// 	'code' => 200,
-				// 	'messages' => "Selamat anda berhasil login..",
-				// 	'data' => $data,
-				// 	'url' => "home/dashboard",
-				// 	// 'token' => $this->security->get_csrf_hash(),
-				// ];
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf password salah!!</div>');
-				redirect('home/dashboard');
+				$response = [
+					'success' => true,
+					'code' => 200,
+					'messages' => "Selamat anda berhasil login!!",
+					'data' => $data,
+					'url' => "home/dashboard",
+					// 'token' => $this->security->get_csrf_hash(),
+				];
+				// $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf password salah!!</div>');
+				// redirect('home/dashboard');
 			}else{
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf password salah!!</div>');
-				redirect('auth');
-				// $response = [
-				// 	'success' => true,
-				// 	'code' => 400,
-				// 	'messages' => "Maaf password salah!!",
-				// 	'token' => $this->security->get_csrf_hash(),
-				// ];
+				// $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf password salah!!</div>');
+				// redirect('auth');
+				$response = [
+					'success' => false,
+					'code' => 400,
+					'messages' => "Maaf password salah!!",
+					'token' => $this->security->get_csrf_hash(),
+				];
 			}
 		}else{
-			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf email anda belum terdaftar!!</div>');
-			redirect('auth');
-			// $response = [
-			// 	'success' => false,
-			// 	'code' => 400,
-			// 	'messages' => "Maaf email anda belum terdaftarkan!!",
-			// 	'token' => $this->security->get_csrf_hash(),
-			// ];
+			// $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf email anda belum terdaftar!!</div>');
+			// redirect('auth');
+			$response = [
+				'success' => false,
+				'code' => 400,
+				'messages' => "Maaf email anda belum terdaftarkan!!",
+				'token' => $this->security->get_csrf_hash(),
+			];
 		}
 		echo json_encode($response);
 	}
@@ -131,6 +141,6 @@ class Auth extends CI_Controller {
 		$this->session->unset_userdata('email');
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Anda sudah berhasil Logout!!</div>');
-		redirect('home');
+		redirect('auth');
 	}
 }
