@@ -11,19 +11,31 @@ class Home extends CI_Controller {
 		$data['user'] = $this->db->get_where('profil', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
-		$this->load->view('pages/dashboard', $data);
+		$this->load->view('pages/dashboard/dashboard', $data);
 		$this->load->view('components/footer');
 	}
 
-	function dashboard()
+	function sentral()
 	{
-		if (!$this->session->userdata('email')) {
-            redirect('auth');
-        } 
-		$data['user'] = $this->db->get_where('profil', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
-		$this->load->view('pages/dashboard', $data);
-		$this->load->view('components/footer');
+		$this->load->view('pages/dashboard/view_sentral');
+		// $this->load->view('components/footer');
+	}
+
+	function akp2i()
+	{
+		$this->load->view('components/header');
+		$this->load->view('components/menu');
+		$this->load->view('pages/dashboard/view_akp2i');
+		// $this->load->view('components/footer');
+	}
+
+	function digifile()
+	{
+		$this->load->view('components/header');
+		$this->load->view('components/menu');
+		$this->load->view('pages/dashboard/view_digifile');
+		// $this->load->view('components/footer');
 	}
 }

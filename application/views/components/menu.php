@@ -1,4 +1,9 @@
 <style>
+     body{
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow-x: hidden;
+    }
 
     *{
         margin: 0;
@@ -323,7 +328,7 @@
 </style>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: fixed;">
-        <a class="navbar-brand" href="#"><img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="" width="80px"> IKAA UNJ</a>
+        <a class="navbar-brand" href="<?= base_url() ?>home"><img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="" width="80px"> IKAA UNJ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -350,9 +355,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('berita') ?>">BERITA</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('kontak') ?>">KONTAK</a>
-                </li>
+                </li> -->
             </ul>
             <?php 
                 $data = $this->session->userdata('email');

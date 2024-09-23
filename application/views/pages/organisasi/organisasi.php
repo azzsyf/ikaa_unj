@@ -1,11 +1,5 @@
 
     <style>
-        body{
-            width: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
-        }
-
         .section1{
             background: #006805;
             width: 100%;
@@ -419,9 +413,9 @@
                         position: absolute;
                     }
                 }
-                img{
-                    transform: translateX(-190px) translateY(-250px);
-                    width: 450px;
+                #img4{
+                    transform: translateX(-110px) translateY(-210px);
+                    width: 300px;
                     height: auto;
                     transition: 1s;
                 }
@@ -436,88 +430,13 @@
                     transform: translateX(-550px) translateY(-400px) !important;
                     width: 950px !important;
                     height: 950px !important;
-                }
-                #img4{
-                    transform: translateX(250px) translateY(-15px);
-                    width: 700px;
-                    height: auto;
-                }
-            }
-        }
-
-        .section4{
-            background: rgb(0,104,5);
-            background: linear-gradient(270deg, rgba(0,104,5,1) 0%, rgba(86,198,95,1) 100%);
-            width: 100%;
-            height: 350px;
-            position: relative;
-            overflow: hidden;
-            #div-isi4{
-                display: flex; 
-                padding-left: 30px;
-                position: relative;
-                #isi4{
-                    flex: 50%; 
-                    padding-left: 20px;
-                    padding-top: 30px;
-                    padding-bottom: 40px;
-                    padding-right: 0px;
-                    color: #fff;
-                    text-align: justify;
-                    transition: 1s;  
-                    #coverIsi4{
-                        width: 80%;
-                    }                  
-                    h5{
-                        font-weight: bolder;
-                        font-size: 15px;
-                    }
-                    span{
-                        font-size: 13px;
-                    }
-                    p{
-                        padding-top: 10px;
-                        font-size: 12px;
+                    #img4{
+                        transform: translateX(400px) translateY(50px);
+                        width: 500px;
+                        height: auto;
                     }
                 }
-                #div-img4{
-                    flex: 50%;
-                    align-self: center;
-                    padding-left: 200px;
-                    padding-top: 180px;
-                    #circelhover4{
-                        transform: translateX(-30px) translateY(-90px);
-                        width: 50px;
-                        height: 50px;
-                        background: #006805;
-                        border-radius: 50%;
-                        transition: 1s;
-                        position: absolute;
-                    }
-                }
-                img{
-                    transform: translateX(-190px) translateY(-250px);
-                    width: 450px;
-                    height: auto;
-                    transition: 1s;
-                }
-            }
-            &:hover{
-                #isi4{
-                    padding-left: 0px !important;
-                    padding-right: 20px !important;
-                    transition: all 1s ease-in-out;
-                }  
-                #div-img4 #circelhover4{
-                    transform: translateX(-550px) translateY(-400px) !important;
-                    width: 950px !important;
-                    height: 950px !important;
-                }
-                #img4{
-                    transform: translateX(250px) translateY(-15px);
-                    width: 700px;
-                    height: auto;
-                }
+                
             }
         }
 
@@ -740,11 +659,11 @@
                     transform: translateX(-320px) translateY(-320px) !important;
                     width: 950px !important;
                     height: 950px !important;
-                }
-                #img7{
-                    transform: translateX(-0px) translateY(115px) !important;
-                    width: 570px !important;
-                    height: 570px !important;
+                    #img7{
+                        transform: translateX(-0px) translateY(55px) !important;
+                        width: 570px !important;
+                        height: 570px !important;
+                    }
                 }
             }
         }
@@ -3395,17 +3314,14 @@
                         <b>Muzaki Andriawan P., S.E., BKP., CTAP.</b>
                     </div>
                     <div class="jabatan3">
-                        Ketua IKA Akuntansi UNJ
+                        Ketua IKA Akuntansi UNJ | Periode 2024 - 2027
                     </div>
-                    <div class="text-pkj3" style="padding-top: 15px; padding-bottom: 5px;">
+                    <div class="text-pkj3" style="padding-top: 5px; padding-bottom: 5px;">
                         <b>RIWAYAT PEKERJAAN</b>
                     </div>
                     <div class="pkj3">
-                        <li>Managing Partner (CEO) - PT. Jawara Mitra Consulting, Oktober 2015 - Sekarang</li>
-                        <li>Tax Manager - PT. Zona Mitra Solution, Februari 2017 - Oktober 2019</li>
-                        <li>Tax Leader - PT. Japan Asia Consultans, Juni 2012 - Januari 2017</li>
-                        <li>Managing Partner PT. Cakra Ragheda Mustika (CRM) Business Strategic Consulting</li>
-                        <li>CFO Digifile (Startup Technology)</li>
+                        <li>Managing Partner Consultans ternama di Jakarta</li>
+                        <li>CFO Startup Technology</li>
                     </div>
                     <div class="text-po3" style="padding-top: 15px; padding-bottom: 5px;">
                         <b>PENGALAMAN ORGANISASI</b>
@@ -3413,6 +3329,9 @@
                     <div class="po3">
                         <li>Ketua Asosiasi Konsultan Pajak Publik Indonesia Cabang Depok,</li>
                         <li>Ketua kompartmen perpajakan SENTRAL (Semangat Enterpreuner Nasional).</li>
+                    </div>
+                    <div class="text-po3" style="padding-top: 15px; padding-bottom: 5px;">
+                        <b>Quote</b>
                     </div>
                     <div style="padding-top: 15px;">
                         <span><i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i> <i class="fab fa-tiktok"></i> <i class="fab fa-linkedin"></i> </span>
@@ -3509,16 +3428,14 @@
                         <b>RIWAYAT PEKERJAAN</b>
                     </div>
                     <div class="pkj4">
-                        <li>Shareholder and Commissioner - PT. Jawara Mitra Consulting (JMC)</li>
-                        <li>Shareholder and President Director - PT. Chakra Ragheeda Mustika (CRM)</li>
-                        <li>Shareholder and President Director - PT. Ide Nuansa Integra (INI) - Document Aggregator</li>
-                        <li>Senior Auditor experienced - KAP Sidharta Widjaja & Rekan (KPMG Indonesia), 2018 - 2019</li>
+                        <li>Partner Consultans ternama di jakarta</li>
+                        <li>CEO Startup Technology</li>
                     </div>
                     <div class="text-po4" style="padding-top: 15px; padding-bottom: 5px;">
                         <b>PENGALAMAN ORGANISASI</b>
                     </div>
                     <div class="po4">
-                        <li>Leader of Department Bidang XII HIPMI JAKSEL - Bidang Investasi</li>
+                        <li>HIPMI JAKSEL</li>
                         <li>Founder and Bendahara Umum - Semangat Entreprenuer Nasional (SENTRAL)</li>
                         <li>Ikatan Akuntan Publik Indonesia (Member)</li>
                         <li>Bendahara Umum - Asosiasi Konsultan Pajak Publik Indonesia (AKP2I) Cabang Depok</li>
