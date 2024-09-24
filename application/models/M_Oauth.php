@@ -4,9 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 Class M_Oauth extends CI_Model
 {
     private $client_id = 'hVBbBqhIKaZ3r93afLJDKo9M0UhOaS7saArneEek-uQ54KaN8dog=';
-    private $redirect_uri = 'http://localhost/ikaa_unj/';
+    private $redirect_uri = 'https://unj.ikatanalumniakuntansi.com/';
     private $grant_type = 'authorization_code';
-    private $base_url = 'http://localhost/oauth.digifile/';
+    private $base_url = 'https://oauth.digifile.id/';
 
     function getToken($code){
         $curl = curl_init();
