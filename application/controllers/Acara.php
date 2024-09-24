@@ -12,6 +12,7 @@ class Acara extends CI_Controller {
 		$email = $this->session->userdata('email');
 		$data['user'] = $this->m_acara->getsDataUsers($email);
 		$data['acara'] = $this->db->get('acara')->result_array();
+		// var_dump($data['acara']);
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
 		$this->load->view('pages/acara/acara', $data);
@@ -75,6 +76,26 @@ class Acara extends CI_Controller {
 				$this->load->view('errors/error');
 			}
 		}
+	}
+
+	function add_acara()
+	{
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->m_acara->getsDataUsers($email);
+		$data['loker'] = $this->db->get('loker')->result_array();
+		$this->load->view('components/header');
+		$this->load->view('components/menu');
+		$this->load->view('pages/acara/add_acara', $data);
+	}
+
+	function view(){
+		$id = $this->uri->segment(3);
+		$data['acaraID'] = $this->m_acara->tampil_data($id);
+		// var_dump($data);die;
+
+		$this->load->view('components/header');
+		$this->load->view('components/menu');
+		$this->load->view('pages/acara/view_acara', $data);
 	}
 
 	function verify()

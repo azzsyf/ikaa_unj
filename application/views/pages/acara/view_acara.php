@@ -111,17 +111,17 @@
                 <a href="<?= base_url() ?>karir" style="text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-left"></i> Kembali</a>
             </div>
                 <!-- <div class="title"><h3 style=" padding: 20px; border-bottom-right-radius: 20px; border-left: solid 5px yellow;"><b>Lowongan Kerja</b></h3></div> -->
-                <h4><b><?= $lokerID['nama_perusahaan']; ?></b></h4>
-                <img src="<?= base_url(); ?>asset/images/karir/<?= $lokerID['gambar'] ?>" width="700px" alt="">
-                <?php if(!empty($lokerID)){ ?>
+                <h4><b><?= $acaraID['judul']; ?></b></h4>
+                <img src="<?= base_url(); ?>asset/images/acara/<?= $acaraID['gambar'] ?>" width="700px" alt="">
+                <?php if(!empty($acaraID)){ ?>
                     <div class="flex" style="display: flex;">
                         <div class="card" style="flex: 60px; border: 0px;">
                             <div class="card-body">
-                                <h3><b><?= $lokerID['divisi']; ?></b></h3>
-                                <i class="fas fa-building"></i> <?= $lokerID['nama_perusahaan']; ?>
+                                <!-- <h3><b><?= $acaraID['divisi']; ?></b></h3> -->
+                                <i class="fas fa-building"></i> <?= $acaraID['judul']; ?>
                                 <div class="row" style="padding-top: 10px; font-family: arial;">
                                     <div class="col-md-12" style="font-size: 15px;">
-                                        <i class="fas fa-map-marker-alt"></i> <?= $lokerID['alamat']; ?>
+                                        <i class="fas fa-map-marker-alt"></i> <?= $acaraID['deskripsi']; ?>
                                     </div>
                                 </div>
 
@@ -129,13 +129,8 @@
                         </div>
                         <div class="card" style="flex: 10px; border: 0px;">
                             <div class="card-body">
-                                <p>Upload : <?= tgl_indo(date("Y-m-d",strtotime($lokerID['date_created']))); ?></p>
+                                <p>Upload : <?= tgl_indo(date("Y-m-d",strtotime($acaraID['date_created']))); ?></p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="isi">
-                        <div>
-                            <?= $lokerID['syarat']; ?>
                         </div>
                     </div>
                 <?php }else{ ?>

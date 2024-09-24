@@ -35,120 +35,109 @@
         }
     }
 </style>
-<!-- <div class="section1">
-    <div id="head">
-        <h1>Karir</h1>
-        <p>Ikatan Alumni Akuntansi UNJ</p>
-    </div>
-</div> -->
 <div class="section2">
     <div class="container" style="padding-top: 130px;">
         <h3>Biodata Anggota</h3>
-        <form action="profile/upload" method="post" enctype="multipart/form-data">
+        <form action="" id="form-edit-profil" enctype="multipart/form-data">
             <div class="row" style="padding-top: 20px;">
                 <?php 
                     $email = $this->session->userdata('email');
-                    $data = $this->db->get_where('foto_profil', ['created_by' => $email])->row_array(); 
-                    // var_dump($data);
+                    // $data = $this->db->get_where('foto_profil', ['created_by' => $email])->row_array(); 
+                    // var_dump($profil);
                 ?>
-                <?php if(!empty($data)){ ?>
+                <?php if(!empty($profil['foto_profil'])){ ?>
                     <div class="col-md-2">
-                        <div style="padding-top: 50px; width: 150px; height: 150px; background: url('<?= base_url() ?>asset/images/uploads/<?= $data['file_name']; ?>'); background-size: cover;">
+                        <div style="padding-top: 50px; width: 150px; height: 150px; background: url('<?= base_url() ?>asset/images/profil/<?= $profil['foto_profil']; ?>'); background-size: cover;">
                         </div>
                     </div>
-                <?php } else{ ?>
+                <?php } else if(empty($profil['foto_profil'])){ ?>
                     <div class="col-md-2">
                         <div style="padding-top: 50px; width: 150px; height: 150px; background: url('<?= base_url() ?>asset/profil-anon.jpg'); background-size: cover;">
                         </div>
                     </div>
                 <?php } ?>
                 <div class="col-md-10">
-                    <input type="hidden" name="id_anggota" value="<?= $profil['id_anggota']; ?>">
                     <label for="gambar" class="form-label">Upload Foto</label>
                     <input class="form-control" type="file" id="gambar" name="gambar">
-                    <div style="padding-top: 40px;" align="right">
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
-                    </div>
                 </div>
             </div>
-        </form>  
-
-        
-        <div class="row" style="padding-top: 20px;">
-            <label for="id_anggota" class="col-sm-2 col-form-label">ID ANGGOTA</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="id_anggota" name="id_anggota" readonly value=": <?= $profil['id_anggota']; ?>">
+            <div class="row" style="padding-top: 20px;">
+                <label for="id_anggota" class="col-sm-2 col-form-label">ID ANGGOTA</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control-plaintext" for="id_anggota" name="id_anggota" readonly value="<?= $profil['id_anggota']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="nama" name="nama" readonly value=": <?= $profil['nama_lengkap']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="nama" name="nama" value="<?= $profil['nama_lengkap']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="tempat_lahir" class="col-sm-2 col-form-label">Tempat lahir</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="tempat_lahir" name="tempat_lahir" readonly value=": <?= $profil['tempat_lahir']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="tempat_lahir" class="col-sm-2 col-form-label">Tempat lahir</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="tempat_lahir" name="tempat_lahir" value="<?= $profil['tempat_lahir']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="tanggal_lahir" class="col-sm-2 col-form-label">Tanggal lahir</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="tanggal_lahir" name="tanggal_lahir" value=": <?= $profil['tanggal_lahir']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="tanggal_lahir" class="col-sm-2 col-form-label">Tanggal lahir</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" for="tanggal_lahir" name="tanggal_lahir" value="<?= $profil['tanggal_lahir']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="alamat" name="alamat" value=": <?= $profil['alamat']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="alamat" name="alamat" value="<?= $profil['alamat']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="angkatan" class="col-sm-2 col-form-label">Angkatan</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="angkatan" name="angkatan" value=": <?= $profil['angkatan']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="angkatan" class="col-sm-2 col-form-label">Angkatan</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="angkatan" name="angkatan" value="<?= $profil['angkatan']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="program_studi" class="col-sm-2 col-form-label">Program Studi</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="program_studi" name="program_studi" value=": <?= $profil['program_studi']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="program_studi" class="col-sm-2 col-form-label">Program Studi</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="program_studi" name="program_studi" value="<?= $profil['program_studi']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="no_hp" class="col-sm-2 col-form-label">No. Hp</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="no_hp" name="no_hp" value=": <?= $profil['no_hp']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="no_hp" class="col-sm-2 col-form-label">No. Hp</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="no_hp" name="no_hp" value="<?= $profil['no_hp']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control-plaintext" for="email" name="email" value=": <?= $profil['email']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control-plaintext" readonly for="email" name="email" value="<?= $profil['email']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="pekerjaan" class="col-sm-2 col-form-label">Pekerjaan</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="pekerjaan" name="pekerjaan" value=": <?= $profil['pekerjaan']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="pekerjaan" class="col-sm-2 col-form-label">Pekerjaan</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="pekerjaan" name="pekerjaan" value="<?= $profil['pekerjaan']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="jabatan" class="col-sm-2 col-form-label">Jabatan</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="jabatan" name="jabatan" value=": <?= $profil['jabatan']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="jabatan" class="col-sm-2 col-form-label">Jabatan</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="jabatan" name="jabatan" value="<?= $profil['jabatan']; ?>">
+                </div>
             </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <label for="nama_instansi" class="col-sm-2 col-form-label">Nama Instansi</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control-plaintext" for="nama_instansi" name="nama_instansi" value=": <?= $profil['nama_instansi']; ?>">
+            <div class="row" style="padding-top: 10px;">
+                <label for="nama_instansi" class="col-sm-2 col-form-label">Nama Instansi</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" for="nama_instansi" name="nama_instansi" value="<?= $profil['nama_instansi']; ?>">
+                </div>
             </div>
-        </div>
-        <div style="padding-top: 20px; padding-bottom: 20px;" align="right">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-print"></i> Cetak Kartu</button>
-        </div>
+            <div style="padding-top: 40px; padding-bottom: 40px;" align="right">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-print"></i> Cetak Kartu</button>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -208,3 +197,30 @@
     </div>
   </div>
 </div>
+
+<script>
+    $("#form-edit-profil").on("submit", function(e){
+        e.preventDefault();
+        var gambar = new FormData(this);
+        // console.log(gambar);
+        
+        $.ajax({
+            url : "<?= base_url(); ?>profile/save_edit",
+            method : "post",
+            data : gambar,
+            dataType: "JSON",
+            processData: false,
+            contentType: false,
+            success : function (data) {
+                if(data.success == true){
+                    toastr.success(data.message, 'success',);
+                    setTimeout(function() {
+                        window.location.href = "<?= base_url(); ?>profile";
+                    }, 1000)
+                }else if(data.success == true){
+                    toastr.warning(data.message, 'error',);
+                }
+            }
+        })
+    })
+</script>

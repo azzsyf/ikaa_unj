@@ -76,6 +76,26 @@ class Berita extends CI_Controller {
 		}
 	}
 
+	function add_berita()
+	{
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->m_berita->getsDataUsers($email);
+		$data['loker'] = $this->db->get('loker')->result_array();
+		$this->load->view('components/header');
+		$this->load->view('components/menu');
+		$this->load->view('pages/berita/add_berita', $data);
+	}
+
+	function view(){
+		$id = $this->uri->segment(3);
+		$data['beritaID'] = $this->m_berita->tampil_data($id);
+		// var_dump($data);die;
+
+		$this->load->view('components/header');
+		$this->load->view('components/menu');
+		$this->load->view('pages/berita/view_berita', $data);
+	}
+
 	function edit()
 	{
 		$id = $this->uri->segment(3);

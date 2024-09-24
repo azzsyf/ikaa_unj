@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div align="right">
-                    <button class="btn btn-primary">Simpan <i class="fas fa-save"></i></button>
+                    <button class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
                 </div>
             </form>
         </div>

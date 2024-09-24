@@ -31,6 +31,16 @@ class Karir extends CI_Controller {
 		$this->load->view('pages/karir/view_karir', $data);
 	}
 
+	function add_karir()
+	{
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->m_karir->getsDataUsers($email);
+		$data['loker'] = $this->db->get('loker')->result_array();
+		$this->load->view('components/header');
+		$this->load->view('components/menu');
+		$this->load->view('pages/karir/add_karir', $data);
+	}
+
 	function save_loker()
 	{
 		if(!empty($this->input->post())){
@@ -38,33 +48,58 @@ class Karir extends CI_Controller {
 			$alamat = $this->input->post('alamat');
 			$divisi = $this->input->post('divisi');
 			$syarat = $this->input->post('syarat');
+
+			if(!empty($_FILES)){
+				$path = FCPATH.'asset/images/karir/';
+				$config['upload_path']      = $path;       
+				$config['allowed_types']    = 'png|PNG|jpg|JPG|jpeg|JPEG|pdf';
+				$this->load->library('upload',$config);
+				$this->upload->initialize($config);
+				if(!empty($_FILES['gambar']['name'])){
+					$_FILES["img"]["name"] = $_FILES["gambar"]["name"];
+					$_FILES["img"]["type"] = $_FILES["gambar"]["type"];
+					$_FILES["img"]["tmp_name"] = $_FILES["gambar"]["tmp_name"];
+					$_FILES["img"]["error"] = $_FILES["gambar"]["error"];
+					$_FILES["img"]["size"] = $_FILES["gambar"]["size"];
 	
-			$data = [
-				'nama_perusahaan' => $nama_perusahaan,
-				'alamat' => $alamat,
-				'divisi' => $divisi,
-				'syarat' => $syarat,
-				'email_created' => $this->session->userdata('email'),
-				'date_created' => date('Y-m-d H:i:s'),
-			];
-			// var_dump($data);die;
-			$success = $this->db->insert('loker', $data);
-			if($success){
-                $response = [
-                    "success" => true,
-                    "messages" => "Data berhasil disimpan!!",
-                    'data' => $data,
-                    "code" => 200,
-                ];
-            }else{
-                $response = [
-                    "success" => true,
-                    "code" => 204,
-                    "messages" => "Data gagal disimpan!!",
-                ];
-            }
-            echo json_encode($response);
-			// redirect('karir/view');
+					
+					if(!$this->upload->do_upload('img')){
+						$response = [
+							'error_message' => $this->upload->display_errors(),
+						];
+					}else{
+						$fileData = $this->upload->data(); 
+						$data = [
+							'nama_perusahaan' => $nama_perusahaan,
+							'alamat' => $alamat,
+							'divisi' => $divisi,
+							'syarat' => $syarat,
+							"gambar" => $fileData['file_name'],
+							'email_created' => $this->session->userdata('email'),
+							'date_created' => date('Y-m-d H:i:s'),
+						];
+						$success = $this->db->insert('loker', $data);
+						if($success){
+							$response = [
+								'success' => true,
+								'message' => 'Data berhasil disimpan!',
+								'code' => 200,
+							];
+						} else {
+							$response = [
+								'success' => true,
+								'message' => 'Data gagal disimpan.. Coba ulangi lagi tahap ini.',
+								'code' => 402,
+							];
+						}
+						echo json_encode($response);
+					}
+				}else{
+					$this->load->view('errors/error');
+				}
+			}else{
+				$this->load->view('errors/error');
+			}
 		}
 	}
 
@@ -85,31 +120,57 @@ class Karir extends CI_Controller {
 		$divisi = $this->input->post('divisi');
 		$syarat = $this->input->post('syarat');
 
-		$where = ['id' => $id];
-		$update = [
-			'nama_perusahaan' => $nama_perusahaan,
-			'alamat' => $alamat,
-			'divisi' => $divisi,
-			'syarat' => $syarat,
-		];
-		// var_dump($update);die;
-		$this->db->where($where);
-		$success = $this->db->update('loker', $update);
-		if($success){
-			$response = [
-				"success" => true,
-				"messages" => "Data berhasil diubah!!",
-				'data' => $update,
-				"code" => 200,
-			];
+		if(!empty($_FILES)){
+			$path = FCPATH.'asset/images/karir/';
+			$config['upload_path']      = $path;       
+			$config['allowed_types']    = 'png|PNG|jpg|JPG|jpeg|JPEG|pdf';
+			$this->load->library('upload',$config);
+			$this->upload->initialize($config);
+			if(!empty($_FILES['gambar']['name'])){
+				$_FILES["img"]["name"] = $_FILES["gambar"]["name"];
+				$_FILES["img"]["type"] = $_FILES["gambar"]["type"];
+				$_FILES["img"]["tmp_name"] = $_FILES["gambar"]["tmp_name"];
+				$_FILES["img"]["error"] = $_FILES["gambar"]["error"];
+				$_FILES["img"]["size"] = $_FILES["gambar"]["size"];
+
+				
+				if(!$this->upload->do_upload('img')){
+					$response = [
+						'error_message' => $this->upload->display_errors(),
+					];
+				}else{
+					$fileData = $this->upload->data(); 
+					$where = ['id' => $id];
+					$data = [
+						'nama_perusahaan' => $nama_perusahaan,
+						'alamat' => $alamat,
+						'divisi' => $divisi,
+						'syarat' => $syarat,
+						"gambar" => $fileData['file_name'],
+					];
+					$this->db->where($where);
+					$success = $this->db->update('loker', $data);
+					if($success){
+						$response = [
+							'success' => true,
+							'message' => 'Data berhasil diubah!',
+							'code' => 200,
+						];
+					} else {
+						$response = [
+							'success' => true,
+							'message' => 'Data gagal disimpan.. Coba ulangi lagi tahap ini.',
+							'code' => 402,
+						];
+					}
+					echo json_encode($response);
+				}
+			}else{
+				$this->load->view('errors/error');
+			}
 		}else{
-			$response = [
-				"success" => true,
-				"code" => 204,
-				"messages" => "Data gagal disimpan!!",
-			];
+			$this->load->view('errors/error');
 		}
-		echo json_encode($response);
 	}
 
 	function delete()
@@ -120,7 +181,7 @@ class Karir extends CI_Controller {
 
 		$this->db->where($where);
 		$this->db->delete('loker');
-		redirect('karir');
+		redirect('karir/add_karir');
 	}
 
 	function cari(){

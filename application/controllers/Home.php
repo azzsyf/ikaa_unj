@@ -9,6 +9,8 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data['user'] = $this->db->get_where('profil', ['email' => $this->session->userdata('email')])->row_array();
+		$data['acara'] = $this->db->get('acara')->result_array();
+		$data['berita'] = $this->db->get('berita')->result_array();
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
 		$this->load->view('pages/dashboard/dashboard', $data);

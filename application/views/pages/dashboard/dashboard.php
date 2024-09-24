@@ -118,12 +118,12 @@
                 -webkit-scrollbar {display: none;}
                 column-gap: 2em;
                 .card{
-                    width: 280px;
+                    min-width: 280px;
                     height: 390px;
                     transition: 1s;
                     transition-timing-function: ease-in-out;
                     &:hover{
-                        width: 280px !important;
+                        min-width: 280px !important;
                         height: 390px;
                         -ms-transform: scale(1.1);
                         transform: scale(1.1); 
@@ -138,12 +138,12 @@
                 -webkit-scrollbar {display: none;}
                 column-gap: 2em;
                 .card{
-                    width: 280px;
+                    min-width: 280px;
                     height: 310px;
                     transition: 1s;
                     transition-timing-function: ease-in-out;
                     &:hover{
-                        width: 280px !important;
+                        min-width: 280px !important;
                         height: 310px;
                         -ms-transform: scale(1.1);
                         transform: scale(1.1); 
@@ -2017,6 +2017,31 @@
 
 
     </style>
+    <?php 
+        function tgl_indo($tanggal){
+            $bulan = array (
+                1 =>   'Januari',
+                'Februari',
+                'Maret',
+                'April',
+                'Mei',
+                'Juni',
+                'Juli',
+                'Agustus',
+                'September',
+                'Oktober',
+                'November',
+                'Desember'
+            );
+            $pecahkan = explode('-', $tanggal);
+            
+            // variabel pecahkan 0 = tanggal
+            // variabel pecahkan 1 = bulan
+            // variabel pecahkan 2 = tahun
+        
+            return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+        }
+    ?>
         <div class="parallax1" style="height:20%; text-align: center;" id="beranda">
             <div class="card" id="logo-unj">
                 <div class="card-body">
@@ -2118,7 +2143,7 @@
                 </div>
             </div>
             <div style="display: flex;">
-                <div class="card col-md-4" style="cursor: pointer; width: 290px; height: 390px; width: 280px; margin-top: 3%; margin-left: 6%; margin-right: 2%;">
+                <div class="card col-md-4" style="cursor: pointer; width: 280px; height: 390px; margin-top: 3%; margin-left: 6%; margin-right: 2%;">
                     <div class="card-body">
                         <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
@@ -2129,37 +2154,23 @@
                     </div>
                 </div>
                 <div class="flex-container" style="padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
-                    <div class="card col-md-4" style="cursor: pointer;">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</p>
-                            </div>
+                <?php foreach($acara as $key) : ?>
+                    <?php if($key['status'] == 1){ ?>
+                        <div class="card col-md-4" style="cursor: pointer; ">
+                            <a href="<?= base_url() ?>acara/view/<?= $key['id']; ?>" style="text-decoration: none;">
+                                <div class="card-body">
+                                    <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" style="height: 220px;" class="card-img-top" alt="...">
+                                    <div style="padding-top: 10px;">
+                                        <p style="text-align: justify; font-weight: bold; weight: 20px;"><?= $key['judul'] ?></p>
+                                        <p class="card-text" style="text-align: justify; font-size: 12px;"><?= $key['deskripsi'] ?></p>
+                                        <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                                    </div>
+                                </div>
+                            </a> 
                         </div>
-                    </div>
-                    <div class="card col-md-4" style="cursor: pointer;">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
+                    <?php } ?>
+                <?php endforeach ?>
+                    <!-- <div class="card col-md-4" style="cursor: pointer;">
                         <div class="card-body">
                             <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                             <div style="padding-top: 10px;">
@@ -2189,6 +2200,26 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card col-md-4">
+                        <div class="card-body">
+                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
+                            <div style="padding-top: 10px;">
+                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-md-4">
+                        <div class="card-body">
+                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
+                            <div style="padding-top: 10px;">
+                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
             
@@ -2209,60 +2240,20 @@
                     </div>
                 </div>
                 <div class="flex-containerBerita" style="padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                <?php foreach($berita as $key) : ?>
+                    <div class="card col-md-4" style="cursor: pointer;">
+                        <a href="<?= base_url() ?>berita/view/<?= $key['id']; ?>" style="text-decoration: none;">
+                            <div class="card-body">
+                                <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" style="width: 280px; height: 145px;" class="card-img-top" alt="...">
+                                <div style="padding-top: 10px;">
+                                    <p style="text-align: justify; font-weight: bold; weight: 20px;"><?= $key['judul'] ?></p>
+                                    <!-- <p class="card-text" style="text-align: justify; font-size: 12px;"><?= $key['deskripsi'] ?></p> -->
+                                    <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                                </div>
                             </div>
-                        </div>
+                        </a> 
                     </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
+                <?php endforeach ?>
                 </div>
             </div>
         </div>

@@ -255,8 +255,6 @@
         height: 40px;
         border-radius: 50%;
         border: 0px;
-        background: url('<?= base_url() ?>asset/profil-anon.jpg');
-        background-size: cover;
     }
 
     .avatar-profil{
@@ -362,13 +360,20 @@
             <?php 
                 $data = $this->session->userdata('email');
                 $data2 = $this->db->get_where('profil', ['email' => $data])->row_array();
+                $data3 = $this->db->get('profil')->result_array();
                 // var_dump($data2);
             ?>
             <?php if(!empty($data)){ ?>
                 <div class="profile">
-                    <div class="icon_wrap">
-                        <button alt="Avatar" class="avatar"></button>
-                    </div>
+                    <?php if(!empty($data2['foto_profil'])){ ?>
+                        <div class="icon_wrap">
+                            <button alt="Avatar" class="avatar" style="background: url('<?= base_url() ?>asset/images/profil/<?= $data2['foto_profil'] ?>'); background-size: cover;"></button>
+                        </div>
+                    <?php }else if(empty($data2['foto_profil'])){ ?>
+                        <div class="icon_wrap">
+                            <button alt="Avatar" class="avatar" style="background: url('<?= base_url() ?>asset/profil-anon.jpg'); background-size: cover;"></button>
+                        </div>
+                    <?php } ?>
 
                     <div class="profile_dd">
                         <ul class="profile_ul">

@@ -7,6 +7,7 @@
         <script src="asset/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="asset/fontawesome-free-5.15.4-web/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
         <link rel="icon" href="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +38,12 @@
                         ['para', ['ul', 'ol', 'paragraph']],
                     ]
                 });
+            });
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+            $('#example').DataTable();
             });
         </script>
         

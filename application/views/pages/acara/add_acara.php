@@ -5,7 +5,7 @@
         width: 100%;
         height: 350px;
         #head{
-            padding-top: 150px;
+            /* padding-top: 150px; */
             text-align: center;
             color: #fff;
         }
@@ -130,14 +130,11 @@
         return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
     }
 ?>
-<div class="section1">
-    <div id="head">
-        <h1>Acara</h1>
-        <p>Ikatan Alumni Akuntansu UNJ</p>
-    </div>
-</div>
 <div class="section2">
-    <div class="container" style="background-color: #fff; height: auto; padding-top: 50px;">
+    <div class="container" style="background-color: #fff; height: auto; padding-top: 150px;">
+        <div>
+            <a href="<?= base_url() ?>acara" style="text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-left"></i> Kembali</a>
+        </div>
         <div class="row">
             <?php 
                 $data = $this->session->userdata('email');
@@ -199,33 +196,47 @@
                     <?php }else if($user['role_id'] == 0){ ?>
                         <div class="title"><h3><b>Daftar Acara</b></h3></div>            
                         <?php if(!empty($data2)){ ?>
-                            <div class="oke">
-                                <?php foreach ($acara as $key) { ?>
-                                    <div class="flex" style="display: flex;">
-                                        <div class="card" style="flex: 10px; border: 0px; background: transparent;">
-                                            <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" alt="" style="width: 200px; height: 200px; padding-top: 20px;">
-                                        </div>
-                                        <div class="card" style="flex: 90px; border: 0px; margin-left: 50px;">
-                                            <div class="card-body">
-                                                <h5><b><?= $key['judul']; ?></b></h5>
-                                                <div class="row" style="padding-top: 10px; font-family: arial;">
-                                                    <div class="col-md-12" style="font-size: 15px;">
-                                                        <i class="fas fa-map-marker-alt"></i> <?= $key['deskripsi']; ?>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="card" style="flex: 10px; border: 0px; margin-left: 130px;">
-                                            <div class="card-body">
-                                                <p><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
-                                            </div>
-                                        </div>
+                            <div class="row">
+                                <div class="col-md-12" style="border: #ebebeb solid 1px;">
+                                    <div class="card-inner">
+                                        <table id="example" class="table table-striped" style="width:100%; font-size: 15px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Judul</th>
+                                                    <th>Deskripsi</th>
+                                                    <th>Flayer</th>
+                                                    <th>Tanggal Dibuat</th>
+                                                    <th>Created_by</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php $no = 1; ?>
+                                                <?php foreach($data2 as $key) { ?>
+                                                    <tr>
+                                                        <td><?= $no++; ?></td>
+                                                        <td><?= $key['judul']; ?></td>
+                                                        <td><?= $key['deskripsi']; ?></td>
+                                                        <td><img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar']; ?>" width="100px;" alt=""></td>
+                                                        <td><?= $key['date_created']; ?></td>
+                                                        <td><?= $key['created_by']; ?></td>
+                                                        <?php if($key['status'] == 0){ ?>
+                                                            <td><span style="color: orange;">Review</span></td>
+                                                        <?php }else if($key['status'] == 1){ ?>
+                                                            <td><span style="color: green;">Sukses</span></td>
+                                                        <?php } ?>
+                                                        <td class="col-md-2">
+                                                            <a href="<?= base_url() ?>acara/delete/<?= $key['id'] ?>"class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></a>
+                                                            <a href="<?= base_url() ?>acara/edit/<?= $key['id'] ?>"class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="fas fa-pen"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div style="padding-top: 10px; padding-bottom: 10px;">
-                                        <a href="<?= base_url() ?>acara/view/<?= $key['id']; ?>" class="btn btn-success" style="width: 100%;">Selengkapnya</a>
-                                    </div>
-                                <?php } ?>
+                                </div>
                             </div>
                         <?php }else{ ?>
                             <div class="row">
@@ -294,19 +305,26 @@
             <div class="main">
                 <?php $data = $this->session->userdata('email'); ?>
                 <?php if(!empty($data)){ ?>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <span style="font-size: large;">Acara Terbaru</span>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="<?= base_url() ?>acara/add_acara" class="btn btn-primary">Bagikan Acara <i class="fas fa-chevron-right"></i></a>
-                        </div>
+                    <div style="padding-bottom: 20px;">
+                        <h5><b>Bagikan Acara</b></h5>  
                     </div>
-                    <div style="padding-top: 20px;">
-                        <?php foreach ($acara as $key){ ?>
-                            <li><a href="#"><?= $key['judul']; ?></a></li>
-                        <?php } ?>
-                    </div>
+                    <form id="form-acara" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Judul <span style="color:red;">*</span></label>
+                            <input type="text" class="form-control" id="judul" name="judul" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsi" class="form-label">Deskripsi <span style="color:red;">*</span></label>
+                            <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" style="height: 150px;" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gambar" class="form-label">Upload Flayer <span style="color:red;">*</span></label>
+                            <input type="file" class="form-control" id="gambar" name="gambar" required>
+                        </div>
+                        <div align="center">
+                            <button class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
+                        </div>
+                    </form>
                 <?php }else{ ?>
                     <!-- <div class="main"> -->
                         <h3>Acara Terbaru</h3>
@@ -378,6 +396,33 @@
             }
         })
 
+    })
+</script>
+
+<script>
+    $("#form-acara").on("submit", function(e){
+        e.preventDefault();
+        var gambar = new FormData(this);
+        // console.log(gambar);
+        
+        $.ajax({
+            url : "<?= base_url(); ?>acara/save_acara",
+            method : "post",
+            data : gambar,
+            dataType: "JSON",
+            processData: false,
+            contentType: false,
+            success : function (data) {
+                if(data.success == true){
+                    toastr.success(data.message, 'success',);
+                    setTimeout(function() {
+                        window.location.href = "<?= base_url(); ?>acara";
+                    }, 1000)
+                }else if(data.success == true){
+                    toastr.warning(data.message, 'error',);
+                }
+            }
+        })
     })
 </script>
 
