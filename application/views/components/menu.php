@@ -1,4 +1,9 @@
 <style>
+     body{
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow-x: hidden;
+    }
 
     *{
         margin: 0;
@@ -250,8 +255,6 @@
         height: 40px;
         border-radius: 50%;
         border: 0px;
-        background: url('<?= base_url() ?>asset/profil-anon.jpg');
-        background-size: cover;
     }
 
     .avatar-profil{
@@ -323,7 +326,7 @@
 </style>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: fixed;">
-        <a class="navbar-brand" href="#"><img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="" width="80px"> IKAA UNJ</a>
+        <a class="navbar-brand" href="<?= base_url() ?>home"><img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="" width="80px"> IKAA UNJ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -350,20 +353,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('berita') ?>">BERITA</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('kontak') ?>">KONTAK</a>
-                </li>
+                </li> -->
             </ul>
             <?php 
                 $data = $this->session->userdata('email');
                 $data2 = $this->db->get_where('profil', ['email' => $data])->row_array();
+                $data3 = $this->db->get('profil')->result_array();
                 // var_dump($data2);
             ?>
             <?php if(!empty($data)){ ?>
                 <div class="profile">
-                    <div class="icon_wrap">
-                        <button alt="Avatar" class="avatar"></button>
-                    </div>
+                    <?php if(!empty($data2['foto_profil'])){ ?>
+                        <div class="icon_wrap">
+                            <button alt="Avatar" class="avatar" style="background: url('<?= base_url() ?>asset/images/profil/<?= $data2['foto_profil'] ?>'); background-size: cover;"></button>
+                        </div>
+                    <?php }else if(empty($data2['foto_profil'])){ ?>
+                        <div class="icon_wrap">
+                            <button alt="Avatar" class="avatar" style="background: url('<?= base_url() ?>asset/profil-anon.jpg'); background-size: cover;"></button>
+                        </div>
+                    <?php } ?>
 
                     <div class="profile_dd">
                         <ul class="profile_ul">

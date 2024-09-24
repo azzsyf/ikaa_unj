@@ -8,11 +8,13 @@ class Alumni extends CI_Controller {
     }
 	public function index()
 	{
-		// $email = $this->session->userdata('email');
+		$data['email'] = $this->session->userdata('email');
+		// var_dump($email);die;
 		$data['profil'] = $this->db->get('profil')->result_array();
 		// var_dump($data);
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
-		$this->load->view('pages/data_alumni', $data);
+		$this->load->view('pages/alumni/data_alumni', $data);
+		$this->load->view('components/footer');
 	}
 }

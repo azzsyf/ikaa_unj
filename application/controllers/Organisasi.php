@@ -10,6 +10,7 @@ class Organisasi extends CI_Controller {
 	{
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
-		$this->load->view('pages/organisasi');
+		$this->load->view('pages/organisasi/organisasi');
+		$this->load->view('components/footer');
 	}
 }

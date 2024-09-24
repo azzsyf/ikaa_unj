@@ -1,11 +1,5 @@
 
     <style>
-        body{
-            width: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
-        }
-
         .parallax1 {
             padding-top: 200px;
             padding-bottom: 60px;
@@ -85,17 +79,23 @@
         .parallax3 {
             background: rgb(86,198,95);
             background: linear-gradient(0deg, rgba(86,198,95,1) 0%, rgba(255,255,255,1) 50%, rgba(86,198,95,1) 100%);
-            height: 450px;
-            img{
+            height: 550px;
+            /* img{
                 padding-left: 10px;
                 padding-right: 10px;
-            }
+            } */
             #logo-sentral{
                 width: 180px;
             }
             #logo-akp2i{
                 width: 200px;
             }
+        }
+
+        .parallax7{
+            background: url("<?= base_url() ?>asset/Group 45.png") center repeat;
+            background-size: 100% 110%;
+            height: 550px;
         }
 
         .parallax4 {
@@ -118,12 +118,12 @@
                 -webkit-scrollbar {display: none;}
                 column-gap: 2em;
                 .card{
-                    width: 280px;
+                    min-width: 280px;
                     height: 390px;
                     transition: 1s;
                     transition-timing-function: ease-in-out;
                     &:hover{
-                        width: 280px !important;
+                        min-width: 280px !important;
                         height: 390px;
                         -ms-transform: scale(1.1);
                         transform: scale(1.1); 
@@ -138,12 +138,12 @@
                 -webkit-scrollbar {display: none;}
                 column-gap: 2em;
                 .card{
-                    width: 280px;
+                    min-width: 280px;
                     height: 310px;
                     transition: 1s;
                     transition-timing-function: ease-in-out;
                     &:hover{
-                        width: 280px !important;
+                        min-width: 280px !important;
                         height: 310px;
                         -ms-transform: scale(1.1);
                         transform: scale(1.1); 
@@ -278,46 +278,7 @@
                 background-position: 50% 0;
             }
         }
-
-        .parallax6{
-            background: url("asset/Group-1.png") left bottom no-repeat, url("asset/Group.png") right top no-repeat, #006805;
-            background-size: 200px, 200px, cover;
-            height: auto;
-            #headfoot{
-                display: flex; 
-                flex-direction: row;
-                padding-top: 4%; 
-                padding-bottom: 4%; 
-                padding-left: 6%;
-            }
-        }
-
-        footer #footer{
-            display: flex;
-            color: #ffffff;
-            padding-top: 5%;
-            #text-footer{
-                font-size: 16px;
-            }
-        }
-
-        #logoFooter{
-            padding-left: 45px;
-            flex-grow: 1;
-            img{
-                width: 200px;
-            }
-        }
-
-        footer p{
-            color: #ffffff;
-            text-align: center;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 40px;
-        }
+        
         .horizontal_line {
             display: flex;
             justify-content: center;
@@ -2056,6 +2017,31 @@
 
 
     </style>
+    <?php 
+        function tgl_indo($tanggal){
+            $bulan = array (
+                1 =>   'Januari',
+                'Februari',
+                'Maret',
+                'April',
+                'Mei',
+                'Juni',
+                'Juli',
+                'Agustus',
+                'September',
+                'Oktober',
+                'November',
+                'Desember'
+            );
+            $pecahkan = explode('-', $tanggal);
+            
+            // variabel pecahkan 0 = tanggal
+            // variabel pecahkan 1 = bulan
+            // variabel pecahkan 2 = tahun
+        
+            return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+        }
+    ?>
         <div class="parallax1" style="height:20%; text-align: center;" id="beranda">
             <div class="card" id="logo-unj">
                 <div class="card-body">
@@ -2080,20 +2066,72 @@
                     $data1 = $this->db->get('profil')->result_array();
                 ?>
                 <div class="card-body">
-                    <h5 class="card-title" style="font-weight: bold;">Jumlah Alumni Terdaftar</h5>
+                    <h5 class="card-title" style="font-weight: bold; padding-bottom: 10px; padding-top: 25px;">Jumlah Alumni Terdaftar</h5>
                     <h1 class="card-text" style="font-weight: bolder; font-size: x-larger;"><?= count($data1); ?></h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
             </div>
         </div>
         <div class="parallax3">
             <h2 style="text-align: center; padding-top: 5%; font-weight: bolder;">PARTNERSHIP</h2>
             <div class="row" style="padding-left: 6%; padding-right: 6%; padding-top: 5%;">
-                <div class="col-md-12">
-                    <marquee behavior="scroll" loop="infinite"  direction="" scrollamount="15">
+                <div class="col-md-12" align="center">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" style="padding-bottom: 70px;">
+                            <div class="carousel-item active">
+                                <div style="display: flex; width: 900px; justify-content: center; padding-left: 20px; padding-right: 20px;">
+                                    <div>
+                                        <a href="<?= base_url() ?>home/sentral"><img style="width: 130px;" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
+                                    </div>
+                                    <div style="padding-left: 25px;">
+                                        <a href="<?= base_url() ?>home/akp2i"><img style="width: 180px;" src="<?= base_url() ?>asset/LOGO-AKP2I-square.png"></a>
+                                    </div>
+                                    <div style="padding-left: 25px;">
+                                        <a href="<?= base_url() ?>home/digifile"><img style="width: 180px;" src="<?= base_url() ?>asset/logo-df.png"></a>
+                                    </div>
+                                    <div style="padding-left: 25px;">
+                                        <a href="<?= base_url() ?>home"><img style="width: 130px;" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
+                                    </div>
+                                    <div>
+                                        <a href="<?= base_url() ?>home"><img style="width: 130px;" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div style="display: flex; width: 240px; justify-content: center;">
+                                    <img style="width: 180px;" src="<?= base_url() ?>asset/LOGO-AKP2I-square.png" alt="Second slide">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div style="display: flex; width: 240px; justify-content: center;">
+                                    <img style="width: 180px;" src="<?= base_url() ?>asset/logo-df.png" alt="Third slide">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <!-- <marquee behavior="scroll" loop="infinite"  direction="" scrollamount="15">
                         <img src="<?= base_url() ?>asset/Logo Sentral.png" id="logo-sentral" alt="">
                         <img src="<?= base_url() ?>asset/LOGO-AKP2I-square.png" id="logo-akp2i" alt="">
-                    </marquee>
+                    </marquee> -->
+                </div>
+            </div>
+        </div>
+        <div class="parallax7" style="display: flex; justify-content: center; align-items: center;">
+            <div class="card" style=" width: 800px; height: 450px; background: #a6a6a6;">
+                <div class="card-body">
+                    <h3 style="text-align: center; margin: 200px;">Space Video</h3>
                 </div>
             </div>
         </div>
@@ -2104,8 +2142,8 @@
                     <a href="<?= base_url() ?>acara" style="color: #000000; text-decoration: none;">Selengkapnya <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
-            <div class="flex-container" style="padding-left: 6%; padding-right: 6%; padding-bottom: 2%; padding-top: 2%;">
-                <div class="card col-md-4">
+            <div style="display: flex;">
+                <div class="card col-md-4" style="cursor: pointer; width: 280px; height: 390px; margin-top: 3%; margin-left: 6%; margin-right: 2%;">
                     <div class="card-body">
                         <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
@@ -2115,55 +2153,73 @@
                         </div>
                     </div>
                 </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                <div class="flex-container" style="padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
+                <?php foreach($acara as $key) : ?>
+                    <?php if($key['status'] == 1){ ?>
+                        <div class="card col-md-4" style="cursor: pointer; ">
+                            <a href="<?= base_url() ?>acara/view/<?= $key['id']; ?>" style="text-decoration: none;">
+                                <div class="card-body">
+                                    <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" style="height: 220px;" class="card-img-top" alt="...">
+                                    <div style="padding-top: 10px;">
+                                        <p style="text-align: justify; font-weight: bold; weight: 20px;"><?= $key['judul'] ?></p>
+                                        <p class="card-text" style="text-align: justify; font-size: 12px;"><?= $key['deskripsi'] ?></p>
+                                        <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                                    </div>
+                                </div>
+                            </a> 
+                        </div>
+                    <?php } ?>
+                <?php endforeach ?>
+                    <!-- <div class="card col-md-4" style="cursor: pointer;">
+                        <div class="card-body">
+                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
+                            <div style="padding-top: 10px;">
+                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                    <div class="card col-md-4">
+                        <div class="card-body">
+                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
+                            <div style="padding-top: 10px;">
+                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                    <div class="card col-md-4">
+                        <div class="card-body">
+                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
+                            <div style="padding-top: 10px;">
+                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                    <div class="card col-md-4">
+                        <div class="card-body">
+                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
+                            <div style="padding-top: 10px;">
+                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                            <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                    <div class="card col-md-4">
+                        <div class="card-body">
+                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
+                            <div style="padding-top: 10px;">
+                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
+                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                            </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             
@@ -2173,8 +2229,8 @@
                     <a href="<?= base_url() ?>berita" style="color: #000000; text-decoration: none;">Selengkapnya <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
-            <div class="flex-containerBerita" style="padding-left: 6%; padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
-                <div class="card col-md-4">
+            <div style="display: flex;">
+                <div class="card col-md-4" style="width: 280px; height: 310px; margin-left: 6%; margin-top: 3%; margin-right: 2%;">
                     <div class="card-body">
                         <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
@@ -2183,50 +2239,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                        </div>
+                <div class="flex-containerBerita" style="padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
+                <?php foreach($berita as $key) : ?>
+                    <div class="card col-md-4" style="cursor: pointer;">
+                        <a href="<?= base_url() ?>berita/view/<?= $key['id']; ?>" style="text-decoration: none;">
+                            <div class="card-body">
+                                <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" style="width: 280px; height: 145px;" class="card-img-top" alt="...">
+                                <div style="padding-top: 10px;">
+                                    <p style="text-align: justify; font-weight: bold; weight: 20px;"><?= $key['judul'] ?></p>
+                                    <!-- <p class="card-text" style="text-align: justify; font-size: 12px;"><?= $key['deskripsi'] ?></p> -->
+                                    <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                                </div>
+                            </div>
+                        </a> 
                     </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card-body">
-                        <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
-                        <div style="padding-top: 10px;">
-                            <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                        </div>
-                    </div>
+                <?php endforeach ?>
                 </div>
             </div>
         </div>
@@ -2241,8 +2268,9 @@
             </div>
             <div class="card div-card">
                 <div class="card-body">
-                    <h5 style="text-align: justify;"><strong>Buat hidup lebih mudah, satu platform beragam informasi</strong></h5>
-                    <p style="text-align: justify;">Bergabung dengan ikatan alumni akuntansi, temukan informasi, pekerjaan dengan mudah, tepat, dan terpercaya bersama kami!</p>
+                    <h5 style="text-align: justify;"><strong>Mari bergabung untuk berjejaring dalam platform IKAA UNJ</strong></h5>
+                    <p style="text-align: justify;">Dengan kamu bergabung dalam platform ini kamu dapat mencari atau memberikan informasi 
+                        seputar lowongan kerja, pelatihan, bisnis, acara, berita terkini dan program-program kerjasama lainnya.</p>
                     <div class="row">
                     <?php 
                         $data = $this->session->userdata('email');
@@ -2255,102 +2283,11 @@
                     <?php }else{ ?>
                         <div class="col-sm-12">
                             <a class="btn btn-light" href="<?= base_url()?>registrasi" id="btn1">Daftar Sekarang</a>
-                            <button class="btn btn-outline-light" id="btn2">Selengkapnya</button>
+                            <!-- <button class="btn btn-outline-light" id="btn2">Selengkapnya</button> -->
                         </div>
                     <?php } ?>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="parallax6">
-            <div id="headfoot">
-                <div style="color: #ffffff; flex-grow: .9;">
-                    <h3>Daftarkan dirimu Dan Belajar Bersama!</h3>
-                </div>
-                <div>
-                    <button class="btn btn-light" style="color: green; padding: 5px 30px;" type="button">Text</button>
-                    <button class="btn btn-outline-light" style="padding: 5px 30px;" type="button">Text</button>
-                </div>
-            </div>
-            <div class="horizontal_line">
-                <div class="card">
-                    
-                </div>
-            </div>
-            <footer>
-                <div id="footer">
-                    <div class="card" style="background: transparent; border: 0px; width: 350px;">
-                        <div class="card-body">
-                            <div id="logoFooter">
-                                <img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div id="text-footer" style="flex-grow: .5;">
-                        <div class="card" style="background: transparent; border: 0px;">
-                            <div class="card-body">
-                                <div style="color: #fff">
-                                    Tentang Kami
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="text-footer" style="flex-grow: .5;">
-                        <div class="card" style="background: transparent; border: 0px;">
-                            <div class="card-body">
-                                <div style="color: #fff">
-                                    Tautan
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="text-footer" style="flex-grow: .5;">
-                        <div class="card" style="background: transparent; border: 0px;">
-                            <div class="card-body">
-                                <div style="color: #fff">
-                                    Beranda
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="text-footer" style="flex-grow: .5;">
-                        <div class="card" style="background: transparent; border: 0px;">
-                            <div class="card-body">
-                                <div style="color: #fff">
-                                    Tentang Kami
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="text-footer" style="flex-grow: .8;">
-                        <div class="card" style="background: transparent; border: 0px;">
-                            <div class="card-body">
-                                <div style="color: #fff">
-                                    Kontak Kami
-                                </div>
-                                <div>
-                                    <span style="color: #fff;">Kantor Sekretariat</span>
-                                </div>
-                                <div>
-                                    <span style="color: #fff;">Universitas Negeri jakarta</span>
-                                </div>
-                                <div>
-                                    <a href="https://www.instagram.com/ikaakuntansiunj" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-instagram"> </i> ikaakuntansiunj</a>
-                                </div>
-                                <div class="mail">
-                                    <a href="https://haloalumni@ikaaunj.id" style="color: #bcbcbc; hover: color: #fff; text-decoration: none;"><i class="fas fa-envelope"> </i> haloalumni@ikaaunj.id</a>
-                                </div>
-                                <div>
-                                    <a href="https://wa.me/" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-whatsapp"> </i> +6285777888999</a>
-                                </div>
-                                <div>
-                                    <a href="https://www.tiktok.com" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-tiktok"> </i> ikaa.unj_official</a> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p>COPYRIGHT &copy; 2024 IKATAN ALUMNI AKUNTANSI UNIVERSITAS NEGERI JAKARTA</p>
-            </footer>
         </div>
         
