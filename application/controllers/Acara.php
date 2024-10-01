@@ -5,14 +5,17 @@ class Acara extends CI_Controller {
 	function __construct()
     {
         parent::__construct();  
-		$this->load->model('m_acara');
+		$this->load->model('m_acara', 'acara');
     }
 	public function index()
 	{
 		$email = $this->session->userdata('email');
-		$data['user'] = $this->m_acara->getsDataUsers($email);
+		$data['user'] = $this->acara->getsDataUsers($email);
 		$data['acara'] = $this->db->get('acara')->result_array();
-		// var_dump($data['acara']);
+		$data['dataKategori'] = $this->input->get('kategori');
+		$data['kategori'] = $this->acara->getsKategori();
+
+		// var_dump($data['dataKategori']);
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
 		$this->load->view('pages/acara/acara', $data);
@@ -22,6 +25,7 @@ class Acara extends CI_Controller {
 	function save_acara()
 	{
 		if(!empty($this->input->post())){
+			$kategori = $this->input->post('kategori');
 			$judul = $this->input->post('judul');
 			$deskripsi = $this->input->post('deskripsi');
 			// $gambar = $this->input->post('gambar');
@@ -46,6 +50,7 @@ class Acara extends CI_Controller {
 					}else{
 						$fileData = $this->upload->data(); 
 						$data = [
+							"kategori" => strtoupper($kategori),
 							"judul" => $judul,
 							"deskripsi" => $deskripsi,
 							"gambar" => $fileData['file_name'],
@@ -81,7 +86,7 @@ class Acara extends CI_Controller {
 	function add_acara()
 	{
 		$email = $this->session->userdata('email');
-		$data['user'] = $this->m_acara->getsDataUsers($email);
+		$data['user'] = $this->acara->getsDataUsers($email);
 		$data['loker'] = $this->db->get('loker')->result_array();
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
@@ -90,7 +95,7 @@ class Acara extends CI_Controller {
 
 	function view(){
 		$id = $this->uri->segment(3);
-		$data['acaraID'] = $this->m_acara->tampil_data($id);
+		$data['acaraID'] = $this->acara->tampil_data($id);
 		// var_dump($data);die;
 
 		$this->load->view('components/header');
@@ -133,7 +138,7 @@ class Acara extends CI_Controller {
 	function edit()
 	{
 		$id = $this->uri->segment(3);
-		$data['acara'] = $this->m_acara->getsData($id);
+		$data['acara'] = $this->acara->getsData($id);
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
 		$this->load->view('pages/acara/edit_acara', $data);
@@ -142,6 +147,7 @@ class Acara extends CI_Controller {
 	function save_edit()
 	{
 		$id = $this->input->post('id');
+		$kategori = $this->input->post('kategori');
 		$judul = $this->input->post('judul');
 		$deskripsi = $this->input->post('deskripsi');
 
@@ -167,6 +173,7 @@ class Acara extends CI_Controller {
 					$fileData = $this->upload->data(); 
 					$where = ['id' => $id];
 					$data = [
+						"kategori" => strtoupper($kategori),
 						"judul" => $judul,
 						"deskripsi" => $deskripsi,
 						"gambar" => $fileData['file_name'],

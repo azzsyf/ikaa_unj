@@ -50,6 +50,7 @@ Class M_Berita extends CI_Model
         if(!empty($data)){
             $result = [
                 "id" => $data['id'],
+                "kategori" => $data['kategori'],
                 "judul" => $data['judul'],
                 "deskripsi" => $data['deskripsi'],
                 "gambar" => $data['gambar'],
@@ -57,6 +58,15 @@ Class M_Berita extends CI_Model
         }
         return $result;
 	}
+
+    function getsKategori()
+    {
+        $this->db->select('kategori');
+        $this->db->distinct();
+        $this->db->from('berita');
+        $data = $this->db->get()->result_array();
+        return $data;
+    }
 
     // function search($keyword)
     // {

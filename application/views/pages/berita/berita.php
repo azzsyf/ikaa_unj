@@ -174,31 +174,60 @@
                     <?php }else if($user['role_id'] == 0){?>
                         <?php if(!empty($data2)){ ?>
                             <div class="oke">
-                                <?php foreach ($berita as $key) { ?>
-                                    <div class="flex" style="display: flex;">
-                                        <div class="card" style="flex: 10px; border: 0px; background: transparent;">
-                                            <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 200px; height: 200px; padding-top: 20px;">
-                                        </div>
-                                        <div class="card" style="flex: 90px; border: 0px; margin-left: 50px;">
+                                <?php if($dataKategori == null) { ?>
+                                    <?php foreach ($berita as $key) : ?>
+                                        <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
                                             <div class="card-body">
-                                                <h5><b><?= $key['judul']; ?></b></h5>
-                                                <div class="row" style="padding-top: 10px; font-family: arial;">
-                                                    <div class="col-md-12" style="font-size: 15px;">
-                                                        <i class="fas fa-map-marker-alt"></i> <?= $key['deskripsi']; ?>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div>
+                                                            <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                                        </div>
+                                                        <div>
+                                                            <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                        </div>
+                                                        <div style="padding-top: 5px; padding-bottom: 5px;">
+                                                            <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
+                                                        </div>
+                                                        <div style="padding-top: 20px;">
+                                                            <a href="<?= base_url() ?>berita/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
-                                        <div class="card" style="flex: 10px; border: 0px; margin-left: 130px;">
-                                            <div class="card-body">
-                                                <p><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                                    <?php endforeach ?>
+                                <?php }else{ ?>
+                                    <?php foreach ($berita as $key) : ?>
+                                        <?php if($key['kategori'] == $dataKategori) { ?>
+                                            <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div>
+                                                                <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                                            </div>
+                                                            <div>
+                                                                <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                            </div>
+                                                            <div style="padding-top: 5px; padding-bottom: 5px;">
+                                                                <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
+                                                            </div>
+                                                            <div style="padding-top: 20px;">
+                                                                <a href="<?= base_url() ?>berita/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div style="padding-top: 10px; padding-bottom: 10px;">
-                                        <a href="<?= base_url() ?>berita/view/<?= $key['id']; ?>" class="btn btn-success" style="width: 100%;">Selengkapnya</a>
-                                    </div>
+                                        <?php } ?>
+                                    <?php endforeach ?>
                                 <?php } ?>
                             </div>
                         <?php }else{ ?>
@@ -207,29 +236,63 @@
                     <?php } ?>
                 <?php }else if(empty($data)){ ?>
                     <?php if(!empty($berita)){ ?>
-                        <?php foreach($berita as $key) : ?>
-                            <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
+                        <div class="oke">
+                                <?php if($dataKategori == null) { ?>
+                                    <?php foreach ($berita as $key) : ?>
+                                        <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div>
+                                                            <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                                        </div>
+                                                        <div>
+                                                            <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                        </div>
+                                                        <div style="padding-top: 5px; padding-bottom: 5px;">
+                                                            <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
+                                                        </div>
+                                                        <div style="padding-top: 20px;">
+                                                            <a href="<?= base_url() ?>berita/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-md-9">
-                                            <div>
-                                                <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                    <?php endforeach ?>
+                                <?php }else{ ?>
+                                    <?php foreach ($berita as $key) : ?>
+                                        <?php if($key['kategori'] == $dataKategori) { ?>
+                                            <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div>
+                                                                <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                                            </div>
+                                                            <div>
+                                                                <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                            </div>
+                                                            <div style="padding-top: 5px; padding-bottom: 5px;">
+                                                                <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
+                                                            </div>
+                                                            <div style="padding-top: 20px;">
+                                                                <a href="<?= base_url() ?>berita/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
-                                            </div>
-                                            <div style="padding-top: 5px; padding-bottom: 5px;">
-                                                <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
-                                            </div>
-                                            <button style="background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <?php } ?>
+                                    <?php endforeach ?>
+                                <?php } ?>
                             </div>
-                        <?php endforeach ?>
                     <?php }else if(empty($berita)){ ?>
                         <div class="flex" style="padding-top: 20px;">
                             <div class="card" style="flex: 100%; border: 0px; background-color: #f1f1f1;">
@@ -246,21 +309,25 @@
                 <?php if(!empty($data)){ ?>
                     <div class="row">
                         <div class="col-md-6">
-                            <span style="font-size: large;">Berita Terbaru</span>
+                            <span style="font-size: large;">Kategori Berita</span>
                         </div>
                         <div class="col-md-6">
                             <a href="<?= base_url() ?>berita/add_berita" class="btn btn-primary">Bagikan Berita <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                     <div style="padding-top: 20px;">
-                        <?php foreach ($berita as $key){ ?>
-                            <li><a href="#"><?= $key['judul']; ?></a></li>
+                        <?php foreach ($kategori as $key){ ?>
+                            <div>
+                                <i class="fas fa-chevron-right"></i> <a href="<?= base_url() ?>berita?kategori=<?= $key['kategori'] ?>" id="" style="text-decoration: none;"><?= $key['kategori'] ?></a>
+                            </div>
                         <?php } ?>
                     </div>
                 <?php }else{ ?>
-                    <h3>Acara Terbaru</h3>
-                    <?php foreach ($berita as $key){ ?>
-                        <li><a href="#"><?= $key['judul']; ?></a></li>
+                    <h3>Kategori Berita</h3>
+                    <?php foreach ($kategori as $key){ ?>
+                        <div>
+                            <i class="fas fa-chevron-right"></i> <a href="<?= base_url() ?>berita?kategori=<?= $key['kategori'] ?>" id="" style="text-decoration: none;"><?= $key['kategori'] ?></a>
+                        </div>
                     <?php } ?>
                 <?php } ?>
             </div>

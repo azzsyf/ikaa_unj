@@ -1,10 +1,20 @@
 <div class="container">
     <div style="padding-top: 150px;">
-        <h1>Edit Acara</h1>
+        <div style="padding-bottom: 20px;">
+            <a href="<?= base_url() ?>berita/add_berita" style="text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-left"></i> Kembali</a>
+        </div>
+        <h1>Edit Berita</h1>
         <div class="container" style="padding-bottom: 20px; border: solid 1px #bcbcbc; border-radius: 12px; padding: 20px;">
             <form id="form-edit-berita" method="post" enctype="multipart/form-data">
                 <div class="mb-3 row">
                     <input type="hidden" id="id" name="id" value="<?= $berita['id'] ?>"> 
+                    <label for="kategori" class="col-sm-2 col-form-label">Kategori <span style="color:red;">*</span></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="kategori" name="kategori" value="<?= $berita['kategori'] ?>">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <!-- <input type="hidden" id="id" name="id" value="<?= $berita['id'] ?>">  -->
                     <label for="judul" class="col-sm-2 col-form-label">Judul <span style="color:red;">*</span></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="judul" name="judul" value="<?= $berita['judul'] ?>">
@@ -19,8 +29,8 @@
                 <div class="mb-3 row">
                     <label for="gambar" class="col-sm-2 col-form-label">Flayer <span style="color:red;">*</span></label>
                     <div class="col-sm-10">
+                        <img src="<?= base_url() ?>asset/images/berita/<?= $berita['gambar'] ?>" width="150px;" style="padding-bottom: 20px;" alt="">
                         <input type="file" class="form-control" id="gambar" name="gambar" value="">
-                        <img src="<?= base_url() ?>asset/images/berita/<?= $berita['gambar'] ?>" width="150px;" style="padding-top: 20px;" alt="">
                     </div>
                 </div>
                 <div align="right">

@@ -108,7 +108,7 @@
         <div class="row">
             <div class="side">
             <div style="padding-bottom: 20px;">
-                <a href="<?= base_url() ?>karir" style="text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-left"></i> Kembali</a>
+                <a href="<?= base_url() ?>acara" style="text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-left"></i> Kembali</a>
             </div>
                 <!-- <div class="title"><h3 style=" padding: 20px; border-bottom-right-radius: 20px; border-left: solid 5px yellow;"><b>Lowongan Kerja</b></h3></div> -->
                 <h4><b><?= $acaraID['judul']; ?></b></h4>

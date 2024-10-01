@@ -28,7 +28,7 @@
     }
 </style>
 <div class="section2">
-    <div class="container" style="background-color: #fff; height: auto; padding-top: 50px;">
+    <div class="container" style="background-color: #fff; height: auto; padding-top: 30px;">
         <div>
             <a href="<?= base_url() ?>karir" style="text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-left"></i> Kembali</a>
         </div>
@@ -46,7 +46,7 @@
                 <?php if(!empty($data)){ ?>
                     <?php if($user['role_id'] == 1){ ?>
                         <div class="row">
-                            <div class="col-md-12" style="border: #ebebeb solid 1px;">
+                            <div style="border: #ebebeb solid 1px;">
                                 <div class="card-inner">
                                     <table id="example" class="table table-striped" style="width:100%; font-size: 15px;">
                                         <thead>
@@ -65,16 +65,16 @@
                                             <?php $no = 1; ?>
                                             <?php foreach($loker as $key) { ?>
                                                 <tr>
-                                                    <td class="col-md-1"><?= $no++; ?></td>
-                                                    <td class="col-md-2"><?= $key['nama_perusahaan']; ?></td>
-                                                    <td class="col-md-2"><?= $key['alamat']; ?></td>
-                                                    <td class="col-md-1"><?= $key['divisi']; ?></td>
-                                                    <td class="col-md-3"><?= $key['syarat']; ?></td>
-                                                    <td class="col-md-1">
+                                                    <td><?= $no++; ?></td>
+                                                    <td><?= $key['nama_perusahaan']; ?></td>
+                                                    <td><?= $key['alamat']; ?></td>
+                                                    <td><?= $key['divisi']; ?></td>
+                                                    <td><?= $key['syarat']; ?></td>
+                                                    <td>
                                                         <img src="<?= base_url() ?>asset/images/karir/<?= $key['gambar']; ?>" width="100px" alt="">
                                                     </td>
                                                     <td><?= date("d-m-Y",strtotime($key['date_created'])); ?></td>
-                                                    <td class="col-md-2">
+                                                    <td>
                                                         <a href="<?= base_url() ?>karir/delete/<?= $key['id'] ?>" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></a>
                                                         <!-- <a href="<?= base_url() ?>karir/edit/<?= $key['id'] ?>" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="fas fa-pen"></i></a> -->
                                                     </td>
@@ -89,9 +89,9 @@
                     <?php if($user['role_id'] == 0){ ?>
                         <?php if(!empty($data2)){ ?>
                             <div class="row">
-                                <div class="col-md-12" style="border: #ebebeb solid 1px;">
+                                <div style="border: #ebebeb solid 1px;  font-size: 13px;">
                                     <div class="card-inner">
-                                        <table id="example" class="table table-striped" style="width:100%; font-size: 15px;">
+                                        <table id="example" class="table table-striped" >
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -100,7 +100,7 @@
                                                     <th>Divisi</th>
                                                     <th>Syarat</th>
                                                     <th>Flyer</th>
-                                                    <th>Tanggal dibuat</th>
+                                                    <!-- <th>Tanggal dibuat</th> -->
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -114,12 +114,12 @@
                                                         <td class="col-md-1"><?= $key['divisi']; ?></td>
                                                         <td class="col-md-3"><?= $key['syarat']; ?></td>
                                                         <td class="col-md-1">
-                                                            <img src="<?= base_url() ?>asset/images/karir/<?= $key['gambar']; ?>" width="100px;" alt="">
+                                                            <a href=""><img src="<?= base_url() ?>asset/images/karir/<?= $key['gambar']; ?>" width="50;" alt=""></a>
                                                         </td>
-                                                        <td><?= date("d-m-Y",strtotime($key['date_created'])); ?></td>
-                                                        <td class="col-md-2">
-                                                            <a href="<?= base_url() ?>karir/delete/<?= $key['id'] ?>"class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></a>
+                                                        <!-- <td><?= date("d-m-Y",strtotime($key['date_created'])); ?></td> -->
+                                                        <td>
                                                             <a href="<?= base_url() ?>karir/edit/<?= $key['id'] ?>"class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="fas fa-pen"></i></a>
+                                                            <a href="<?= base_url() ?>karir/delete/<?= $key['id'] ?>"class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hapus"><i class="fas fa-trash" style="width: 15px;"></i></a>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
@@ -215,6 +215,10 @@
                     </div>
                     <form method="post" action="" id="form-loker" enctype="multipart/form-data">
                         <div class="mb-3">
+                            <label for="kategori" class="form-label">Kategori <span style="color:red;">*</span></label>
+                            <input type="text" class="form-control" id="kategori" name="kategori" required>
+                        </div>
+                        <div class="mb-3">
                             <label for="nama_perusahaan" class="form-label">Nama Perusahaan <span style="color:red;">*</span></label>
                             <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" required>
                         </div>
@@ -240,9 +244,9 @@
                     </form>
                 <?php }else{ ?>
                     <h3>Loker Terbaru</h3>
-                    <!-- <?php foreach ($loker as $key){ ?>
+                    <?php foreach ($loker as $key){ ?>
                         <li><a href="#"><?= $key['divisi']; ?>, <?= $key['nama_perusahaan']; ?></a></li>
-                    <?php } ?> -->
+                    <?php } ?>
                 <?php } ?>
             </div>
         </div>

@@ -50,6 +50,7 @@ Class M_Acara extends CI_Model
         if(!empty($data)){
             $result = [
                 "id" => $data['id'],
+                "kategori" => $data['kategori'],
                 "judul" => $data['judul'],
                 "deskripsi" => $data['deskripsi'],
                 "gambar" => $data['gambar'],
@@ -59,14 +60,12 @@ Class M_Acara extends CI_Model
         return $result;
 	}
 
-    // function search($keyword)
-    // {
-    //     if(!$keyword){
-    //         return null;
-    //     }
-    //     $this->db->like('title', $keyword);
-    //     $this->db->or_like('content', $keyword);
-    //     $query = $this->db->get($this->_table);
-    //     return $query->result();
-    // }
+    function getsKategori()
+    {
+        $this->db->select('kategori');
+        $this->db->distinct();
+        $this->db->from('acara');
+        $data = $this->db->get()->result_array();
+        return $data;
+    }
 }

@@ -14,6 +14,7 @@ Class M_Karir extends CI_Model
         if(!empty($data)){
             $result = [
                 "id" => $data['id'],
+                "kategori" => $data['kategori'],
                 "divisi" => $data['divisi'],
                 "nama_perusahaan" => $data['nama_perusahaan'],
                 "alamat" => $data['alamat'],
@@ -42,7 +43,7 @@ Class M_Karir extends CI_Model
         return $result;
 	}
 
-    function getsData($id){
+    function getsDataByID($id){
         $result = [];
         $where = ['id'=>$id];
         $this->db->select('*');
@@ -52,6 +53,7 @@ Class M_Karir extends CI_Model
         if(!empty($data)){
             $result = [
                 "id" => $data['id'],
+                "kategori" => $data['kategori'],
                 "nama_perusahaan" => $data['nama_perusahaan'],
                 "alamat" => $data['alamat'],
                 "divisi" => $data['divisi'],
@@ -62,14 +64,12 @@ Class M_Karir extends CI_Model
         return $result;
 	}
 
-    // function search($keyword)
-    // {
-    //     if(!$keyword){
-    //         return null;
-    //     }
-    //     $this->db->like('title', $keyword);
-    //     $this->db->or_like('content', $keyword);
-    //     $query = $this->db->get($this->_table);
-    //     return $query->result();
-    // }
+    function getsKategori()
+    {
+        $this->db->select('kategori');
+        $this->db->distinct();
+        $this->db->from('loker');
+        $data = $this->db->get()->result_array();
+        return $data;
+    }
 }

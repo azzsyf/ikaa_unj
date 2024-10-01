@@ -8,6 +8,13 @@
             <form id="form-edit-acara" method="post" enctype="multipart/form-data">
                 <div class="mb-3 row">
                     <input type="hidden" id="id" name="id" value="<?= $acara['id'] ?>"> 
+                    <label for="kategori" class="col-sm-2 col-form-label">Kategori <span style="color:red;">*</span></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="kategori" name="kategori" value="<?= $acara['kategori'] ?>">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <!-- <input type="hidden" id="id" name="id" value="<?= $acara['id'] ?>">  -->
                     <label for="judul" class="col-sm-2 col-form-label">Judul <span style="color:red;">*</span></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="judul" name="judul" value="<?= $acara['judul'] ?>">
@@ -19,13 +26,13 @@
                         <textarea type="text" class="form-control" id="deskripsi" name="deskripsi"><?= $acara['deskripsi'] ?></textarea>
                     </div>
                 </div>
-                <!-- <div class="mb-3 row">
+                <div class="mb-3 row">
                     <label for="gambar" class="col-sm-2 col-form-label">Flayer <span style="color:red;">*</span></label>
                     <div class="col-sm-10">
                         <img src="<?= base_url() ?>asset/images/acara/<?= $acara['gambar'] ?>" width="150px;" style="padding-bottom: 20px;" alt="">
                         <input type="file" class="form-control" id="gambar" name="gambar" value="">
                     </div>
-                </div> -->
+                </div>
                 <div align="right">
                     <button class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
                 </div>
