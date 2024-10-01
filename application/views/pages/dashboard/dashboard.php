@@ -2242,8 +2242,8 @@
                 <div class="flex-containerBerita" style="padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
                 <?php foreach($berita as $key) : ?>
                     <div class="card col-md-4" style="cursor: pointer;">
-                        <a href="<?= base_url() ?>berita/view/<?= $key['id']; ?>" style="text-decoration: none;">
                             <div class="card-body">
+                                <a href="<?= base_url() ?>berita/view/<?= $key['id']; ?>" style="text-decoration: none;">
                                 <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" style="width: 280px; height: 145px;" class="card-img-top" alt="...">
                                 <div style="padding-top: 10px;">
                                     <p style="text-align: justify; font-weight: bold; weight: 20px;"><?= $key['judul'] ?></p>

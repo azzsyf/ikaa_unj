@@ -7,7 +7,7 @@ class Home extends CI_Controller {
     {
         parent::__construct();
 		$this->load->model('M_Oauth', 'oauth');
-		$this->load->model('Generate_Code');
+		$this->load->model('Generate_Code', 'generate_code');
     }
 	public function index()
 	{
@@ -38,7 +38,7 @@ class Home extends CI_Controller {
 					$user = [
 						'email' => $email,
 					];
-					$id_anggota = $this->Generate_Code->CreateCode();
+					$id_anggota = $this->generate_code->CreateCode();
 					$checkID = $this->db->get_where('profil', ['id_anggota' => $id_anggota])->row_array();
 					if(!empty($checkID)){
 						do {
