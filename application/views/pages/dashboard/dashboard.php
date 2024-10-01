@@ -2149,7 +2149,7 @@
                         <div style="padding-top: 10px;">
                             <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
                             <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</p>
+                            <p class="post-date" style="color: #a6a6a6; font-size: 12px; position: absolute; bottom: -8px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</p>
                         </div>
                     </div>
                 </div>
@@ -2163,63 +2163,13 @@
                                     <div style="padding-top: 10px;">
                                         <p style="text-align: justify; font-weight: bold; weight: 20px;"><?= $key['judul'] ?></p>
                                         <p class="card-text" style="text-align: justify; font-size: 12px;"><?= $key['deskripsi'] ?></p>
-                                        <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                                        <p class="post-date" style="color: #a6a6a6; font-size: 12px; position: absolute; bottom: -8px;"><i class="far fa-clock" style="margin-right: 5px;"></i><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
                                     </div>
                                 </div>
                             </a> 
                         </div>
                     <?php } ?>
                 <?php endforeach ?>
-                    <!-- <div class="card col-md-4" style="cursor: pointer;">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-4">
-                        <div class="card-body">
-                            <img src="<?= base_url() ?>asset/flayer.jpg" class="card-img-top" alt="...">
-                            <div style="padding-top: 10px;">
-                                <p style="text-align: justify; font-weight: bold;">Nama Acara</p>
-                                <p class="card-text" style="text-align: justify; font-size: 12px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             
@@ -2235,7 +2185,7 @@
                         <img src="<?= base_url() ?>asset/news.jpg" class="card-img-top" alt="...">
                         <div style="padding-top: 10px;">
                             <p class="card-text" style="text-align: justify; font-weight: bold;">Some quick example text to build on the card title and make up.</p>
-                            <span class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
+                            <span class="post-date" style="color: #a6a6a6; font-size: 12px; position: absolute; bottom: 8px;"><i class="far fa-clock" style="margin-right: 5px;"></i>01 Mei 2024 - 01 Mei 2025</span>
                         </div>
                     </div>
                 </div>
@@ -2243,12 +2193,11 @@
                 <?php foreach($berita as $key) : ?>
                     <div class="card col-md-4" style="cursor: pointer;">
                             <div class="card-body">
-                                <a href="<?= base_url() ?>berita/view/<?= $key['id']; ?>" style="text-decoration: none;">
-                                <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" style="width: 280px; height: 145px;" class="card-img-top" alt="...">
+                                <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" style="width: 230px; height: 145px;" class="card-img-top" alt="...">
                                 <div style="padding-top: 10px;">
                                     <p style="text-align: justify; font-weight: bold; weight: 20px;"><?= $key['judul'] ?></p>
                                     <!-- <p class="card-text" style="text-align: justify; font-size: 12px;"><?= $key['deskripsi'] ?></p> -->
-                                    <p class="post-date" style="color: #a6a6a6; font-size: 12px;"><i class="far fa-clock" style="margin-right: 5px;"></i><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
+                                    <p class="post-date" style="color: #a6a6a6; font-size: 12px; position: absolute; bottom: -8px;"><i class="far fa-clock" style="margin-right: 5px;"></i><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
                                 </div>
                             </div>
                         </a> 

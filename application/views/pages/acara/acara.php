@@ -200,31 +200,64 @@
                         <div class="title"><h3><b>Daftar Acara</b></h3></div>            
                         <?php if(!empty($data2)){ ?>
                             <div class="oke">
-                                <?php foreach ($acara as $key) { ?>
-                                    <div class="flex" style="display: flex;">
-                                        <div class="card" style="flex: 10px; border: 0px; background: transparent;">
-                                            <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" alt="" style="width: 200px; height: 200px; padding-top: 20px;">
-                                        </div>
-                                        <div class="card" style="flex: 90px; border: 0px; margin-left: 50px;">
-                                            <div class="card-body">
-                                                <h5><b><?= $key['judul']; ?></b></h5>
-                                                <div class="row" style="padding-top: 10px; font-family: arial;">
-                                                    <div class="col-md-12" style="font-size: 15px;">
-                                                        <i class="fas fa-map-marker-alt"></i> <?= $key['deskripsi']; ?>
+                                <?php if($dataKategori == null){ ?>
+                                    <?php foreach ($acara as $key) { ?>
+                                        <?php if($key['status'] == 1) { ?>
+                                            <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div>
+                                                                <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                                            </div>
+                                                            <div>
+                                                                <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                            </div>
+                                                            <div style="padding-top: 5px; padding-bottom: 5px;">
+                                                                <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
+                                                            </div>
+                                                            <div style="padding-top: 20px;">
+                                                                <a href="<?= base_url() ?>acara/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                        </div>
-                                        <div class="card" style="flex: 10px; border: 0px; margin-left: 130px;">
-                                            <div class="card-body">
-                                                <p><?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style="padding-top: 10px; padding-bottom: 10px;">
-                                        <a href="<?= base_url() ?>acara/view/<?= $key['id']; ?>" class="btn btn-success" style="width: 100%;">Selengkapnya</a>
-                                    </div>
+                                        <?php } ?>
+                                    <?php } ?>
+                                <?php }else{ ?>
+                                    <?php foreach ($acara as $key) { ?>
+                                        <?php if($key['status'] == 1) { ?>
+                                            <?php if($key['kategori'] == $dataKategori){ ?>
+                                                <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <div>
+                                                                    <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                                                </div>
+                                                                <div>
+                                                                    <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                                </div>
+                                                                <div style="padding-top: 5px; padding-bottom: 5px;">
+                                                                    <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
+                                                                </div>
+                                                                <div style="padding-top: 20px;">
+                                                                    <a href="<?= base_url() ?>acara/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                        <?php } ?>
+                                    <?php } ?>
                                 <?php } ?>
                             </div>
                         <?php }else{ ?>
@@ -255,31 +288,65 @@
                 <?php }else if(empty($data)){ ?>
                     <div class="title"><h3><b>Semua Acara</b></h3></div>            
                     <?php if(!empty($acara)){ ?>
-                        <?php foreach($acara as $key) : ?>
-                            <?php if($key['status'] == 1) { ?>
-                                <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
-                                            </div>
-                                            <div class="col-md-9">
-                                                <div>
-                                                    <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                        <?php if($dataKategori == null){ ?>
+                            <?php foreach($acara as $key) : ?>
+                                <?php if($key['status'] == 1) { ?>
+                                    <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
                                                 </div>
-                                                <div>
-                                                    <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                <div class="col-md-9">
+                                                    <div>
+                                                        <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                                    </div>
+                                                    <div>
+                                                        <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                    </div>
+                                                    <div style="padding-top: 5px; padding-bottom: 5px;">
+                                                        <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
+                                                    </div>
+                                                    <div style="padding-top: 20px;">
+                                                        <a href="<?= base_url() ?>acara/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
+                                                    </div>
                                                 </div>
-                                                <div style="padding-top: 5px; padding-bottom: 5px;">
-                                                    <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
-                                                </div>
-                                                <button style="background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            <?php } ?>
-                        <?php endforeach ?>
+                                <?php } ?>
+                            <?php endforeach ?>
+                        <?php }else{ ?>
+                            <?php foreach($acara as $key) : ?>
+                                <?php if($key['status'] == 1) { ?>
+                                    <?php if($key['kategori'] == $dataKategori){ ?>
+                                        <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <img src="<?= base_url() ?>asset/images/acara/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div>
+                                                            <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
+                                                        </div>
+                                                        <div>
+                                                            <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
+                                                        </div>
+                                                        <div style="padding-top: 5px; padding-bottom: 5px;">
+                                                            <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
+                                                        </div>
+                                                        <div style="padding-top: 20px;">
+                                                            <a href="<?= base_url() ?>acara/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php endforeach ?>
+                        <?php } ?>
                     <?php }else if(empty($acara)){ ?>
                         <div class="flex" style="padding-top: 20px;">
                             <div class="card" style="flex: 100%; border: 0px; background-color: #f1f1f1;">
@@ -296,24 +363,32 @@
                 <?php if(!empty($data)){ ?>
                     <div class="row">
                         <div class="col-md-6">
-                            <span style="font-size: large;">Acara Terbaru</span>
+                            <span style="font-size: large;">Kategori Acara</span>
                         </div>
                         <div class="col-md-6">
                             <a href="<?= base_url() ?>acara/add_acara" class="btn btn-primary">Bagikan Acara <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                     <div style="padding-top: 20px;">
-                        <?php foreach ($acara as $key){ ?>
-                            <li><a href="#"><?= $key['judul']; ?></a></li>
+                        <?php foreach ($kategori as $key){ ?>
+                            <div>
+                                <i class="fas fa-chevron-right"></i> <a href="<?= base_url() ?>acara?kategori=<?= $key['kategori'] ?>" id="" style="text-decoration: none;"><?= $key['kategori'] ?></a>
+                            </div>
                         <?php } ?>
                     </div>
                 <?php }else{ ?>
-                    <!-- <div class="main"> -->
-                        <h3>Acara Terbaru</h3>
-                        <?php foreach($acara as $key){ ?>
-                            <li><a href="p"><?= $key['judul']; ?></a></li>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span style="font-size: large;">Kategori Acara</span>
+                        </div>
+                    </div>
+                    <div style="padding-top: 20px;">
+                        <?php foreach ($kategori as $key){ ?>
+                            <div>
+                                <i class="fas fa-chevron-right"></i> <a href="<?= base_url() ?>acara?kategori=<?= $key['kategori'] ?>" id="" style="text-decoration: none;"><?= $key['kategori'] ?></a>
+                            </div>
                         <?php } ?>
-                    <!-- </div> -->
+                    </div>
                 <?php } ?>
             </div>
         </div>

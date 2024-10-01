@@ -95,7 +95,7 @@
     }
 ?>
 <div class="section2">
-    <div class="container" style="background-color: #fff; height: auto; padding-top: 150px;">
+    <div class="container" style="background-color: #fff; height: auto; padding-top: 100px;">
         <div>
             <a href="<?= base_url() ?>berita" style="text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-left"></i> Kembali</a>
         </div>
@@ -201,40 +201,6 @@
                                 </div>
                             </div>
                         <?php } ?>
-                    <?php } ?>
-                <?php }else if(empty($data)){ ?>
-                    <?php if(!empty($berita)){ ?>
-                        <?php foreach($berita as $key) : ?>
-                            <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px;">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div>
-                                                <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
-                                            </div>
-                                            <div>
-                                                <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
-                                            </div>
-                                            <div style="padding-top: 5px; padding-bottom: 5px;">
-                                                <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
-                                            </div>
-                                            <button style="background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach ?>
-                    <?php }else if(empty($berita)){ ?>
-                        <div class="flex" style="padding-top: 20px;">
-                            <div class="card" style="flex: 100%; border: 0px; background-color: #f1f1f1;">
-                                <div class="card-body">
-                                    <h3 align="center">" Belum Ada Data "</h3>
-                                </div>
-                            </div>
-                        </div>
                     <?php } ?>
                 <?php } ?>
             </div>

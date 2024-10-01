@@ -5,13 +5,15 @@ class Berita extends CI_Controller {
 	function __construct()
     {
         parent::__construct();   
-		$this->load->model('m_berita');
+		$this->load->model('m_berita', 'berita');
     }
 	public function index()
 	{
 		$email = $this->session->userdata('email');
-		$data['user'] = $this->m_berita->getsDataUsers($email);
+		$data['user'] = $this->berita->getsDataUsers($email);
 		$data['berita'] = $this->db->get('berita')->result_array();
+		$data['dataKategori'] = $this->input->get('kategori');
+		$data['kategori'] = $this->berita->getsKategori();
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
 		$this->load->view('pages/berita/berita', $data);
@@ -23,7 +25,7 @@ class Berita extends CI_Controller {
 		if(!empty($this->input->post())){
 			$judul = $this->input->post('judul');
 			$deskripsi = $this->input->post('deskripsi');
-			// $gambar = $this->input->post('gambar');
+			$kategori = $this->input->post('kategori');
 			if(!empty($_FILES)){
 				$path = FCPATH.'asset/images/berita/';
 				$config['upload_path']      = $path;       
@@ -45,6 +47,7 @@ class Berita extends CI_Controller {
 					}else{
 						$fileData = $this->upload->data(); 
 						$data = [
+							"kategori" => strtoupper($kategori),
 							"judul" => $judul,
 							"deskripsi" => $deskripsi,
 							"gambar" => $fileData['file_name'],
@@ -79,8 +82,8 @@ class Berita extends CI_Controller {
 	function add_berita()
 	{
 		$email = $this->session->userdata('email');
-		$data['user'] = $this->m_berita->getsDataUsers($email);
-		$data['loker'] = $this->db->get('loker')->result_array();
+		$data['user'] = $this->berita->getsDataUsers($email);
+		$data['berita'] = $this->db->get('berita')->result_array();
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
 		$this->load->view('pages/berita/add_berita', $data);
@@ -88,7 +91,7 @@ class Berita extends CI_Controller {
 
 	function view(){
 		$id = $this->uri->segment(3);
-		$data['beritaID'] = $this->m_berita->tampil_data($id);
+		$data['beritaID'] = $this->berita->tampil_data($id);
 		// var_dump($data);die;
 
 		$this->load->view('components/header');
@@ -99,7 +102,7 @@ class Berita extends CI_Controller {
 	function edit()
 	{
 		$id = $this->uri->segment(3);
-		$data['berita'] = $this->m_berita->getsData($id);
+		$data['berita'] = $this->berita->getsData($id);
 		$this->load->view('components/header');
 		$this->load->view('components/menu');
 		$this->load->view('pages/berita/edit_berita', $data);
@@ -110,6 +113,7 @@ class Berita extends CI_Controller {
 		$id = $this->input->post('id');
 		$judul = $this->input->post('judul');
 		$deskripsi = $this->input->post('deskripsi');
+		$kategori = $this->input->post('kategori');
 
 		if(!empty($_FILES)){
 			$path = FCPATH.'asset/images/berita/';
@@ -133,6 +137,7 @@ class Berita extends CI_Controller {
 					$fileData = $this->upload->data(); 
 					$where = ['id' => $id];
 					$data = [
+						"kategori" => strtoupper($kategori),
 						"judul" => $judul,
 						"deskripsi" => $deskripsi,
 						"gambar" => $fileData['file_name'],
