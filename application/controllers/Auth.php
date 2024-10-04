@@ -6,7 +6,7 @@ class Auth extends CI_Controller {
     {
         parent::__construct(); 
 		$this->load->library('form_validation'); 
-		// $this->load->model('Generate_Code');
+		$this->load->model('Generate_Code', 'generate_code');
     }
 	public function index()
 	{
@@ -24,15 +24,15 @@ class Auth extends CI_Controller {
 		}
 	}
 
-	public function v2()
-    {
-        if ($this->session->userdata('email')) {
-            redirect('home');
-        }else{
-			$this->load->view('components/header');
-            $this->load->view('pages/auth/login_v2');
-        }
-    }
+	// public function v2()
+    // {
+    //     if ($this->session->userdata('email')) {
+    //         redirect('home');
+    //     }else{
+	// 		$this->load->view('components/header');
+    //         $this->load->view('pages/auth/login_v2');
+    //     }
+    // }
 
 	function login_user()
 	{
@@ -90,7 +90,7 @@ class Auth extends CI_Controller {
 	{
 		if(!empty($this->input->post())){
 			// $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
-            $id_anggota = $this->Generate_Code->CreateCode();
+            $id_anggota = $this->generate_code->CreateCode();
 			$nama = $this->input->post('nama');
 			$tempat_lahir = $this->input->post('tempat_lahir');
 			$tanggal_lahir = $this->input->post('tanggal_lahir');

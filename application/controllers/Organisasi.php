@@ -11,9 +11,10 @@ class Organisasi extends CI_Controller {
 	{
 		$email = $this->session->userdata('email');
 		$data['profil'] = $this->organisasi->tampil_data($email);
+		$data['user'] = $this->organisasi->getsDataUsers($email);
 		// var_dump($data);
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/organisasi/organisasi', $data);
 		$this->load->view('components/footer');
 	}

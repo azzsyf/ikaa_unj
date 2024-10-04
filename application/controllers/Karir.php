@@ -20,7 +20,7 @@ class Karir extends CI_Controller {
 
 		// var_dump($data['dataKategori']);die;
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/karir/karir', $data);
 		$this->load->view('components/footer');
 	}
@@ -28,10 +28,12 @@ class Karir extends CI_Controller {
 	function view(){
 		$id = $this->uri->segment(3);
 		$data['lokerID'] = $this->karir->tampil_data($id);
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->karir->getsDataUsers($email);
 		// var_dump($data);die;
 
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/karir/view_karir', $data);
 	}
 
@@ -41,7 +43,7 @@ class Karir extends CI_Controller {
 		$data['user'] = $this->karir->getsDataUsers($email);
 		$data['loker'] = $this->db->get('loker')->result_array();
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/karir/add_karir', $data);
 	}
 
@@ -113,8 +115,10 @@ class Karir extends CI_Controller {
 	{
 		$id = $this->uri->segment(3);
 		$data['loker'] = $this->karir->getsDataByID($id);
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->karir->getsDataUsers($email);
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/karir/edit_karir', $data);
 	}
 

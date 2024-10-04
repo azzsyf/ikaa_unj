@@ -24,4 +24,21 @@ Class M_Organisasi extends CI_Model
         }
         return $result;
 	}
+
+    function getsDataUsers($email){
+        $result = [];
+        $where = ['email'=>$email];
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where($where);
+        $data = $this->db->get()->row_array();
+        if(!empty($data)){
+            $result = [
+                // "id" => $data['id'],
+                "email" => $data['email'],
+                "role_id" => $data['role_id'],
+            ];
+        }
+        return $result;
+	}
 }

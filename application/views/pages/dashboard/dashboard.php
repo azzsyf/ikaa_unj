@@ -80,15 +80,28 @@
             background: rgb(86,198,95);
             background: linear-gradient(0deg, rgba(86,198,95,1) 0%, rgba(255,255,255,1) 50%, rgba(86,198,95,1) 100%);
             height: 550px;
-            /* img{
+            img{
                 padding-left: 10px;
                 padding-right: 10px;
-            } */
-            #logo-sentral{
+            }
+            #img-sentral{
+                width: 130px;
+            }
+            #img-akp2i{
                 width: 180px;
             }
-            #logo-akp2i{
-                width: 200px;
+            #img-digifile{
+                width: 180px;
+            }
+            .carousel-inner{
+                padding-bottom: 70px;
+            }
+            .carousel-img{
+                display: flex; 
+                width: 100px; 
+                justify-content: center; 
+                padding-left: 20px; 
+                padding-right: 20px;
             }
         }
 
@@ -1270,19 +1283,41 @@
             .parallax3 {
                 background: rgb(86,198,95);
                 background: linear-gradient(0deg, rgba(86,198,95,1) 0%, rgba(255,255,255,1) 50%, rgba(86,198,95,1) 100%);
-                height: 230px;
+                height: auto;
                 img{
-                    width: 100px;
+                    padding-left: 2px;
+                    padding-right: 2px;
                 }
-                #logo-sentral{
-                    width: 100px;
+                #img-sentral{
+                    width: 40px;
                 }
-                #logo-akp2i{
-                    width: 120px;
+                #img-akp2i{
+                    width: 50px;
+                }
+                #img-digifile{
+                    width: 50px;
+                }
+                #carousel-control-prev{
+                    width: 30px;
+                }
+                #carousel-control-next{
+                    width: 30px;
+                }
+                .carousel-inner{
+                    padding-bottom: 40px;
                 }
                 h2{
                     font-size: 15px;
                 }
+
+                .carousel-img{
+                    display: flex; 
+                    width: 100px; 
+                    justify-content: center; 
+                    padding-left: 20px; 
+                    padding-right: 20px;
+                }
+
             }
 
             .parallax4{
@@ -2081,43 +2116,43 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         </ol>
-                        <div class="carousel-inner" style="padding-bottom: 70px;">
+                        <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div style="display: flex; width: 900px; justify-content: center; padding-left: 20px; padding-right: 20px;">
+                                <div class="carousel-img">
                                     <div>
-                                        <a href="<?= base_url() ?>home/sentral"><img style="width: 130px;" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
-                                    </div>
-                                    <div style="padding-left: 25px;">
-                                        <a href="<?= base_url() ?>home/akp2i"><img style="width: 180px;" src="<?= base_url() ?>asset/LOGO-AKP2I-square.png"></a>
-                                    </div>
-                                    <div style="padding-left: 25px;">
-                                        <a href="<?= base_url() ?>home/digifile"><img style="width: 180px;" src="<?= base_url() ?>asset/logo-df.png"></a>
-                                    </div>
-                                    <div style="padding-left: 25px;">
-                                        <a href="<?= base_url() ?>home"><img style="width: 130px;" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
+                                        <a href="<?= base_url() ?>home/sentral"><img id="img-sentral" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
                                     </div>
                                     <div>
-                                        <a href="<?= base_url() ?>home"><img style="width: 130px;" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
+                                        <a href="<?= base_url() ?>home/akp2i"><img id="img-akp2i" src="<?= base_url() ?>asset/LOGO-AKP2I-square.png"></a>
+                                    </div>
+                                    <div>
+                                        <a href="<?= base_url() ?>home/digifile"><img id="img-digifile" src="<?= base_url() ?>asset/logo-df.png"></a>
+                                    </div>
+                                    <div>
+                                        <a href="<?= base_url() ?>home"><img id="img-sentral" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
+                                    </div>
+                                    <div>
+                                        <a href="<?= base_url() ?>home"><img id="img-sentral" src="<?= base_url() ?>asset/Logo Sentral.png"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div style="display: flex; width: 240px; justify-content: center;">
-                                    <img style="width: 180px;" src="<?= base_url() ?>asset/LOGO-AKP2I-square.png" alt="Second slide">
+                                    <img id="img-akp2i" src="<?= base_url() ?>asset/LOGO-AKP2I-square.png" alt="Second slide">
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div style="display: flex; width: 240px; justify-content: center;">
-                                    <img style="width: 180px;" src="<?= base_url() ?>asset/logo-df.png" alt="Third slide">
+                                    <img  id="img-digifile" src="<?= base_url() ?>asset/logo-df.png" alt="Third slide">
                                 </div>
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <img id="carousel-control-prev" src="<?= base_url() ?>asset/chevron-left.svg" aria-hidden="true" alt="">
                             <span class="sr-only">Previous</span>
                         </a>
                         <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <img id="carousel-control-next" src="<?= base_url() ?>asset/chevron-right.svg" aria-hidden="true" alt="">
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
@@ -2192,7 +2227,6 @@
                 <div class="flex-containerBerita" style="padding-right: 6%; padding-bottom: 10%; padding-top: 3%;">
                 <?php foreach($berita as $key) : ?>
                     <div class="card col-md-4" style="cursor: pointer;">
-                        <a href="<?= base_url() ?>berita/view/<?= $key['id']; ?>" style="text-decoration: none;">
                             <div class="card-body">
                                 <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" style="width: 230px; height: 145px;" class="card-img-top" alt="...">
                                 <div style="padding-top: 10px;">

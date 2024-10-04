@@ -17,7 +17,7 @@ class Acara extends CI_Controller {
 
 		// var_dump($data['dataKategori']);
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/acara/acara', $data);
 		$this->load->view('components/footer');
 	}
@@ -87,19 +87,22 @@ class Acara extends CI_Controller {
 	{
 		$email = $this->session->userdata('email');
 		$data['user'] = $this->acara->getsDataUsers($email);
-		$data['loker'] = $this->db->get('loker')->result_array();
+		$data['acara'] = $this->db->get('acara')->result_array();
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/acara/add_acara', $data);
 	}
 
 	function view(){
 		$id = $this->uri->segment(3);
 		$data['acaraID'] = $this->acara->tampil_data($id);
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->acara->getsDataUsers($email);
+
 		// var_dump($data);die;
 
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/acara/view_acara', $data);
 	}
 
@@ -139,8 +142,10 @@ class Acara extends CI_Controller {
 	{
 		$id = $this->uri->segment(3);
 		$data['acara'] = $this->acara->getsData($id);
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->acara->getsDataUsers($email);
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/acara/edit_acara', $data);
 	}
 
@@ -202,6 +207,36 @@ class Acara extends CI_Controller {
 		}else{
 			$this->load->view('errors/error');
 		}
+	}
+
+	function pin()
+	{
+		$id = $this->uri->segment(3);
+		// var_dump($id);
+
+		$where1 = ['pin' => 1];
+		$update = [
+			'pin' => "0",
+		];
+
+		$this->db->where($where1);
+		$success = $this->db->update('acara', $update);
+		if($success){
+			$where = ['id' => $id];
+			if('pin' == 0){
+				$update1 = [
+					'id' => $id,
+					'pin' => "1",
+				];
+			}
+			$this->db->where($where);
+			$success = $this->db->update('acara', $update1);
+			if($success){
+				redirect('acara');
+			}
+			// echo json_encode($response);
+		}
+
 	}
 
 	function delete()

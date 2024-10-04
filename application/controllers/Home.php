@@ -7,7 +7,8 @@ class Home extends CI_Controller {
     {
         parent::__construct();
 		$this->load->model('M_Oauth', 'oauth');
-		$this->load->model('Generate_Code');
+		$this->load->model('Generate_Code', 'generate_code');
+		$this->load->model('m_acara', 'acara');
     }
 	public function index()
 	{
@@ -38,7 +39,7 @@ class Home extends CI_Controller {
 					$user = [
 						'email' => $email,
 					];
-					$id_anggota = $this->Generate_Code->CreateCode();
+					$id_anggota = $this->generate_code->CreateCode();
 					$checkID = $this->db->get_where('profil', ['id_anggota' => $id_anggota])->row_array();
 					if(!empty($checkID)){
 						do {
@@ -77,11 +78,13 @@ class Home extends CI_Controller {
 			}
 			
 		}else{
-			$data['user'] = $this->db->get_where('profil', ['email' => $this->session->userdata('email')])->row_array();
+			$email = $this->session->userdata('email');
+			$data['user'] = $this->acara->getsDataUsers($email);
+			// $data['user'] = $this->db->get_where('profil', ['email' => $this->session->userdata('email')])->row_array();
 			$data['acara'] = $this->db->get('acara')->result_array();
 			$data['berita'] = $this->db->get('berita')->result_array();
 			$this->load->view('components/header');
-			$this->load->view('components/menu');
+			$this->load->view('components/menu', $data);
 			$this->load->view('pages/dashboard/dashboard', $data);
 			$this->load->view('components/footer');
 		}
@@ -89,24 +92,30 @@ class Home extends CI_Controller {
 
 	function sentral()
 	{
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->acara->getsDataUsers($email);
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/dashboard/view_sentral');
 		// $this->load->view('components/footer');
 	}
 
 	function akp2i()
 	{
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->acara->getsDataUsers($email);
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/dashboard/view_akp2i');
 		// $this->load->view('components/footer');
 	}
 
 	function digifile()
 	{
+		$email = $this->session->userdata('email');
+		$data['user'] = $this->acara->getsDataUsers($email);
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/dashboard/view_digifile');
 		// $this->load->view('components/footer');
 	}

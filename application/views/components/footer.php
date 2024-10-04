@@ -375,34 +375,34 @@
     <div class="parallax6">
         <footer>
             <div id="footer" class="row">
-                <div class="card col-md-2" style="background: transparent; border: 0px; width: 300px; padding: 10px;">
-                    <img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="">
+                <div class="col-md-3" align="center">
+                    <img src="<?= base_url() ?>asset/Logo IKA Akuntansi UNJ bulet.png" alt="" style="width: 70%;">
                 </div>
-                <div class="col-md-2">
-                    <div id="head-menu" style="color: #fff; font-weight: bold; padding-bottom: 10px;">
+                <div class="col-md-2" style="padding: 20px;">
+                    <div id="head-menu" style="color: #fff; font-weight: bold; padding-bottom: 5px;">
                         TENTANG KAMI
                     </div>
-                    <div>
+                    <div style="margin-top: 5px;">
                         <a href="<?= base_url() ?>organisasi" style="color: #bcbcbc;">Organisasi</a>
                     </div>
-                    <div>
+                    <div style="margin-top: 5px;">
                         <a href="<?= base_url() ?>karir" style="color: #bcbcbc;">Karir</a>
                     </div>
-                    <div>
+                    <div style="margin-top: 5px;">
                         <a href="<?= base_url() ?>acara" style="color: #bcbcbc;">Acara</a>
                     </div>
-                    <div>
+                    <div style="margin-top: 5px;">
                         <a href="<?= base_url() ?>berita" style="color: #bcbcbc;">Berita</a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div id="head-kontak" style="color: #fff; font-weight: bold; padding-bottom: 10px;">
+                <div class="col-md-3" style="padding: 20px;">
+                    <div id="head-kontak" style="color: #fff; font-weight: bold; padding-bottom: 5px;">
                         KONTAK KAMI
                     </div>
                     <!-- <div>
                         <span style="color: #fff;">Kantor Sekretariat</span>
                     </div> -->
-                    <div>
+                    <div style="padding-bottom: 5px;">
                         <span style="color: #bcbcbc;"><i class="fas fa-building"></i> Universitas Negeri jakarta</span>
                     </div>
                     <div>
@@ -414,15 +414,14 @@
                     <div>
                         <a href="https://www.tiktok.com" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-tiktok"> </i> ikaa.unj_official</a> 
                     </div> -->
-                    <div id="head-follow" style="color: #fff; font-weight: bold; padding-bottom: 10px; padding-top: 10px;">
+                    <div id="head-follow" style="color: #fff; font-weight: bold; padding-bottom: 5px; padding-top: 20px;">
                         IKUTI KAMI
                     </div>
-                    <div>
-                        <a href="https://www.instagram.com/ikaakuntansiunj" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-instagram"> </i> ikaakuntansiunj</a>
-                    </div>
+                    <a href="https://www.instagram.com/ikaakuntansiunj" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-instagram"> </i> ikaakuntansiunj</a><br>
+                    <a href="https://www.tiktok.com/@unj_connecthive" style="color: #bcbcbc; text-decoration: none;"><i class="fab fa-tiktok"> </i> unj_connecthive</a> 
                 </div>
-                <div class="col-md-4">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.524925130935!2d106.87646897440968!3d-6.1942536606837635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4ed14403213%3A0x2412a91a0f6a01c8!2sUniversitas%20Negeri%20Jakarta!5e0!3m2!1sid!2sid!4v1727749569048!5m2!1sid!2sid" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="col-md-4" style="padding: 20px;" align="center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.524925130935!2d106.87646897440968!3d-6.1942536606837635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4ed14403213%3A0x2412a91a0f6a01c8!2sUniversitas%20Negeri%20Jakarta!5e0!3m2!1sid!2sid!4v1727749569048!5m2!1sid!2sid" height="250" style="border:0; width: 80%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <p>COPYRIGHT &copy; 2024 IKATAN ALUMNI AKUNTANSI UNIVERSITAS NEGERI JAKARTA</p>

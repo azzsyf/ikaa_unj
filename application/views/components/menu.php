@@ -341,9 +341,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('organisasi') ?>">ORGANISASI</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('alumni') ?>">DATA ALUMNI</a>
-                </li> -->
+                <?php $email = $this->session->userdata('email'); ?>
+                <?php if($email != null) { ?>
+                    <?php if($user['role_id'] == 1){ ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('alumni') ?>">DATA ALUMNI</a>
+                        </li>
+                    <?php } ?>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('karir') ?>">KARIR</a>
                 </li>

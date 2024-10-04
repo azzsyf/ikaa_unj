@@ -5,15 +5,18 @@ class Profile extends CI_Controller {
 	function __construct()
     {
         parent::__construct();  
+		$this->load->model('m_acara', 'acara');
     }
 	public function index()
 	{
 		$data['email'] = $this->session->userdata('email');
 		$data['profil'] = $this->db->get_where('profil', ['email' => $data['email']])->row_array();
+        $email = $this->session->userdata('email');
+		$data['user'] = $this->acara->getsDataUsers($email);
 		// var_dump($data1);die; 
 		if ($this->session->userdata('email')) {
 			$this->load->view('components/header');
-			$this->load->view('components/menu');
+			$this->load->view('components/menu', $data);
 			$this->load->view('pages/profile/profil', $data);
         }else{
 			redirect('home');

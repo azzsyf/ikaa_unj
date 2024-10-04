@@ -15,7 +15,7 @@ class Berita extends CI_Controller {
 		$data['dataKategori'] = $this->input->get('kategori');
 		$data['kategori'] = $this->berita->getsKategori();
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/berita/berita', $data);
 		$this->load->view('components/footer');
 	}
@@ -85,26 +85,30 @@ class Berita extends CI_Controller {
 		$data['user'] = $this->berita->getsDataUsers($email);
 		$data['berita'] = $this->db->get('berita')->result_array();
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/berita/add_berita', $data);
 	}
 
 	function view(){
 		$id = $this->uri->segment(3);
+		$email = $this->session->userdata('email');
 		$data['beritaID'] = $this->berita->tampil_data($id);
+		$data['user'] = $this->berita->getsDataUsers($email);
 		// var_dump($data);die;
 
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/berita/view_berita', $data);
 	}
 
 	function edit()
 	{
 		$id = $this->uri->segment(3);
+		$email = $this->session->userdata('email');
 		$data['berita'] = $this->berita->getsData($id);
+		$data['user'] = $this->berita->getsDataUsers($email);
 		$this->load->view('components/header');
-		$this->load->view('components/menu');
+		$this->load->view('components/menu', $data);
 		$this->load->view('pages/berita/edit_berita', $data);
 	}
 
@@ -166,6 +170,36 @@ class Berita extends CI_Controller {
 		}else{
 			$this->load->view('errors/error');
 		}
+	}
+
+	function pin()
+	{
+		$id = $this->uri->segment(3);
+		// var_dump($id);
+
+		$where1 = ['pin' => 1];
+		$update = [
+			'pin' => "0",
+		];
+
+		$this->db->where($where1);
+		$success = $this->db->update('berita', $update);
+		if($success){
+			$where = ['id' => $id];
+			if('pin' == 0){
+				$update1 = [
+					'id' => $id,
+					'pin' => "1",
+				];
+			}
+			$this->db->where($where);
+			$success = $this->db->update('berita', $update1);
+			if($success){
+				redirect('berita');
+			}
+			// echo json_encode($response);
+		}
+
 	}
 
 	function delete()
