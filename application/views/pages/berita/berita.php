@@ -94,7 +94,7 @@
   
     // Menampilkan nama hari format Bahasa Indonesia
     $hari_ini   = date('Y-m-d');
-    echo getDayIndonesia($hari_ini);
+    // echo getDayIndonesia($hari_ini);
     
 
     function tgl_indo($tanggal){
@@ -186,68 +186,6 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php }else if($user['role_id'] == 0){?>
-                            <?php if(!empty($data2)){ ?>
-                                <div class="oke">
-                                    <?php if($dataKategori == null) { ?>
-                                        <?php foreach ($berita as $key) : ?>
-                                            <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px; margin-left: -15px;">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-md-3">
-                                                            <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div>
-                                                                <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
-                                                            </div>
-                                                            <div>
-                                                                <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
-                                                            </div>
-                                                            <div style="padding-top: 5px; padding-bottom: 5px;">
-                                                                <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
-                                                            </div>
-                                                            <div style="padding-top: 20px;">
-                                                                <a href="<?= base_url() ?>berita/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php endforeach ?>
-                                    <?php }else{ ?>
-                                        <?php foreach ($berita as $key) : ?>
-                                            <?php if($key['kategori'] == $dataKategori) { ?>
-                                                <div class="card" style="height: auto; border: 0px; border-bottom: #ebebeb dashed 1px; margin-left: -15px;">
-                                                    <div class="card-body">
-                                                        <div class="row">
-                                                            <div class="col-md-3">
-                                                                <img src="<?= base_url() ?>asset/images/berita/<?= $key['gambar'] ?>" alt="" style="width: 150px;">
-                                                            </div>
-                                                            <div class="col-md-9">
-                                                                <div>
-                                                                    <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
-                                                                </div>
-                                                                <div>
-                                                                    <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
-                                                                </div>
-                                                                <div style="padding-top: 5px; padding-bottom: 5px;">
-                                                                    <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
-                                                                </div>
-                                                                <div style="padding-top: 20px;">
-                                                                    <a href="<?= base_url() ?>berita/view/<?= $key['id'] ?>" style="text-decoration: none; background-color: blue; color: #fff; border-radius: 7px; padding: 10px; border: 0px;">Selengkapnya</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            <?php } ?>
-                                        <?php endforeach ?>
-                                    <?php } ?>
-                                </div>
-                            <?php }else{ ?>
-                                <span>Belum Ada Berita</span>
-                            <?php } ?>
                         <?php } ?>
                     <?php }else if(empty($data)){ ?>
                         <?php if(!empty($berita)){ ?>
@@ -327,7 +265,7 @@
                 <div class="side">
                     <div class="title"><h3><b>Daftar Berita</b></h3></div>
                     <?php if(!empty($data)){ ?>
-                        <?php if(!empty($data2)){ ?>
+                        <?php if(!empty($berita)){ ?>
                             <div class="oke">
                                 <?php if($dataKategori == null) { ?>
                                     <?php foreach ($berita as $key) : ?>
@@ -341,9 +279,9 @@
                                                         <div>
                                                             <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
                                                         </div>
-                                                        <div>
-                                                            <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
-                                                        </div>
+                                                            <span style="text-decoration: none; color: #000;">
+                                                                <?php for ($i=0; $i < 70; $i++) { ?><?= $key['deskripsi'][$i] ?><?php } ?>....   
+                                                            </span>
                                                         <div style="padding-top: 5px; padding-bottom: 5px;">
                                                             <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
                                                         </div>
@@ -368,9 +306,9 @@
                                                             <div>
                                                                 <a href="#" style="text-decoration: none; font-weight: bolder; color: #000;"><span><?= $key['judul'] ?></span></a>
                                                             </div>
-                                                            <div>
-                                                                <span style="text-decoration: none; color: #000;"><?= $key['deskripsi'] ?></span>
-                                                            </div>
+                                                                <span style="text-decoration: none; color: #000;">
+                                                                    <?php for ($i=0; $i < 70; $i++) { ?><?= $key['deskripsi'][$i] ?><?php } ?>....   
+                                                                </span>
                                                             <div style="padding-top: 5px; padding-bottom: 5px;">
                                                                 <i class="far fa-calendar-alt" style="color: grey; font-size: 13px;"> <?= getDayIndonesia($key['date_created']) ?>, <?= tgl_indo(date("Y-m-d",strtotime($key['date_created']))); ?></i>
                                                             </div>

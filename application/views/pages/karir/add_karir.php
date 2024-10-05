@@ -100,7 +100,7 @@
                                                     <th>Divisi</th>
                                                     <th>Syarat</th>
                                                     <th>Flyer</th>
-                                                    <!-- <th>Tanggal dibuat</th> -->
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -116,6 +116,11 @@
                                                         <td class="col-md-1">
                                                             <a href=""><img src="<?= base_url() ?>asset/images/karir/<?= $key['gambar']; ?>" width="50;" alt=""></a>
                                                         </td>
+                                                        <?php if($key['status'] == 0){ ?>
+                                                            <td><span>Proses</span></td>
+                                                        <?php }else if($key['status'] == 1){ ?>
+                                                            <td><span>Sukses</span></td>
+                                                        <?php } ?>                                                        
                                                         <!-- <td><?= date("d-m-Y",strtotime($key['date_created'])); ?></td> -->
                                                         <td>
                                                             <a href="<?= base_url() ?>karir/edit/<?= $key['id'] ?>"class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="fas fa-pen"></i></a>

@@ -15,7 +15,7 @@ class Acara extends CI_Controller {
 		$data['dataKategori'] = $this->input->get('kategori');
 		$data['kategori'] = $this->acara->getsKategori();
 
-		// var_dump($data['dataKategori']);
+		// var_dump($data['acara']);
 		$this->load->view('components/header');
 		$this->load->view('components/menu', $data);
 		$this->load->view('pages/acara/acara', $data);
@@ -58,6 +58,7 @@ class Acara extends CI_Controller {
 							"created_by" => $this->session->userdata('email'),
 							"status" => 0,
 						];
+						// var_dump($data);die;
 						$success = $this->db->insert('acara', $data);
 						if($success){
 							$response = [

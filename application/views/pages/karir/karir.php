@@ -107,6 +107,7 @@
                                                     <th>Syarat</th>
                                                     <th>Flyer</th>
                                                     <th>Tanggal dibuat</th>
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -118,14 +119,19 @@
                                                         <td class="col-md-2"><?= $key['nama_perusahaan']; ?></td>
                                                         <td class="col-md-2"><?= $key['alamat']; ?></td>
                                                         <td class="col-md-1"><?= $key['divisi']; ?></td>
-                                                        <td class="col-md-1"><?= $key['syarat']; ?></td>
-                                                        <td class="col-md-3">
+                                                        <td class="col-md-2"><?= $key['syarat']; ?></td>
+                                                        <td class="col-md-1">
                                                             <img src="<?= base_url() ?>asset/images/karir/<?= $key['gambar']; ?>" width="100px" alt="">
                                                         </td>
                                                         <td><?= date("d-m-Y",strtotime($key['date_created'])); ?></td>
+                                                        <?php if($key['status'] == 0){ ?>
+                                                            <td><span style="color: orange;">Belum diverifikasi</span></td>
+                                                        <?php }else if($key['status'] == 1){ ?>
+                                                            <td><span style="color: green;">Sudah diverifikasi</span></td>
+                                                        <?php } ?>
                                                         <td class="col-md-2">
+                                                            <a class="btn-verify btn btn-warning" name="btn-verify" id="<?= $key['id'] ?>" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Verifikasi"><i class="fas fa-check"></i></a>
                                                             <a href="<?= base_url() ?>karir/delete/<?= $key['id'] ?>" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></a>
-                                                            <!-- <a href="<?= base_url() ?>karir/edit/<?= $key['id'] ?>" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="fas fa-pen"></i></a> -->
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
@@ -280,3 +286,63 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modal-confirm" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title">Modal title</h5> -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Apakah anda yakin untuk verifikasi data ini??</p>
+      </div>
+      <div class="modal-footer">
+        <form action="" id="form-confirm-verify">
+            <input type="hidden" name="btn-verify" value="<?= $key['id'] ?>">
+            <!-- <input type="text" name="status" value="<?= $key['status'] ?>"> -->
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Verifikasi</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(".btn-verify").on("click", function(e){
+        e.preventDefault();
+
+        var id = this.id;
+        $("input[name=btn-verify]").val(id);
+        console.log(id)
+
+        $("#modal-confirm").modal('show');
+    })
+
+    $("#form-confirm-verify").on("submit", function(e){
+        e.preventDefault();
+
+        var id = $("input[name=btn-verify]").val();
+        // var status = $("input[name=status]").val();
+        console.log(id)
+
+        $.ajax({
+            url : "<?= base_url(); ?>karir/verify",
+            method : "post",
+            dataType: "JSON",
+            data : {id: id},
+            success : function (data) {
+                // var response = JSON.parse(data);
+                if(data.success == true){
+                    toastr.success(data.messages);
+                    setTimeout(function() {
+                        window.location.href = "<?= base_url(); ?>karir";
+                    }, 1000)
+                }else if(data.success == false){
+                    toastr.warning(data.messages);
+                }
+            }
+        })
+    })
+</script>

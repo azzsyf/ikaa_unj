@@ -122,6 +122,39 @@ class Karir extends CI_Controller {
 		$this->load->view('pages/karir/edit_karir', $data);
 	}
 
+	function verify()
+	{
+        if(!empty($this->input->post())){
+			$id = $this->input->post('id');
+
+			$where = ['id' => $id];
+			// var_dump($where);die;
+			$update = [
+				"status" => "1",
+			];
+
+			// var_dump($update);die;
+				
+			$this->db->where($where);
+			$success = $this->db->update('loker', $update);
+			if($success){
+				$response = [
+					"success" => true,
+					"messages" => "Verifikasi berhasil!!",
+				];
+			}else{
+				$response = [
+					"success" => false,
+					"messages" => "Atur sebagai default gagal!!",
+				];
+			}
+			echo json_encode($response);
+		}else{
+            $this->load->view('errors/error');
+        }
+
+	}
+
 	function save_edit()
 	{
 		$id = $this->input->post('id');

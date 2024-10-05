@@ -21,6 +21,7 @@ Class M_Karir extends CI_Model
                 "date_created" => $data['date_created'],
                 "syarat" => $data['syarat'],
                 "gambar" => $data['gambar'],
+                "status" => $data['status'],
             ];
         }
         return $result;
@@ -59,6 +60,7 @@ Class M_Karir extends CI_Model
                 "divisi" => $data['divisi'],
                 "syarat" => $data['syarat'],
                 "gambar" => $data['gambar'],
+                "status" => $data['status'],
             ];
         }
         return $result;

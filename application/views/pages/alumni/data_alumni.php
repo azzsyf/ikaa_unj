@@ -80,7 +80,7 @@
                                             <td><?= $key['angkatan']; ?></td>
                                             <td><?= $key['program_studi']; ?></td>
                                             <td class="col-md-2">
-                                                <a href="<?= base_url() ?>acara/edit/"class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="fas fa-pen"></i></a>
+                                                <!-- <a href="<?= base_url() ?>acara/edit/"class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="fas fa-pen"></i></a> -->
                                                 <a href="<?= base_url() ?>acara/delete/"class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>

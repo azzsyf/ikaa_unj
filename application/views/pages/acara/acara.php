@@ -184,9 +184,9 @@
                                                         <td><?= $key['date_created']; ?></td>
                                                         <td><?= $key['created_by']; ?></td>
                                                         <?php if($key['status'] == 0){ ?>
-                                                            <td><span style="color: orange;">Review</span></td>
+                                                            <td><span style="color: orange;">Belum diverifikasi</span></td>
                                                         <?php }else if($key['status'] == 1){ ?>
-                                                            <td><span style="color: green;">Sukses</span></td>
+                                                            <td><span style="color: green;">Sudah diverifikasi</span></td>
                                                         <?php } ?>
                                                         <?php if($key['status'] == 0){ ?>
                                                             <td class="col-md-2">
@@ -215,7 +215,7 @@
                             </div>
                         <?php }else if($user['role_id'] == 0){ ?>
                             <div class="title"><h3><b>Daftar Acara</b></h3></div>            
-                            <?php if(!empty($data2)){ ?>
+                            <?php if(!empty($acara)){ ?>
                                 <div class="oke">
                                     <?php if($dataKategori == null){ ?>
                                         <?php foreach ($acara as $key) { ?>
@@ -368,7 +368,7 @@
                 <div class="side">
                     <?php if(!empty($data)) { ?>
                         <div class="title"><h3><b>Daftar Acara</b></h3></div>            
-                        <?php if(!empty($data2)){ ?>
+                        <?php if(!empty($acara)){ ?>
                             <div class="oke">
                                 <?php if($dataKategori == null){ ?>
                                     <?php foreach ($acara as $key) { ?>
@@ -539,7 +539,9 @@
                         <div style="padding-top: 20px;">
                             <?php foreach ($kategori as $key){ ?>
                                 <div>
-                                    <i class="fas fa-chevron-right"></i> <a href="<?= base_url() ?>acara?kategori=<?= $key['kategori'] ?>" id="" style="text-decoration: none;"><?= $key['kategori'] ?></a>
+                                    <?php if($key['status'] == 1){ ?>
+                                        <i class="fas fa-chevron-right"></i> <a href="<?= base_url() ?>acara?kategori=<?= $key['kategori'] ?>" id="" style="text-decoration: none;"><?= $key['kategori'] ?></a>
+                                    <?php } ?>
                                 </div>
                             <?php } ?>
                         </div>
@@ -562,7 +564,7 @@
       </div>
       <div class="modal-footer">
         <form action="" id="form-confirm-verify">
-            <!-- <input type="text" name="btn-verify" value="<?= $key['id'] ?>"> -->
+            <input type="hidden" name="btn-verify" value="<?= $key['id'] ?>">
             <!-- <input type="text" name="status" value="<?= $key['status'] ?>"> -->
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Verifikasi</button>
